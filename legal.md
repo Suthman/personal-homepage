@@ -1,3 +1,7 @@
+---
+title: Imprint, privacy policy and disclaimer
+---
+
 # Impressum / Legal Notice
 
 ## Angaben gemäß § 5 TMG / Information according to § 5 TMG
