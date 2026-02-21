@@ -1,5 +1,6 @@
+# the following files are not available via the website
 exclude:
   - README.md
 
 # site properties
-email: info@invalid-domain.de
+email: chr.mi@web.de
