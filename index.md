@@ -12,6 +12,8 @@ title: My Homepage
 
 Welcome to my personal homepage!
 
+jekyll test: This is my test param {{site.email}}
+
 
 
 
