@@ -1,5 +1,5 @@
 title: "Christoph – Homepage"
-description: "Christoph's personal Homepage of Christoph"
+description: "Christoph's personal Homepage"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 defaults:
@@ -27,3 +27,4 @@ exclude:
 
 # site properties
 email: chr.mi@web.de
+
