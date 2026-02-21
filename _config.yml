@@ -15,6 +15,10 @@ defaults:
         position: left
 
 
+plugins:
+  - jekyll-include-cache
+
+
 # the following files are not available via the website
 exclude:
   - README.md
