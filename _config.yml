@@ -1,1 +1,5 @@
+exclude:
+  - README.md
+
+# site properties
 email: info@invalid-domain.de
