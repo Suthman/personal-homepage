@@ -18,4 +18,3 @@ The website is available at:
 
 - [index.md](index.md) — Main homepage content  
 - [_config.yml](_config.yml) — Jekyll configuration file  
-- [legal.md](legal.md) — Imprint, privacy policy and disclaimer (if included)
