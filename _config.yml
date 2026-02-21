@@ -1,5 +1,30 @@
+title: "Christoph – Homepage"
+description: "Christoph's personal Homepage of Christoph
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: single
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: "main"
+        position: left
+
+
+# the following files are not available via the website
 exclude:
   - README.md
+  - LICENSE
+  - scripts/
+  - .vscode/
+  - Gemfile
+  - Gemfile.lock
+
 
 # site properties
-email: info@invalid-domain.de
+email: chr.mi@web.de
+
