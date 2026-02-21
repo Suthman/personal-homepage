@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Meine Homepage
+title: My Homepage
 ---
 
 ## Welcome
