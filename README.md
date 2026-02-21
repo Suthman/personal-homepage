@@ -11,7 +11,7 @@ The website is available at:
 
 
 ## Build and Deployment 
-- HTML files are generated with Jekyll by the github action job [jekyll.yml](.github/workflow/jekyll.yml)
+- HTML files are generated with Jekyll by the github action job [jekyll.yml](.github/workflows/jekyll.yml)
   - HTML of 'main' branch are written to branch 'gh-pages'
   - HTML of other branches is written to branch 'gh-pages-dev'
 - The GitHub Page is generated from the branch 'gh-pages'
