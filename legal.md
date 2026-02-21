@@ -1,3 +1,7 @@
+---
+title: Imprint, privacy policy and disclaimer
+---
+
 # Impressum / Legal Notice
 
 ## Angaben gemäß § 5 TMG / Information according to § 5 TMG
@@ -7,7 +11,7 @@ Altenrather Str. 5F
 Deutschland / Germany
 
 ## Kontakt / Contact
-E-Mail: {{site.email}}  
+E-Mail: {{  site.email  }}  
 
 ## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV / Responsible for content according to § 55 (2) RStV
 Christoph Mies, Anschrift wie oben / same address as above.
@@ -35,7 +39,7 @@ This website may contain links to external third‑party websites over which I h
 Altenrather Str. 5F  
 53797 Lohmar  
 Deutschland / Germany  
-E-Mail: {{site.email}}
+E-Mail: {{ site.email }}
 
 ## 2. Erhebung und Speicherung personenbezogener Daten / Collection of Personal Data
 

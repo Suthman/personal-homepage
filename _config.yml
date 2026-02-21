@@ -1,5 +1,5 @@
 title: "Christoph – Homepage"
-description: "Christoph's personal Homepage of Christoph"
+description: "Christoph's personal Homepage"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 defaults:
@@ -15,6 +15,10 @@ defaults:
         position: left
 
 
+plugins:
+  - jekyll-include-cache
+
+
 # the following files are not available via the website
 exclude:
   - README.md
@@ -27,3 +31,4 @@ exclude:
 
 # site properties
 email: chr.mi@web.de
+
