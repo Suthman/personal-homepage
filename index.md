@@ -51,4 +51,4 @@ I am Christoph, and I live in [Lohmar](https://de.wikipedia.org/wiki/Lohmar).
 ---
 
 ## Imprint, privacy policy and disclaimer / Impressum, Datenschutzerklärung und Haftungsausschluss
-[Imprint, privacy policy and disclaimer / Impressum, Datenschutzerklärung und Haftungsausschluss](legal.md)
+[Imprint, privacy policy and disclaimer / Impressum, Datenschutzerklärung und Haftungsausschluss](/legal/)
