@@ -1,5 +1,6 @@
 ---
 title: My Homepage
+permalink: /home/
 ---
 
 ## Welcome

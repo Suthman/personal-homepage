@@ -1,5 +1,6 @@
 ---
 title: Imprint, privacy policy and disclaimer
+permalink: /legal/
 ---
 
 # Impressum / Legal Notice
