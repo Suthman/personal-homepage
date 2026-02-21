@@ -3,6 +3,12 @@ layout: default
 title: Meine Homepage
 ---
 
+## Welcome
+
+Welcome to my personal homepage!
+
+I am Christoph, and I live in [Lohmar](https://de.wikipedia.org/wiki/Lohmar).
+
 ## Publications
 
 - **Encoding HTN Heuristics in PDDL Planning Instances**, C. Mies, J. Hertzberg, In: *KI 2013: Advances in Artificial Intelligence. Lecture Notes in Computer Science, vol 8077*, pp 292-295 (2013)  
