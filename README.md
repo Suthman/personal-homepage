@@ -6,7 +6,7 @@ This repository contains the source code of my personal homepage.
 ## Accessibility
 
 The website is available at:
-
+- https://www.christoph-mies.de
 - https://suthman.github.io/personal-homepage/
 
 
@@ -15,6 +15,16 @@ The website is available at:
   - HTML of 'main' branch are written to branch 'gh-pages'
   - HTML of other branches is written to branch 'gh-pages-dev'
 - The GitHub Page is generated from the branch 'gh-pages'
+
+
+## Configuration of domain
+- Create four A-Records for your primary domain pointing to the GitHub IP adresses  
+  - christoph-mies.de -> 185.199.108.153
+  - christoph-mies.de -> 185.199.109.153
+  - christoph-mies.de -> 185.199.110.153
+  - christoph-mies.de -> 185.199.111.153
+- Create a CNAME forwarding from the www-part to the github url 
+  - www.christoph-mies.de -> suthman.github.io
 
 
 ## Important Files
