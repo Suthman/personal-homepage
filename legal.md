@@ -1,8 +1,12 @@
 ---
-title: Imprint, privacy policy and disclaimer
+title: Imprint, disclaimer and privacy policy 
+permalink: /legal/
+toc: true
+toc_sticky: true
 ---
 
-# Impressum / Legal Notice
+
+# Impressum / Imprint
 
 ## Angaben gemäß § 5 TMG / Information according to § 5 TMG
 **Christoph Mies**  
