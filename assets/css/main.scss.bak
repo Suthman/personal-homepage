@@ -1,9 +1,0 @@
-@import "minimal-mistakes/skins/default"; // skin
-@import "minimal-mistakes"; // main partials
-
-/* Deine individuellen Anpassungen UNTER den Imports */
-.page__footer, 
-.page__footer-follow, 
-.page__footer-copyright {
-  border-top: none !important;
-}
