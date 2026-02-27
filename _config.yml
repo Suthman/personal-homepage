@@ -1,6 +1,15 @@
 title: "Christoph – Homepage"
 description: "Christoph's personal Homepage"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+locale: "en-EN"
+
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-sitemap
+
 
 defaults:
   - scope:
@@ -8,20 +17,54 @@ defaults:
       type: "pages"
     values:
       layout: single
-      toc: true
-      toc_sticky: true
+#      toc: true
+#      toc_sticky: true
+      author_profile: true
       sidebar:
         nav: "main"
         position: left
 
+# site properties
+email: chr.mi@web.de
 
-plugins:
-  - jekyll-include-cache
+author:
+  name   : "Christoph"
+#  bio    : "Enthusiastischer Web-Entwickler & Jekyll-Nutzer. Hier teile ich meine Projekte und Gedanken."
+  avatar : "/assets/images/author-photo.jpg" # Pfath to photo
+  location: "Germany"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:chr.mi@web.de"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://de.linkedin.com/in/christoph-mies-459042177"
+    - label: "XING"
+      # icon: "fab fa-fw fa-xing" original icon, but lower one is similar to the others
+      icon: "fab fa-fw fa-xing-square"
+      url: "https://www.xing.com/profile/Christoph_Mies3"
+#    - label: "GitHub"
+#      icon: "fab fa-fw fa-github"
+#      url: "https://github.com"
+
+atom_feed:
+  hide: true
+
+footer:
+  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/legal/">Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/">Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
+
+#footer:
+#  links:
+#    - label: "LinkedIn"
+#      icon: "fab fa-fw fa-linkedin"
+#      url: "https://de.linkedin.com"
+#  extra_footer_content: "© 2026 Christoph Mies — Alle Rechte vorbehalten. Diese Website verwendet das Minimal Mistakes Jekyll Theme."
 
 
 # the following files are not available via the website
 exclude:
   - README.md
+  - CNAME
   - LICENSE
   - scripts/
   - .vscode/
@@ -29,6 +72,5 @@ exclude:
   - Gemfile.lock
 
 
-# site properties
-email: chr.mi@web.de
+
 
