@@ -1,0 +1,11 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Publications"
+    url: /#publications
+  - title: "Interests"
+    url: /#interests-and-hobbies
+  - title: "Social Media"
+    url: /#social-media
+  - title: "Legal"
+    url: /legal/
