@@ -1,5 +1,5 @@
-title: "Christoph – Homepage"
-description: "Christoph's personal Homepage"
+title: "Christoph Mies"
+description: "A collection of my publications, my CV, and my interests — professional and personal."
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 locale: "en-EN"
 
@@ -17,8 +17,6 @@ defaults:
       type: "pages"
     values:
       layout: single
-#      toc: true
-#      toc_sticky: true
       author_profile: true
       sidebar:
         nav: "main"
@@ -31,7 +29,8 @@ author:
   name   : "Christoph"
 #  bio    : "Enthusiastischer Web-Entwickler & Jekyll-Nutzer. Hier teile ich meine Projekte und Gedanken."
   avatar : "/assets/images/author-photo.jpg" # Pfath to photo
-  location: "Germany"
+  #location: "<a href='https://www.google.com/maps/place/53797+Lohmar' target='_blank'>Lohmar, Germany</a>"
+  location: "Lohmar, Germany"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -51,14 +50,8 @@ atom_feed:
   hide: true
 
 footer:
-  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/legal/">Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/">Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
+  extra_footer_content: '© 2026 Christoph Mies &#124; <strong>As of February 2026: Site under construction</strong> &#124; <a href="/legal/">Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/">Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
 
-#footer:
-#  links:
-#    - label: "LinkedIn"
-#      icon: "fab fa-fw fa-linkedin"
-#      url: "https://de.linkedin.com"
-#  extra_footer_content: "© 2026 Christoph Mies — Alle Rechte vorbehalten. Diese Website verwendet das Minimal Mistakes Jekyll Theme."
 
 
 # the following files are not available via the website
