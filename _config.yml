@@ -50,7 +50,7 @@ atom_feed:
   hide: true
 
 footer:
-  extra_footer_content: '© 2026 Christoph Mies &#124; <strong>As of February 2026: Site under construction</strong> &#124; <a href="/legal/">Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/">Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
+  extra_footer_content: '© 2026 Christoph Mies &#124; <strong>As of March 2026: Site under construction</strong> &#124; <a href="/legal/">Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/">Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
 
 
 
