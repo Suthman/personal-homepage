@@ -1,9 +1,24 @@
 title: "Christoph Mies"
-description: "A collection of my publications, my CV, and my interests — professional and personal."
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-locale: "en-EN"
+subtitle: "IT Architect"
+description: "Blog · Publications · Professional Journey"
+url: "https://christoph-mies.de"
+og_image: "/assets/images/author-photo.jpg" # image used when sharing links. Can be a logo or portait. ATTENTION: also check og_image when updating!
 
 minimal_mistakes_skin: "default" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+search: true
+
+# Build settings
+markdown: kramdown
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+encoding: "utf-8" # no official jekyll standard, but: might help and will not break anything
+
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+locale: "en_GB"
+timezone: "Europe/Berlin" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 plugins:
   - jekyll-include-cache
@@ -24,6 +39,18 @@ exclude:
   - exclude/
 
 defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
   - scope:
       path: "_pages"
       type: "pages"
@@ -35,18 +62,17 @@ defaults:
         position: left
 
 # site properties
-email: chr.mi@web.de
+email: chr.mi@web.de # ATTENTION: Also check mail adress in author-info when changing!
 
 author:
   name   : "Christoph"
 #  bio    : "Enthusiastischer Web-Entwickler & Jekyll-Nutzer. Hier teile ich meine Projekte und Gedanken."
-  avatar : "/assets/images/author-photo.jpg" # Pfath to photo
-  #location: "<a href='https://www.google.com/maps/place/53797+Lohmar' target='_blank'>Lohmar, Germany</a>"
+  avatar : "/assets/images/author-photo.jpg" # Path to photo. ATTENTION: also check og_image when updating!
   location: "Lohmar, Germany"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:chr.mi@web.de"
+      url: "mailto:chr.mi@web.de" # ATTENTION: Also check mail adress in site properties when changing!
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://de.linkedin.com/in/christoph-mies-459042177"

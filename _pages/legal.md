@@ -3,6 +3,8 @@ title: Imprint, disclaimer and privacy policy
 permalink: /legal/
 toc: true
 toc_sticky: true
+sitemap: false
+search: false
 ---
 
 
