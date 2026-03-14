@@ -12,12 +12,8 @@ The website is available at:
 
 ## Build and Deployment 
 - I chose to follow the GitHub Flow branching strategy. GitHub Flow consists of a single permanent **main** branch and short-lived feature branches for changes.
+- The website is generated via GitHub's default [Jeckyll](https://jekyllrb.com/) support
 - The GitHub Page is generated from the **main** branch by default (production setup). For testing purposes, it can temporarily be generated from short-lived branches as well. However, this should remain the exception.
-- [Gemfile](Gemfile) is the Ruby configuration file required for [Jeckyll](https://jekyllrb.com/)
-- Additionally, HTML files are generated with Jekyll by the github action job [jekyll.yml](.github/workflows/jekyll.yml)
-  - HTML of 'main' branch are written to branch 'gh-pages'
-  - HTML of other branches is written to branch 'gh-pages-dev'
-
 
 
 ## Configuration of domain
