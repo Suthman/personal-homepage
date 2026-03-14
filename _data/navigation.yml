@@ -1,7 +1,14 @@
 main:
-  - title: "Home"
+  - title: "Blog"
     url: /
-  - title: "About Me"
-    url: /about-me/
+#  - title: "Posts by Year"
+#    url: /posts/
+#  - title: "Posts by Tag"
+#    url: /tags/
+#  - title: "Posts by Category"
+#    url: /categories/
   - title: "Publications"
     url: /publications/
+  - title: "About Me"
+    url: /about-me/
+
