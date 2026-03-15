@@ -1,7 +1,42 @@
 # Personal Homepage
 
 This repository contains the source code of my personal homepage.  
-It is based on the [Jekyll](https://jekyllrb.com/) theme **Minimal Mistakes**.
+- [Contents and Overview](#contents-and-overview)
+- [Technical setup](#technical-setup)
+- [TODOs and future topics](exclude/possible-content.md)
+
+
+---
+
+
+## 📖 Contents and overview
+- [Home](_pages/home.md)
+- [About me](_pages/about-me.md)
+- [Publications](_pages/publications.md)
+- [Legal](_pages/legal.md)
+- [404](_pages/404.md)
+- Blog / Posts
+  - [2026-03-15-creating-my-website.md](_posts/2026-03-15-creating-my-website.md) `last_modified_at=2026-03-15 00:00:00`  
+    categories: `Blog`, tags: `website` `development`
+
+
+---
+
+
+## 🛠️ Technical setup
+
+- [Jekyll Theme: Minimal Mistakes](#jekyll-theme-minimal-mistakes)
+- [Theme Overrides](#theme-overrides)
+- [Build and Deployment](#build-and-deployment)
+- [Accessibility and Links](#accessibility-and-important-links)
+
+
+---
+
+
+### 🧪 Jekyll theme: Minimal Mistakes
+
+The website is based on the [Jekyll](https://jekyllrb.com/) theme **Minimal Mistakes**.
 
 Useful resources related to Minimal Mistakes:
 
@@ -9,9 +44,47 @@ Useful resources related to Minimal Mistakes:
 - [Minimal Mistakes GitHub Pages Starter](https://github.com/mmistakes/mm-github-pages-starter)
 - [Sample Content Repository](https://github.com/mmistakes/jekyll-sample-content/)
 
+Important files:
+- [`_config.yml`](_config.yml) — Jekyll configuration
+- [`navigation.yml`](_data/navigation.yml) — site navigation
+
+
 ---
 
-## 🌐 Accessibility
+
+### ⚠️ Theme Overrides
+
+The following files have been **overridden**. Please proceed with caution during theme updates!
+
+- [footer.html](_includes/footer.html):  
+   The footer now only displays the text defined in the `footer.extra_footer_content` parameter of _config.yml
+- [head.html](_includes/head.html):  
+   Loads `font-awesome/6.7.2` globally
+- [social-share.html](_includes/social-share.html)  
+   Customized sharing options
+- [main.scss](assets/css/main.scss)  
+   Main CSS file; the override imports the original theme styles and adds custom rules
+
+Usage of customization hooks - no real override:
+- [comments-providers/custom.html](_includes/comments-providers/custom.html)  
+   Enables post feedback via email
+
+
+---
+
+
+### 🚀 Build and Deployment
+
+- I follow the **GitHub Flow** branching strategy: a single long-lived `main` branch and short-lived feature branches for changes.
+- The website is generated using GitHub’s built-in **Jekyll** support.
+- GitHub Pages deploys the site from the `main` branch (production).  
+  For testing, it can temporarily be deployed from feature branches — but this should remain the exception.
+
+
+---
+
+
+### 🌐 Accessibility and important links
 
 The website is available at:
 
@@ -21,23 +94,10 @@ The website is available at:
 Additional resources:
 
 - [Sitemap](https://christoph-mies.de/sitemap.xml)
+- [RSS Feed](https://christoph-mies.de/feed.xml)
 
----
-
-## 🚀 Build and Deployment
-
-- I follow the **GitHub Flow** branching strategy: a single long-lived `main` branch and short-lived feature branches for changes.
-- The website is generated using GitHub’s built-in **Jekyll** support.
-- GitHub Pages deploys the site from the `main` branch (production).  
-  For testing, it can temporarily be deployed from feature branches — but this should remain the exception.
-
----
-
-## 🌍 Domain Configuration
-
-To configure the custom domain:
-
-### A‑Records (root domain → GitHub Pages IPs)
+Domain Configuration
+#### A‑Records (root domain → GitHub Pages IPs)
 
 - christoph-mies.de  → 185.199.108.153
 - christoph-mies.de  → 185.199.109.153
@@ -45,16 +105,7 @@ To configure the custom domain:
 - christoph-mies.de  → 185.199.111.153
 
 
-### CNAME (www → GitHub Pages)
+#### CNAME (www → GitHub Pages)
 
 - www.christoph-mies.de  → suthman.github.io
-
-
----
-
-## 📁 Important Files
-
-- [`_config.yml`](_config.yml) — Jekyll configuration  
-- [`navigation.yml`](_data/navigation.yml) — site navigation  
-
 
