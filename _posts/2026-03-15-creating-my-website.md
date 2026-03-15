@@ -124,14 +124,13 @@ Microsoft Copilot summarizes it this way (March 2026):
 > “Minimal Mistakes is perfect for websites that need to organize and present substantial content cleanly and readably, without the overhead of a full CMS such as WordPress.”
 {: .notice--info}
 
-I also found the minimal starter repository for Minimal Mistakes: [mm-github-pages-starter](https://github.com/mmistakes/mm-github-pages-starter).
-By analyzing the provided structure and configuration, I iteratively reorganized and improved my website.
+Encouraged by these assessments, I began exploring the technical details of the theme.
 
-Along the way, I learned that Markdown pages typically begin with a *front matter* block — a concept used by most static site generators, including Jekyll. There is a wide range of parameters available to control layout, metadata, and behavior.
+The minimal starter repository for Minimal Mistakes — [mm-github-pages-starter](https://github.com/mmistakes/mm-github-pages-starter) — proved extremely helpful. By studying its structure and configuration, I was able to iteratively reorganize and improve my own website.
 
-Another essential component is the Jekyll configuration file, `_config.yml`.
+Along the way, I learned that Markdown pages typically begin with a `front matter` block — a concept used by most static site generators, including Jekyll.  A wide range of parameters is available to control layout, metadata, and behavior. Another essential component is the Jekyll configuration file, `_config.yml`.
 
-By asking LLMs about the specific parameters used in `_config.yml` and in *front matter* blocks, I gained a solid understanding of how Minimal Mistakes works and how to tailor it to my needs.
+By asking LLMs about the specific parameters used these configurations, I gained a solid understanding of how Minimal Mistakes works and how to tailor it to my needs.
 
 
 
@@ -163,7 +162,7 @@ My use case was straightforward:
 
 I wanted to present my CV and publications, maintain a blog with a moderate posting frequency — perhaps one or two posts per month — and use a layout that looks clean and appealing.
 
-The combination of Jekyll, the Minimal Mistakes theme, and GitHub Pages fulfills all of these requirements:
+The combination of Jekyll, the Minimal Mistakes theme, and GitHub Pages meets all of my requirements:
 
 1. clean and appealing layout — ✅
 2. easy to maintain — ✅
