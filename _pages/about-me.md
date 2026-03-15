@@ -3,16 +3,17 @@ title: About Me
 permalink: /about-me/
 toc: true
 toc_sticky: true
+toc_icon: "user-tie"
+toc_label: "About Me"
 ---
 
 
-This section provides an overview of both my professional journey and my personal interests. 
+## My Journey
+
+A look at my professional development — from university to where I am today.
 
 
-# My Journey
-
-
-## IT Architect and Software Engineer at REWE digital (since October 2011)
+### IT Architect and Software Engineer at REWE digital (since October 2011)
 
 Since October 2011, I have been part of [REWE digital](https://www.rewe-digital.com/en), the largest IT service provider of the [REWE Group](https://www.rewe-group.com/en/). During this time, the company has undergone a massive organizational and cultural transformation:
 
@@ -22,7 +23,7 @@ Since October 2011, I have been part of [REWE digital](https://www.rewe-digital.
 - The company expanded internationally by opening subsidiaries in several European countries, transforming itself into an international enterprise.
 
 
-### IT Architect (since December 2020)
+#### IT Architect (since December 2020)
 
 When REWE digital formalized IT Architecture as a dedicated profession in late 2020, I was among the first to join the newly established, company-wide architecture organization, helping to anchor architectural excellence within our product teams from day one
 
@@ -38,7 +39,7 @@ The book introduces the well-known elevator metaphor, describing architects as t
 Additionally, Hohpe highlights a broad set of challenges for architects — and employees in general — structured around the key themes of communication, organization, and transformation.
 
 
-### Software Engineer (October 2011 – November 2020)
+#### Software Engineer (October 2011 – November 2020)
 
 From October 2011 to November 2020, I worked as a Software Engineer and accompanied the company on a long technological journey:
 
@@ -50,7 +51,7 @@ It inspired me to adopt practices such as test-driven development, which signifi
 
 
 
-## Research Associate at Fraunhofer IAIS (July 2007 – September 2011)
+### Research Associate at Fraunhofer IAIS (July 2007 – September 2011)
 
 During this period, I worked as a Research Associate at [Fraunhofer IAIS](https://www.iais.fraunhofer.de/), contributing to several applied research projects and publishing most of my academic work.
 
@@ -66,7 +67,7 @@ This formed the backbone of my work at Fraunhofer IAIS and provided deep experie
 
 
 
-## Computer Science Student at RWTH Aachen University (October 2001 – June 2007)
+### Computer Science Student at RWTH Aachen University (October 2001 – June 2007)
 
 I studied Computer Science at [RWTH Aachen University](https://www.rwth-aachen.de/) and graduated with a German Diploma in Computer Science (equivalent to a Master’s degree).  
 During my advanced studies, I specialized in knowledge-based systems.
@@ -82,11 +83,9 @@ Through this work, I gained hands-on experience in:
 
 
 
-# Community & Personal Interests
+## Community & Personal Interests
 
 - **Cultural Heritage & Engagement:** As an active member of [Ernte-Verein Donrath 1925 e.V.](https://evd-tanzfloehe.de), I am deeply committed to preserving local traditions. I value the strong sense of community and the collective effort required to maintain these generations-old customs.
 - **Social Commitment:** Every Shrove Tuesday (*Veilchendienstag*), I participate in the traditional procession of [Ääzebär e.V. Lohmar](https://aeaezebaer.de). Our mission is charitable: we collect donations for the local Red Cross and support various local charitable and non-profit community initiatives.
 - **Sports & Team Spirit:** I stay active through a balance of individual and team sports. I am a lifelong supporter of [1. FC Köln](https://fc.de), embodying the local "Rhenish resilience" by standing by my club through every high and low. To keep fit, I go jogging regularly and enjoy the camaraderie of a weekly football match with friends.
 - **Lifelong Learning & Gaming:** I am an avid reader, constantly exploring new perspectives through literature—both professional and fiction. In my downtime, I enjoy gaming, which I appreciate for its storytelling, complex mechanics, and the strategic thinking it requires.
-
-
