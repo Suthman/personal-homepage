@@ -9,7 +9,7 @@ tags:
 toc: true
 toc_sticky: true
 toc_label: "Creating my website"
-toc_icon: "gears"
+toc_icon: "cogs"
 
 ---
 
