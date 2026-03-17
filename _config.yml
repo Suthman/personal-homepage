@@ -62,7 +62,7 @@ defaults:
         position: left
 
 # site properties
-email: chr.mi@web.de # ATTENTION: Also check mail adress in author-info when changing!
+email: www-christoph-mies-de@web.de # ATTENTION: Also check mail adress in author-info when changing!
 
 author:
   name   : "Christoph"
@@ -72,7 +72,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:chr.mi@web.de" # ATTENTION: Also check mail adress in site properties when changing!
+      url: "mailto:www-christoph-mies-de@web.de" # ATTENTION: Also check mail adress in site properties when changing!
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://de.linkedin.com/in/christoph-mies-459042177"
