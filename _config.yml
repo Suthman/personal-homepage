@@ -2,7 +2,7 @@ title: "Christoph Mies"
 subtitle: "IT Architect"
 description: "Blog · Publications · Professional Journey"
 url: "https://christoph-mies.de"
-og_image: "/assets/images/author-photo.jpg" # image used when sharing links. Can be a logo or portait. ATTENTION: also check og_image when updating!
+og_image: /assets/images/author-photo.jpg # image used when sharing links. Can be a logo or portait. ATTENTION: also check og_image when updating!
 
 minimal_mistakes_skin: "default" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
@@ -10,15 +10,15 @@ search: true
 # Build settings
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-encoding: "utf-8" # no official jekyll standard, but: might help and will not break anything
+encoding: utf-8 # no official jekyll standard, but: might help and will not break anything
 
 
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-locale: "en_GB"
-timezone: "Europe/Berlin" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+locale: en_GB
+timezone: Europe/Berlin # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 plugins:
   - jekyll-paginate # Automatically splits your post list into smaller chunks (e.g., 5 or 10 posts per page) and creates the "Next/Previous" navigation at the bottom.
@@ -57,12 +57,12 @@ defaults:
   # _pages
   - scope:
       path: "_pages"
-      type: "pages"
+      type: pages
     values:
       layout: single
       author_profile: true
       sidebar:
-        nav: "main"
+        nav: main
         position: left
 
 # site properties
@@ -71,16 +71,16 @@ email: www-christoph-mies-de@web.de # ATTENTION: Also check mail adress in autho
 author:
   name   : "Christoph"
 #  bio    : "Enthusiastischer Web-Entwickler & Jekyll-Nutzer. Hier teile ich meine Projekte und Gedanken."
-  avatar : "/assets/images/author-photo.jpg" # Path to photo. ATTENTION: also check og_image when updating!
+  avatar : /assets/images/author-photo.jpg # Path to photo. ATTENTION: also check og_image when updating!
   location: "Lohmar, Germany"
   links:
-    - label: "Email"
+    - label: Email
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:www-christoph-mies-de@web.de" # ATTENTION: Also check mail adress in site properties when changing!
-    - label: "LinkedIn"
+    - label: LinkedIn
       icon: "fab fa-fw fa-linkedin"
       url: "https://de.linkedin.com/in/christoph-mies-459042177"
-    - label: "XING"
+    - label: XING
       # icon: "fab fa-fw fa-xing" original icon, but lower one is similar to the others
       icon: "fab fa-fw fa-xing-square"
       url: "https://www.xing.com/profile/Christoph_Mies3"
@@ -92,7 +92,7 @@ atom_feed:
   hide: true # not rendered anyway as long as search is active. So I put RSS feed to footer explicitly
 
 comments:
-  provider: "custom"
+  provider: custom
 
 footer:
   extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/feed.xml"><i class="fas fa-rss-square"></i> RSS Feed</a> &#124; <strong><i class="fas fa-tools"></i> As of March 2026: Site under construction <i class="fas fa-tools"></i></strong> &#124; <a href="/legal/"><i class="fas fa-balance-scale"></i> Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/"><i class="fas fa-balance-scale"></i> Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
