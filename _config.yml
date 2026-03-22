@@ -21,8 +21,12 @@ locale: "en_GB"
 timezone: "Europe/Berlin" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 plugins:
-  - jekyll-include-cache
-  - jekyll-sitemap
+  - jekyll-paginate # Automatically splits your post list into smaller chunks (e.g., 5 or 10 posts per page) and creates the "Next/Previous" navigation at the bottom.
+  - jekyll-sitemap # It automatically generates a sitemap.xml file, which tells search engines like Google exactly which pages exist
+  - jekyll-gist # Instead of copying long code blocks into your Markdown, you just use a simple tag like {% gist ID %}. It renders the code beautifully with syntax highlighting directly from GitHub.
+  - jekyll-feed # It creates an Atom/RSS feed (usually at /feed.xml), Whenever you post a new summary, it automatically pops up in their feed readers.
+  - jemoji #  It brings GitHub-style emojis to your site like :books: or :triangular_ruler: representing emoji images 📚 📐
+  - jekyll-include-cache # It is a performance booster for your site's build process.
 
 include:
   - _pages
@@ -84,8 +88,11 @@ author:
 #      icon: "fab fa-fw fa-github"
 #      url: "https://github.com"
 
-atom_feed:
-  hide: true
+atom_feed: 
+  hide: true # not rendered anyway as long as search is active. So I put RSS feed to footer explicitly
+
+comments:
+  provider: "custom"
 
 footer:
-  extra_footer_content: '© 2026 Christoph Mies &#124; <strong>As of March 2026: Site under construction</strong> &#124; <a href="/legal/">Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/">Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
+  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/feed.xml"><i class="fas fa-rss-square"></i> RSS Feed</a> &#124; <strong><i class="fas fa-tools"></i> As of March 2026: Site under construction <i class="fas fa-tools"></i></strong> &#124; <a href="/legal/"><i class="fas fa-balance-scale"></i> Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/"><i class="fas fa-balance-scale"></i> Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
