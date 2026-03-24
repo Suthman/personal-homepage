@@ -25,7 +25,7 @@ Since October 2011, I have been part of [REWE digital](https://www.rewe-digital.
 
 #### IT Architect (since December 2020)
 
-When REWE digital formalized IT Architecture as a dedicated profession in late 2020, I was among the first to join the newly established, company-wide architecture organization, helping to anchor architectural excellence within our product teams from day one
+When REWE digital formalized IT Architecture as a dedicated profession in late 2020, I was among the first to join the newly established, company-wide architecture organization, helping to anchor architectural excellence within our product teams from day one.
 
 Transitioning from software engineering to full-time architecture shifted my focus from writing code to shaping systems, domains, and organizational structures. I introduced and applied a range of architectural methods and standards that had not previously been part of the company’s daily practice, including:
 
@@ -78,7 +78,7 @@ I was an active member of RWTH Aachen’s RoboCup team *AllemaniACs*, competing 
 
 Through this work, I gained hands-on experience in:
 - robotics hardware and software integration,
-- processing sensor data (e.g., camera vision, laser range readings) into internal world models,
+- processing sensor data (e.g., camera vision, laser range readings) into internal world models.
 
 
 
