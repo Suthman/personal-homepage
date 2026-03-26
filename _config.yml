@@ -50,10 +50,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
+      read_time: true # alculates the estimated reading time (e.g., "3 min read") and displays it at the top of the article.
+      comments: true # Activates the comment section below the post. You must also configure a provider _config.yml.
+      share: true # Displays social media buttons (Twitter, Facebook, LinkedIn, etc.), allowing readers to share your post with a single click.
+      related: false # Enables the "You May Also Enjoy" section. Displays similar posts here (based on shared tags or categories).
   # _pages
   - scope:
       path: "_pages"
@@ -70,7 +70,7 @@ email: www-christoph-mies-de@web.de # ATTENTION: Also check mail adress in autho
 
 author:
   name   : "Christoph"
-#  bio    : "Enthusiastischer Web-Entwickler & Jekyll-Nutzer. Hier teile ich meine Projekte und Gedanken."
+#  bio    : "Here I am sharing my projects and thoughts."
   avatar : /assets/images/author-photo.jpg # Path to photo. ATTENTION: also check og_image when updating!
   location: "Lohmar, Germany"
   links:
