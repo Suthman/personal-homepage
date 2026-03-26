@@ -75,14 +75,13 @@ author:
   location: "Lohmar, Germany"
   links:
     - label: Email
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-square-envelope"
       url: "mailto:www-christoph-mies-de@web.de" # ATTENTION: Also check mail adress in site properties when changing!
     - label: LinkedIn
       icon: "fab fa-fw fa-linkedin"
       url: "https://de.linkedin.com/in/christoph-mies-459042177"
     - label: XING
-      # icon: "fab fa-fw fa-xing" original icon, but lower one is similar to the others
-      icon: "fab fa-fw fa-xing-square"
+      icon: "fab fa-fw fa-square-xing"
       url: "https://www.xing.com/profile/Christoph_Mies3"
 #    - label: "GitHub"
 #      icon: "fab fa-fw fa-github"
@@ -95,4 +94,4 @@ comments:
   provider: custom
 
 footer:
-  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/feed.xml"><i class="fas fa-rss-square"></i> RSS Feed</a> &#124; <strong><i class="fas fa-tools"></i> As of March 2026: Site under construction <i class="fas fa-tools"></i></strong> &#124; <a href="/legal/"><i class="fas fa-balance-scale"></i> Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/"><i class="fas fa-balance-scale"></i> Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
+  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/feed.xml"><i class="fas fa-square-rss" style="color: #ee802f;"></i> RSS Feed</a> &#124; <strong><i class="fas fa-screwdriver-wrench"></i> As of March 2026: Site under construction <i class="fas fa-screwdriver-wrench"></i></strong> &#124; <a href="/legal/"><i class="fas fa-scale-balanced"></i> Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/"><i class="fas fa-scale-balanced"></i> Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
