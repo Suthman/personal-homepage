@@ -49,11 +49,14 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
       read_time: true # alculates the estimated reading time (e.g., "3 min read") and displays it at the top of the article.
       comments: true # Activates the comment section below the post. You must also configure a provider _config.yml.
       share: true # Displays social media buttons (Twitter, Facebook, LinkedIn, etc.), allowing readers to share your post with a single click.
       related: false # Enables the "You May Also Enjoy" section. Displays similar posts here (based on shared tags or categories).
+      author_profile: true
+      sidebar:
+        nav: main
+        position: left
   # _pages
   - scope:
       path: "_pages"
