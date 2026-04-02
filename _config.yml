@@ -97,4 +97,4 @@ comments:
   provider: custom
 
 footer:
-  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/feed.xml"><i class="fas fa-square-rss" style="color: #ee802f;"></i> RSS Feed</a> &#124; <strong><i class="fas fa-screwdriver-wrench"></i> As of March 2026: Site under construction <i class="fas fa-screwdriver-wrench"></i></strong> &#124; <a href="/legal/"><i class="fas fa-scale-balanced"></i> Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/"><i class="fas fa-scale-balanced"></i> Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
+  extra_footer_content: '© 2026 Christoph Mies &#124; <a href="/feed.xml"><i class="fas fa-square-rss" style="color: #ee802f;"></i> RSS Feed</a> &#124; <strong><i class="fas fa-screwdriver-wrench"></i> As of April 2026: Site under construction <i class="fas fa-screwdriver-wrench"></i></strong> &#124; <a href="/legal/"><i class="fas fa-scale-balanced"></i> Imprint, disclaimer and privacy policy</a> &#124; <a href="/legal/"><i class="fas fa-scale-balanced"></i> Impressum, Datenschutzerklärung und Haftungsausschluss</a>'
