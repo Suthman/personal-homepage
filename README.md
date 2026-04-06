@@ -79,9 +79,12 @@ Custom extensions:
 ### 🚀 Build and Deployment
 
 - I follow the **GitHub Flow** branching strategy: a single long-lived `main` branch and short-lived feature branches for changes.
-- The website is generated using GitHub’s built-in **Jekyll** support.
-- GitHub Pages deploys the site from the `main` branch (production).  
-  For testing, it can temporarily be deployed from feature branches — but this should remain the exception.
+- The website is generated using GitHub action **[deploy-jekyll-site.yml](.github/workflows/deploy-jekyll-site.yml)**
+  - The site is build on each push to any branch
+  - It is deployed on any push to the `main` branch (production)
+  - For testing, it can be deployed manually from feature branches  
+    Note: the branch must be explicitly mention in environment `github-pages`
+- Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
 
 
 ---

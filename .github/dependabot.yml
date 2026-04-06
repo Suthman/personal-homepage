@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # 1. Automatic updates for GitHub Actions (deploy.yml)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # 2. Automatic updates for your Ruby Gems (Gemfile)
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
