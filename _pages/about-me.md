@@ -7,6 +7,8 @@ toc_icon: "user-tie"
 toc_label: "About Me"
 ---
 
+{% include ai-disclaimer-short.html %}
+
 
 ## My Journey
 

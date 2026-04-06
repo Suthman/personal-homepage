@@ -13,6 +13,9 @@ toc_icon: "gears"
 
 ---
 
+{% include ai-disclaimer-short.html %}
+
+
 ## Why did I start my website?
 
 I created this website because I wanted to have a personal presence on the internet. It gives me the opportunity to share more about myself — and especially about my work — than a traditional CV can convey.
