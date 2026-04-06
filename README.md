@@ -1,8 +1,8 @@
 # Personal Homepage
 
 This repository contains the source code of my personal homepage.  
-- [Contents and Overview](#contents-and-overview)
-- [Technical setup](#technical-setup)
+- [Contents and Overview](#-contents-and-overview)
+- [Technical setup](#-technical-setup)
 - [TODOs and future topics](exclude/possible-content.md)
 
 
@@ -25,10 +25,10 @@ This repository contains the source code of my personal homepage.
 
 ## 🛠️ Technical setup
 
-- [Jekyll Theme: Minimal Mistakes](#jekyll-theme-minimal-mistakes)
-- [Theme Overrides](#theme-overrides)
-- [Build and Deployment](#build-and-deployment)
-- [Accessibility and Links](#accessibility-and-important-links)
+- [Jekyll Theme: Minimal Mistakes](#-jekyll-theme-minimal-mistakes)
+- [Theme Overrides and Customization](#-theme-overrides-and-customization)
+- [Build and Deployment](#-build-and-deployment)
+- [Accessibility and Links](#-accessibility-and-important-links)
 
 
 ---
@@ -52,23 +52,26 @@ Important files:
 ---
 
 
-### ⚠️ Theme Overrides
+### ⚠️ Theme Overrides and Customization
 
 The following files have been **overridden**. Please proceed with caution during theme updates!
 
-- [footer.html](_includes/footer.html):  
+- **[footer.html](_includes/footer.html)**  
    The footer now only displays the text defined in the `footer.extra_footer_content` parameter of _config.yml
-- [head.html](_includes/head.html):  
+- **[head.html](_includes/head.html)**  
    Loads `font-awesome/6.7.2` globally
-- [social-share.html](_includes/social-share.html)  
+- **[social-share.html](_includes/social-share.html)**  
    Customized sharing options
-- [main.scss](assets/css/main.scss)  
+- **[main.scss](assets/css/main.scss)**  
    Main CSS file; the override imports the original theme styles and adds custom rules
 
-Usage of customization hooks - no real override:
-- [comments-providers/custom.html](_includes/comments-providers/custom.html)  
+Usage of customization hooks (no direct override):
+- **[comments-providers/custom.html](_includes/comments-providers/custom.html)**  
    Enables post feedback via email
 
+Custom extensions:
+- **[ai-disclaimer-short.html](_includes/ai-disclaimer-short.html)**  
+   A disclaimer for text generated with AI
 
 ---
 
