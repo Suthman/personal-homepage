@@ -48,31 +48,38 @@ jobs:
           with open(sitemap_path, 'r') as f: 
               content = f.read()
           
-          # Find all URLs that contain /assets/ and end with .pdf or .bib
-          # This matches the part from /assets/ until the end of the loc tag
-          asset_pattern = r'<loc>https?://[^<]+(/assets/[^<]+\.(?:pdf|bib))</loc>'
+          # Match asset paths in <loc> tags
+          asset_pattern = r'<loc>\s*https?://[^<]+?(/assets/[^<]+?\.(?:pdf|bib))\s*</loc>'
           matches = re.findall(asset_pattern, content)
-          print(f'Found {len(matches)} assets under /assets/ in sitemap.')
+          print(f'Found {len(matches)} assets in sitemap.')
           
           for asset_path in matches:
-              # Remove leading slash to get local path (assets/...)
               local_path = asset_path.lstrip('/')
-              
               if os.path.exists(local_path):
-                  # Get the ISO 8601 commit date from Git
                   git_date = subprocess.getoutput(f'git log -1 --format=%cI -- \"{local_path}\"')
                   if git_date:
-                      print(f'✅ Updating {local_path} to {git_date}')
-                      # Search for the specific URL block and replace the following lastmod tag
-                      # We use re.escape on the full URL match to be safe
-                      full_url_pattern = rf'(<loc>https?://[^<]+{re.escape(asset_path)}</loc><lastmod>)[^<]+(</lastmod>)'
-                      content = re.sub(full_url_pattern, rf'\1{git_date}\2', content)
+                      # We use \g<1> to safely separate the group from the following date digits
+                      search_pattern = rf'(<loc>\s*https?://[^<]+?{re.escape(asset_path)}\s*</loc>\s*<lastmod>)[^<]+(</lastmod>)'
+                      new_content = re.sub(search_pattern, rf'\g<1>{git_date}\g<2>', content, flags=re.DOTALL)
+                      
+                      if new_content != content:
+                          print(f'✅ Successfully patched {local_path} to {git_date}')
+                          content = new_content
+                      else:
+                          print(f'⚠️ Regex match failed for {local_path}')
               else:
                   print(f'⚠️ File not found on disk: {local_path}')
           
           with open(sitemap_path, 'w') as f: 
               f.write(content)
+          
+          lines = content.splitlines()
+          print('\n--- DEBUG: FIRST 10 LINES ---')
+          print('\n'.join(lines[:10]))
+          print('\n--- DEBUG: LAST 50 LINES ---')
+          print('\n'.join(lines[-50:]))
           "
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
 

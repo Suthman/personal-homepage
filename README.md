@@ -84,6 +84,7 @@ Custom extensions:
   - It is deployed on any push to the `main` branch (production)
   - For testing, it can be deployed manually from feature branches  
     Note: the branch must be explicitly mention in environment `github-pages`
+  - ⚠️ **Attention**: PDF and BIB lastmod timestamps in the sitemap are overwritten via a post-build hack ⚠️
 - Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
 
 
