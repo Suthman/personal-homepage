@@ -29,10 +29,6 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true # Caches gems to speed up future builds
 
-      - name: Restore timestamps # substitutes file system timestamp by git timestamp
-        run: |
-          git ls-files -z | xargs -0 -n1 -I{} touch -d "$(git log -1 --format="@%ct" "{}")" "{}"
-
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
@@ -41,6 +37,42 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Fix PDF Timestamps in Sitemap
+        run: |
+          python3 -c "
+          import re, subprocess, os
+          sitemap_path = '_site/sitemap.xml'
+          if not os.path.exists(sitemap_path): 
+              print('❌ ERROR: sitemap.xml not found'); exit(1)
+          
+          with open(sitemap_path, 'r') as f: 
+              content = f.read()
+          
+          # Find all URLs that contain /assets/ and end with .pdf or .bib
+          # This matches the part from /assets/ until the end of the loc tag
+          asset_pattern = r'<loc>https?://[^<]+(/assets/[^<]+\.(?:pdf|bib))</loc>'
+          matches = re.findall(asset_pattern, content)
+          print(f'Found {len(matches)} assets under /assets/ in sitemap.')
+          
+          for asset_path in matches:
+              # Remove leading slash to get local path (assets/...)
+              local_path = asset_path.lstrip('/')
+              
+              if os.path.exists(local_path):
+                  # Get the ISO 8601 commit date from Git
+                  git_date = subprocess.getoutput(f'git log -1 --format=%cI -- \"{local_path}\"')
+                  if git_date:
+                      print(f'✅ Updating {local_path} to {git_date}')
+                      # Search for the specific URL block and replace the following lastmod tag
+                      # We use re.escape on the full URL match to be safe
+                      full_url_pattern = rf'(<loc>https?://[^<]+{re.escape(asset_path)}</loc><lastmod>)[^<]+(</lastmod>)'
+                      content = re.sub(full_url_pattern, rf'\1{git_date}\2', content)
+              else:
+                  print(f'⚠️ File not found on disk: {local_path}')
+          
+          with open(sitemap_path, 'w') as f: 
+              f.write(content)
+          "
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
 

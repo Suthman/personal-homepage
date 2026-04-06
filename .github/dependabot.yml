@@ -1,13 +1,23 @@
 version: 2
 updates:
-  # 1. Automatic updates for GitHub Actions (deploy.yml)
+  # 1. GitHub Actions (All updates in one weekly group)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "saturday"
+    groups:
+      github-actions-group:
+        patterns:
+          - "*"
 
-  # 2. Automatic updates for your Ruby Gems (Gemfile)
+  # 2. Ruby Gems / Jekyll (All updates in one weekly group)
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "saturday"
+    groups:
+      ruby-gems-group:
+        patterns:
+          - "*"
