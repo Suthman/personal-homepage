@@ -45,8 +45,10 @@ Useful resources related to Minimal Mistakes:
 - [Sample Content Repository](https://github.com/mmistakes/jekyll-sample-content/)
 
 Important files:
-- [`_config.yml`](_config.yml) — Jekyll configuration
-- [`navigation.yml`](_data/navigation.yml) — site navigation
+- [_config.yml](_config.yml): - Jekyll configuration
+- [navigation.yml](_data/navigation.yml): site navigation
+- [Gemfile](Gemfile): dependeny management for Ruby  
+  Find Ruby dependencies on [rubygems.org](https://rubygems.org/)
 
 
 ---
