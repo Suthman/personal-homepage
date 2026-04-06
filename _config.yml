@@ -9,7 +9,8 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+#remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+theme: "minimal-mistakes-jekyll"
 encoding: utf-8 # no official jekyll standard, but: might help and will not break anything
 
 
@@ -21,12 +22,14 @@ locale: en_GB
 timezone: Europe/Berlin # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 plugins:
-  - jekyll-paginate # Automatically splits your post list into smaller chunks (e.g., 5 or 10 posts per page) and creates the "Next/Previous" navigation at the bottom.
-  - jekyll-sitemap # It automatically generates a sitemap.xml file, which tells search engines like Google exactly which pages exist
-  - jekyll-gist # Instead of copying long code blocks into your Markdown, you just use a simple tag like {% gist ID %}. It renders the code beautifully with syntax highlighting directly from GitHub.
-  - jekyll-feed # It creates an Atom/RSS feed (usually at /feed.xml), Whenever you post a new summary, it automatically pops up in their feed readers.
-  - jemoji #  It brings GitHub-style emojis to your site like :books: or :triangular_ruler: representing emoji images 📚 📐
-  - jekyll-include-cache # It is a performance booster for your site's build process.
+  - jekyll-include-cache # Speeds up the build process by caching repetitive includes
+  - jekyll-gist # Allows embedding GitHub Gists using the {% gist %} tag
+  - jemoji # Supports GitHub-style emojis like :books: or :rocket:
+  - jekyll-paginate # Enables pagination for long lists of blog posts
+  - jekyll-last-modified-at # Automatically syncs create and update timestamps with your Git commit history; important for automatic sitemap and feed generation
+  - jekyll-sitemap # Automatically generates a sitemap.xml for search engines
+  - jekyll-feed # Creates an Atom/RSS feed (usually at /feed.xml) for subscribers
+
 
 include:
   - _pages
