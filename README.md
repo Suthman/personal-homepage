@@ -16,7 +16,7 @@ This repository contains the source code of my personal homepage.
 - [Legal](_pages/legal.md)
 - [404](_pages/404.md)
 - Blog / Posts
-  - [2026-03-15-creating-my-website.md](_posts/2026-03-15-creating-my-website.md) `last_modified_at=2026-03-15 00:00:00`  
+  - [2026-03-15-creating-my-website.md](_posts/2026-03-15-creating-my-website.md)  
     categories: `Blog`, tags: `website` `development`
 
 
@@ -40,6 +40,7 @@ The website is based on the [Jekyll](https://jekyllrb.com/) theme **Minimal Mist
 
 Useful resources related to Minimal Mistakes:
 
+- [Minimal Mistakes GitHub](https://github.com/mmistakes/minimal-mistakes)
 - [Minimal Mistakes Documentation](https://mmistakes.github.io/minimal-mistakes/)
 - [Minimal Mistakes GitHub Pages Starter](https://github.com/mmistakes/mm-github-pages-starter)
 - [Sample Content Repository](https://github.com/mmistakes/jekyll-sample-content/)
@@ -64,8 +65,6 @@ The following files have been **overridden**. Please proceed with caution during
    Loads `font-awesome/6.7.2` globally
 - **[social-share.html](_includes/social-share.html)**  
    Customized sharing options
-- **[main.scss](assets/css/main.scss)**  
-   Main CSS file; the override imports the original theme styles and adds custom rules
 
 Usage of customization hooks (no direct override):
 - **[comments-providers/custom.html](_includes/comments-providers/custom.html)**  
