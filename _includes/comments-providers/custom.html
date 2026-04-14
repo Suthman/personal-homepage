@@ -1,8 +1,11 @@
 <!-- Custom Email Feedback Button -->
 <div class="notice--primary" style="margin-top: 2em; text-align: center;">
-  <h4>Thoughts on this post?</h4>
+  <h4 style="margin-top: 0;">Thoughts on this post?</h4>
   <p>Feel free to send me an email with your comments or questions.</p>
-  <a href="mailto:{{ site.email }}?subject=Feedback on [{{ site.title }}]: {{ page.title | url_encode }}" class="btn btn--info">
-    <i class="fas fa-envelope"></i> Feedback via Email
+  
+  <a href="mailto:{{ site.email }}?subject=Feedback on [{{ site.title }}]: {{ page.title | url_encode }}" 
+     class="btn btn--inverse" 
+     style="padding: 0.4em 0.8em; font-size: 0.9em; box-shadow: 0 1px 1px rgba(0,0,0,0.1); font-weight: bold; border: 1px solid #dbdbdb; display: inline-block;">
+    <i class="fas fa-fw fa-envelope" aria-hidden="true"></i><span> Feedback via Email</span>
   </a>
 </div>
