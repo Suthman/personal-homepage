@@ -18,13 +18,14 @@ This repository contains the source code of my personal homepage.
 - Blog / Posts
   - [2026-03-15-creating-my-website.md](_posts/2026-03-15-creating-my-website.md)  
     categories: `Blog`, tags: `website` `development`
+  - [2026-05-17-getting-started-with-ai-chatbots.md](_posts/2026-05-17-getting-started-with-ai-chatbots.md)  
+    categories: `Blog`, tags: `ai-chatbots` `generative-ai` `prompt-engineering` `prompting-techniques` `ai-for-beginners` `productivity`
 
 
 ---
 
 
 ## 🛠️ Technical setup
-
 - [Jekyll Theme: Minimal Mistakes](#-jekyll-theme-minimal-mistakes)
 - [Theme Overrides and Customization](#-theme-overrides-and-customization)
 - [Build and Deployment](#-build-and-deployment)
@@ -86,6 +87,7 @@ Custom extensions:
   - For testing, it can be deployed manually from feature branches  
     Note: the branch must be explicitly mention in environment `github-pages`
   - ⚠️ **Attention**: PDF and BIB lastmod timestamps in the sitemap are overwritten via a post-build hack ⚠️
+- Local development: `bundle exec jekyll serve --livereload`
 - Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
 
 
