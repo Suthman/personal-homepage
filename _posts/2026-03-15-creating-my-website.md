@@ -4,8 +4,13 @@ excerpt: "Why I chose GitHub Pages, Jekyll, and Minimal Mistakes to build my web
 categories:
   - Blog
 tags:
-  - website
-  - development
+  - github-pages
+  - jekyll
+  - minimal-mistakes
+  - static-site-generator
+  - it-architecture
+  - github-flow
+  - personal-website
 toc: true
 toc_sticky: true
 toc_label: "Creating my website"
