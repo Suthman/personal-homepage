@@ -1,6 +1,6 @@
 ---
 title: "Creating my website"
-excerpt: "Why I chose GitHub Pages, Jekyll, and Minimal Mistakes to build my website"
+excerpt: "Why I chose GitHub Pages, Jekyll, and Minimal Mistakes to build my website."
 categories:
   - Blog
 tags:
