@@ -3,6 +3,7 @@
 This repository contains the source code of my personal homepage.  
 - [Contents and Overview](#-contents-and-overview)
 - [Technical setup](#-technical-setup)
+- [Styleguide](#-styleguide)
 - [TODOs and future topics](exclude/possible-content.md)
 
 
@@ -15,7 +16,7 @@ This repository contains the source code of my personal homepage.
 - [Publications](_pages/publications.md)
 - [Legal](_pages/legal.md)
 - [404](_pages/404.md)
-- Blog / Posts
+- Blog / Postsgit stauts
   - [2026-03-15-creating-my-website.md](_posts/2026-03-15-creating-my-website.md)  
     categories: `Blog`, tags: `github-pages` `jekyll` `minimal-mistakes` `static-site-generator` `it-architecture` `github-flow` `github-flow`
   - [2026-05-17-getting-started-with-ai-chatbots.md](_posts/2026-05-17-getting-started-with-ai-chatbots.md)  
@@ -25,7 +26,17 @@ This repository contains the source code of my personal homepage.
 ---
 
 
-## 🛠️ Technical setup
+## 🎨 Styleguide
+- Maximum of 2 levels in the table of contents
+- **_Technical terms_** in bold and italic
+- **Important information** in bold
+- *Quotes* or *Calls-to-Action* in italic
+
+
+---
+
+
+## 🔧 Technical setup
 - [Jekyll Theme: Minimal Mistakes](#-jekyll-theme-minimal-mistakes)
 - [Theme Overrides and Customization](#-theme-overrides-and-customization)
 - [Build and Deployment](#-build-and-deployment)
