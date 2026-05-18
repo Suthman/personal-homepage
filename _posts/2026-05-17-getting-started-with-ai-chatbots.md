@@ -22,7 +22,7 @@ toc_icon: "fa-solid fa-robot"
 
 Artificial intelligence is currently surrounded by buzzwords like **_Generative AI_**, **_Agentic AI_**, **_Large Language Models (LLM)_**, and **_AI Chatbots_**. This blog post gives non-IT readers a simple introduction to what these terms mean and how to use the underlying technologies effectively.
 
-The focus is on **_AI chatbots_**. The goal is to help you understand the basics, see how the technology works, and learn to use it productively.
+The focus is on **_AI chatbots_** like [ChatGPT](https://chatgpt.com). The goal is to help you understand the basics, see how the technology works, and learn to use it productively.
 
 After a brief example conversation with an AI chatbot, I discuss the key factor that separates chatbots from traditional web search: the **_prompt_** — the input you provide. Several practical prompting techniques are introduced, followed by a short summary.
 
@@ -30,7 +30,7 @@ After a brief example conversation with an AI chatbot, I discuss the key factor 
 
 ## Chatting with an AI Chatbot – An example
 
-An AI chatbot is a tool that allows users to have interactive conversations. The chatbot responds and remembers the entire context of the chat. To demonstrate, I asked Gemini (Google) the question, "What are the differences between an AI chatbot and a standard web search?" and started the following conversation:
+An AI chatbot is a tool that allows users to have interactive conversations. The chatbot responds and remembers the entire context of the chat. To demonstrate, I asked Gemini (Google) the question, *"What are the differences between an AI chatbot and a standard web search?"* and started the following conversation:
 
 > **Me:** What are the differences between an AI chatbot and a standard web search?
 >
@@ -103,9 +103,9 @@ An AI chatbot is a tool that allows users to have interactive conversations. The
 
 ## Context is the key - Prompts are decisive
 
-Looking at the exemplary chat above, it becomes clear that the chatbot is aware of the whole **context** of the chat. For example, it understood that my request for a "short and concise" answer related to the previous question, which I did not need to repeat. Additionally, I advised it to answer in English when it answered in German. Thus, I clarified my requirements for and expectations of the AI chatbot during the chat itself—meaning I refined the chatbot's context.
+Looking at the exemplary chat above, it becomes clear that the chatbot is aware of the whole **_context_** of the chat. For example, it understood that my request for a *"short and concise"* answer related to the previous question, which I did not need to repeat. Additionally, I advised it to answer in English when it answered in German. Thus, I clarified my requirements for and expectations of the AI chatbot during the chat itself — meaning I refined the chatbot's context.
 
-The input provided to an AI chatbot is called a **prompt**. The better the prompt, the better the answers of the chatbot will be, since it has a clearer context about its task. Gemini gave examples of bad and good prompts itself:
+The input provided to an AI chatbot is called a **_prompt_**. The better the prompt, the better the answers of the chatbot will be, since it has a clearer context about its task. Gemini gave examples of bad and good prompts itself:
 
 >
 > **Me:** please give examples for a good and bad prompt
@@ -121,7 +121,7 @@ The input provided to an AI chatbot is called a **prompt**. The better the promp
 >    *(Precise: Defines role, reason, tone, and specific details.)*
 >
 
-The process of generating good prompts — resulting in good answers — is also called prompt **engineering**.
+The process of generating good prompts — resulting in good answers — is also called **_prompt engineering_**.
 
 
 
@@ -137,12 +137,12 @@ A good prompt consists of the following elements:
 
 | # | Component | Definition | Example |
 | :--- | :--- | :--- | :--- |
-| **1** | **Role** | Who the AI should pretend to be. | "Act as an experienced social media manager." |
-| **2** | **Task** | What exactly the AI should do. | "Write a LinkedIn post about the benefits of remote work." |
-| **3** | **Context** | The background, goal, or target audience. | "The post is for mid-sized company CEOs who are still skeptical about working from home." |
-| **4** | **Constraints** | What the AI must avoid or specific limits. | "Do not use clichés or corporate buzzwords. Maximum 150 words." |
-| **5** | **Tone** | How the AI should sound. | "The tone should be professional yet approachable and persuasive." |
-| **6** | **Format** | How the final output should be organized. | "Use short paragraphs and end the post with a question (Call to Action)." |
+| **1** | **Role** | Who the AI should pretend to be. | *"Act as an experienced social media manager."* |
+| **2** | **Task** | What exactly the AI should do. | *"Write a LinkedIn post about the benefits of remote work."* |
+| **3** | **Context** | The background, goal, or target audience. | *"The post is for mid-sized company CEOs who are still skeptical about working from home."* |
+| **4** | **Constraints** | What the AI must avoid or specific limits. | *"Do not use clichés or corporate buzzwords. Maximum 150 words."* |
+| **5** | **Tone** | How the AI should sound. | *"The tone should be professional yet approachable and persuasive."* |
+| **6** | **Format** | How the final output should be organized. | *"Use short paragraphs and end the post with a question (Call to Action)."* |
 
 As stated above, the prompt should describe the exact result that you expect from the AI chatbot. All six components in the table are important to define before the AI generates its answer. Of course, you can iteratively refine your initial prompt to improve the output. However, the more information you provide upfront, the better the generated result will be.
 
@@ -158,7 +158,7 @@ CoT prompting simply means asking the AI to **"think out loud"** and show its wo
 
 #### Why is it important?
 {: .no_toc}
-AI predicts text one word at a time; *its typing is its thinking*. By forcing the AI to write out its steps, you give it *"working memory."* This drastically reduces logical errors and hallucinations in math, coding, or complex reasoning. It also lets you see exactly where the AI's logic failed if it makes a mistake.
+AI predicts text one word at a time; **its typing is its thinking**. By forcing the AI to write out its steps, you give it **"working memory."** This drastically reduces logical errors and hallucinations in math, coding, or complex reasoning. It also lets you see exactly where the AI's logic failed if it makes a mistake.
 
 #### How to use it?
 {: .no_toc}
@@ -180,18 +180,17 @@ Few-Shot Prompting means providing **1 to 3 concrete examples** of the exact inp
 
 #### Why is it important?
 {: .no_toc}
-AI models are massive pattern-recognition engines. While written instructions can be misunderstood, examples cannot. Giving the AI a few *"shots"* (examples) instantly aligns its tone, length, style, and formatting constraints. It eliminates guesswork and prevents the AI from giving a generic response.
+AI models are massive pattern-recognition engines. While written instructions can be misunderstood, examples cannot. Giving the AI a few **"shots"** (examples) instantly aligns its tone, length, style, and formatting constraints. It eliminates guesswork and prevents the AI from giving a generic response.
 
 #### How to use it?
 {: .no_toc}
 Structure your prompt by showing the AI how to do the task first, then give it the new task:
 
-*   Example 1 `Input: "Movie: Inception"`  
+*   Example 1: `Input: "Movie: Inception"`  
 -> `Output: "Genre: Sci-Fi ; Rating: 9/10"`
-*   Example 2 Input: `"Movie: The Lion King"`  
+*   Example 2: `Input: "Movie: The Lion King"`  
 -> `Output: "Genre: Animation ; Rating: 8/10"`
-
-*Actual Input:* `"Movie: Interstellar"`  -> AI will now automatically output the exact format: `"Genre: Sci-Fi ; Rating: 9/10"`
+* Actual: `Input: "Movie: Interstellar"`  -> AI will now automatically output the exact format: `"Genre: Sci-Fi ; Rating: 9/10"`
 
 **Basic idea:** Don't just tell the AI what you want — show it. 
 
@@ -207,7 +206,7 @@ Reflective Prompting means instructing the AI to **critique, evaluate, or double
 
 #### Why is it important?
 {: .no_toc}
-Standard prompts are *"single-pass"* — the AI prints the first thoughts that fit its algorithm. Reflective prompting forces a *"second look."* This process catches factual errors, removes superficial ideas, and uncovers hidden biases. It elevates the AI's output from a basic, generic response to an expert-level analysis.
+Standard prompts are **"single-pass"** — the AI prints the first thoughts that fit its algorithm. Reflective prompting forces a **"second look."** This process catches factual errors, removes superficial ideas, and uncovers hidden biases. It elevates the AI's output from a basic, generic response to an expert-level analysis.
 
 #### How to use it?
 {: .no_toc}
@@ -229,7 +228,7 @@ Role-Based Prompting means telling the AI to **adopt a specific persona or exper
 
 #### Why is it important?
 {: .no_toc}
-AI models contain a vast ocean of general knowledge. By assigning a role, you tell the AI to ignore irrelevant data and pull information from a specific *"expert folder."* This instantly adjusts the vocabulary, depth, perspective, and professionalism of the answer. It ensures the response sounds like a seasoned professional rather than a generic encyclopedia.
+AI models contain a vast ocean of general knowledge. By assigning a role, you tell the AI to ignore irrelevant data and pull information from a specific **"expert folder."** This instantly adjusts the vocabulary, depth, perspective, and professionalism of the answer. It ensures the response sounds like a seasoned professional rather than a generic encyclopedia.
 
 #### How to use it?
 {: .no_toc}
@@ -243,12 +242,12 @@ Always start your prompt by clearly defining the identity, experience level, and
 
 ## AI Chatbots: A major leap forward – Don't miss the AI train!
 
-In this blog post, I gave an introduction to **AI chatbots**. This technology is the latest breakthrough in **Generative AI** since AI chatbots can actually **_create content_**: the resulting text. 
+In this blog post, I gave an introduction to **_AI chatbots_**. This technology is the latest breakthrough in **_Generative AI_** since AI chatbots can actually **create content**: the resulting text. 
 
 Why is the generation of text such an important milestone?  
-This is a real breakthrough because by being able to generate text, the AI can create input for other IT systems. When an AI chatbot is extended to call other systems, the system becomes classified as **Agentic AI**. Many modern AI chatbots function as agentic AI systems since they can execute web searches and analyze the results to answer the user's questions (e.g., Google's Gemini uses Google Search). 
+This is a real breakthrough because by being able to generate text, the AI can create input for other IT systems. When an AI chatbot is extended to call other systems, the system becomes classified as **_Agentic AI_**. Many modern AI chatbots function as agentic AI systems since they can execute web searches and analyze the results to answer the user's questions (e.g., Google's Gemini uses Google Search). 
 
-This is highly important since the core knowledge of current AIs is contained within **Large Language Models (LLMs)** that have been trained on static training data. This data is never fully up-to-date, making web search a key feature for providing real-time answers.
+This is highly important since the core knowledge of current AIs is contained within **_Large Language Models (LLMs)_** that have been trained on static training data. This data is never fully up-to-date, making web search a key feature for providing real-time answers.
 
 Currently, generative agentic AI systems are being developed for nearly all imaginable areas where IT can be applied. Since computers can cope with text, anything that can be processed by computer systems can be optimized by generative agentic AI systems. This encompasses the generation of files (image, video, and sound files, but also Word documents or PowerPoint presentations) as well as the entire area of software development (programming codes are text files in the end).
 
