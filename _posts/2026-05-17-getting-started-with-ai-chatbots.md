@@ -12,7 +12,7 @@ tags:
   - productivity
 toc: true
 toc_sticky: true
-toc_label: "PROMPTING"
+toc_label: "Prompt Engineering"
 toc_icon: "fa-solid fa-robot"
 
 ---
