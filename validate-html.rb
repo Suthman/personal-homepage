@@ -15,6 +15,10 @@ options = {
     /clean-code-developer\.de\/en\//
   ],
 
+  # Swap your live domain for nothing to force local branch file checks
+  swap_urls: {
+    %r{^https?://(www\.)?christoph-mies\.de} => ""
+  },
 
   # Pass custom parameters down to the Typhoeus connection worker
   typhoeus: {
