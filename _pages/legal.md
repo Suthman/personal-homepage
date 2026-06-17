@@ -8,6 +8,7 @@ sitemap: false
 search: false
 ---
 
+{% include ai-disclaimer-short.html %}
 
 # Impressum / Imprint
 
