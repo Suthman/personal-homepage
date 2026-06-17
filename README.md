@@ -27,7 +27,8 @@ This repository contains the source code of my personal homepage.
 
 
 ## 🎨 Styleguide
-- Maximum of 2 levels in the table of contents
+- Maximum of 2 levels in the table of contents   
+Exception: TOCs of book review align to book structure
 - **_Technical terms_** in bold and italic
 - **Important information** in bold
 - _Quotes_ or _Calls-to-Action_ in italic
