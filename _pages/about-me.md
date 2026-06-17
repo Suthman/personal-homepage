@@ -48,9 +48,7 @@ From October 2011 to November 2020, I worked as a Software Engineer and accompan
 - I began by developing batch jobs on an IBM Z mainframe and building applications on Tomcat servers running on virtual Linux machines — all of which required manual configuration via Jira tickets.
 - By 2020, my team was developing Spring Boot services and Angular applications deployed on Kubernetes clusters, with sophisticated CI/CD pipelines handling deployment, configuration, and operations automatically.
 
-A major personal influence during this period was the book [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.pearson.de/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884) by Robert C. Martin.  
-It inspired me to adopt practices such as test-driven development, which significantly improved the quality and structure of my code. I also engaged with the [Clean Code Developer](https://clean-code-developer.de/en/) community, which provided practical guidance for applying clean coding principles within teams.
-
+A major personal influence during this period was the book [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.pearson.de/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884) by Robert C. Martin. It inspired me to adopt the [Clean Code Developer](https://clean-code-developer.de/en/) framework. While it encompasses many methodologies, Test-Driven Development became the single most important practice for me, significantly improving my code quality. Based on this experience, I introduced these principles to my team to provide practical guidance for our daily development.
 
 
 ### Research Associate at Fraunhofer IAIS (July 2007 – September 2011)
