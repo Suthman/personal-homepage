@@ -15,5 +15,7 @@ group :jekyll_plugins do
   gem "jekyll-include-cache", "0.2.1"
 end
 
-# Required for local testing with Ruby 3.0+ (standard web server)
-gem "webrick", "1.9.2"
+group :test do
+  gem "webrick", "1.9.2" # web server
+  gem 'html-proofer', "5.2.0"
+end
