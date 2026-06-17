@@ -80,6 +80,9 @@ jobs:
           print('\n'.join(lines[-50:]))
           "
 
+      - name: Validate HTML
+        run: bundle exec ruby validate-html.rb
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
 
