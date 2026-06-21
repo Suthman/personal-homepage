@@ -2,7 +2,7 @@
 title: "Getting started with AI chatbots – Master your prompting skills"    
 excerpt: "A beginner-friendly introduction to AI chatbots: Learn why your input matters and discover practical techniques to get better results instantly."
 categories:
-  - Blog
+  - blog
 tags:
   - ai-chatbots
   - generative-ai
@@ -14,7 +14,6 @@ toc: true
 toc_sticky: true
 toc_label: "Prompt Engineering"
 toc_icon: "fa-solid fa-robot"
-
 ---
 
 {% include ai-disclaimer-short.html %}

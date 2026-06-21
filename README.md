@@ -18,9 +18,9 @@ This repository contains the source code of my personal homepage.
 - [404](_pages/404.md)
 - Posts
   - [2026-03-15-creating-my-website.md](_posts/2026-03-15-creating-my-website.md)  
-    categories: `Blog`, tags: `github-pages` `jekyll` `minimal-mistakes` `static-site-generator` `it-architecture` `github-flow` `github-flow`
+    categories: `blog`, tags: `github-pages` `jekyll` `minimal-mistakes` `static-site-generator` `it-architecture` `github-flow` `github-flow`
   - [2026-05-17-getting-started-with-ai-chatbots.md](_posts/2026-05-17-getting-started-with-ai-chatbots.md)  
-    categories: `Blog`, tags: `ai-chatbots` `generative-ai` `prompt-engineering` `prompting-techniques` `ai-for-beginners` `productivity`
+    categories: `blog`, tags: `ai-chatbots` `generative-ai` `prompt-engineering` `prompting-techniques` `ai-for-beginners` `productivity`
 
 
 ---
