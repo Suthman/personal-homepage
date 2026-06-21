@@ -2,7 +2,7 @@
 title: "Creating my website"
 excerpt: "Why I chose GitHub Pages, Jekyll, and Minimal Mistakes to build my website."
 categories:
-  - Blog
+  - blog
 tags:
   - github-pages
   - jekyll
@@ -15,7 +15,6 @@ toc: true
 toc_sticky: true
 toc_label: "Creating my website"
 toc_icon: "gears"
-
 ---
 
 {% include ai-disclaimer-short.html %}
