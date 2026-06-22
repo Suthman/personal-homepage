@@ -57,9 +57,6 @@ defaults:
       share: true # Displays social media buttons (Twitter, Facebook, LinkedIn, etc.), allowing readers to share your post with a single click.
       related: false # Enables the "You May Also Enjoy" section. Displays similar posts here (based on shared tags or categories).
       author_profile: true
-      sidebar:
-        nav: main
-        position: left
   # _pages
   - scope:
       path: "_pages"
@@ -67,9 +64,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-      sidebar:
-        nav: main
-        position: left
 
 # site properties
 email: www-christoph-mies-de@web.de # ATTENTION: Also check mail adress in author-info when changing!
