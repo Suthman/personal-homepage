@@ -1,0 +1,7 @@
+---
+# Front matter dashes are required for Jekyll to process SCSS variables properly
+---
+
+$doc-font-size: 15px; // custom base font size (default is 16px in version 4.28.0, see _sass/minimal-mistakes/_variables.scss)
+
+@import "minimal-mistakes";
