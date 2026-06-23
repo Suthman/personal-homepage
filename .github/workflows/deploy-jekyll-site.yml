@@ -81,7 +81,7 @@ jobs:
           "
 
       - name: Validate HTML
-        run: bundle exec ruby validate-html.rb
+        run: bundle exec ruby exclude/validate-html.rb
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

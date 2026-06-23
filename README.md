@@ -104,7 +104,7 @@ Custom extensions:
   ⚠️ **Attention**: Production domain is replaced with `""` to ensure correct link checks on branches ⚠️
 - Local development:
   - Build pages and start server `bundle exec jekyll serve --livereload`
-  - Validate HTML: `bundle exec ruby validate-html.rb`
+  - Validate HTML: `bundle exec ruby exclude/validate-html.rb --swap-localhost`
 - Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
 
 

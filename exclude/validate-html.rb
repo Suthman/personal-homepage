@@ -1,24 +1,39 @@
 require 'html-proofer'
+require 'pp' # Prettier print library for complex objects
 
 # target directory
 target_directory = "./_site"
 
+# Prepase URL swapping depending on --swap-localhost parameter
+swap_localhost = ARGV.include?('--swap-localhost')
+url_swaps = {
+  %r{^https://(www\.)?christoph-mies\.de} => ""
+}
+if swap_localhost
+  url_swaps[%r{^https?://localhost:4000}] = ""
+  url_swaps[%r{^https?://127\.0\.0\.1:4000}] = ""
+end
+puts "\n--- Active URL Swapping Configuration ---"
+url_swaps.each do |regex, replacement|
+  puts "Match: #{regex.inspect}  =>  Replace with: '#{replacement}'"
+end
+puts "-----------------------------------------\n\n"
+
+
 # Definition of options
 options = {
-  check_favicon: true,                         # Enables the favicon check
-  check_opengraph: true,                       # Enables the social media (OpenGraph) check
-  ignore_empty_mailto: true,
+  check_favicon: true,
+  check_opengraph: true,
+  enforce_https: true,
 
+  ignore_empty_mailto: true,
   ignore_status_codes: [302, 403],
   ignore_urls: [                               # Ignores URLs (as real RegEx)
     /linkedin\.com\/in\/christoph/,
     /clean-code-developer\.de\/en\//
   ],
 
-  # Swap your live domain for nothing to force local branch file checks
-  swap_urls: {
-    %r{^https?://(www\.)?christoph-mies\.de} => ""
-  },
+  swap_urls: url_swaps,
 
   # Pass custom parameters down to the Typhoeus connection worker
   typhoeus: {
