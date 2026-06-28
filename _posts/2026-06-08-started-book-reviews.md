@@ -37,13 +37,14 @@ When reading a professional book, I take detailed reading notes for myself. Base
 
 This section provides a quick overview of the reviewed book.
 
-- **Book:**
-- **Author:**
-- **Target Audience:**
-- **My Rating:**   
-- **Link:** 
+- **Book**
+- **Author**
+- **Target Audience** 
+- **My Rating**   
+- **Link** 
 
 I rate each book on a 5-star scale:
+
 | Rating | Score | Description |
 | :--- | :---: | :--- |
 | ⭐⭐⭐⭐⭐ | 5/5 | Highly Recommended / Must Read |
@@ -73,36 +74,58 @@ The raw reading notes that I jotted down while reading the book are shared here.
 
 ## Prompts
 
-- fix my bullet points [TODO: any specializations about the form?]
+Here are some prompts that help my to post a book review based on my raw reading notes
+
+- Fix and beautify my bullet points of the raw meeting notes
+  
+```markdown
+- **Role**
+  - Act as an experienced author of technical and IT research papers.
+- **Tasks**
+  - Fix spelling, punctuation, and grammatical errors within the raw meeting notes.
+  - Equip each top-level bullet point (Level 1) with a concise, bold-printed heading.
+  - Translate the entire content into professional English.
+- **Context**
+  - The source text is located immediately below the `----------` separator line.
+  - The final output must be written entirely in English.
+- **Constraints**
+  - Maintain the exact structure of the original meeting notes, as they map directly to the book's outline.
+  - If any part of the text is ambiguous, ask for clarification; do not guess the intent.
+- **Tone**
+  - The tone must be strictly professional, academic, and objective.
+- **Format**
+  - Provide the final output in Markdown format, delivering both the rendered preview and a clean markdown-copy-and-paste code block.
+
+----------
 ```
-bitte korrigiere Rechtschreibfehler in den folgenden Texten. Der Text soll komplett englisch sein.
-```
+
+- Create the summary based on the raw meeting notes
 
 ```markdown
 - Role
-  - Act as an experienced author of papers with technical or IT background
+  - Act as an experienced author of technical and IT research papers.
 - Tasks
- - Create a summary of the book XXX from my raw meeting notes
-- Context
+  - Create a summary of the book XXX from my raw meeting notes
   - Link to the book: XXX
-  - The raw meeting notes are coming after the line ----------
+- Context
+  - The source text is located immediately below the `----------` separator line.
   - The text should be in English
   - The summary should be a continuous text
 - Constraint
   - The sections of my meeting notes correspond to the structure of the book and should also be the structure of the summary
- - if you do have any questions, then ask me; do not guess!
+  - if you do have any questions, then ask me; do not guess!
 - Tone
   - your tone should be professional and objective
 - Format
- - Provide answers in Markdown: render as well as a markdown-copy-and-paste block
+  - Provide answers in Markdown: render as well as a markdown-copy-and-paste block
 
 ----------
-
 ```
 
-```
-Here are additional summary points. They follow directly after the original bullet points.
+- When a text exceeds the maximum token length for a single prompt, it must be split across multiple inputs. Subsequent prompts can then be utilized to provide the remaining additional text.
+
+```markdown
+Here is the additional text. It is located immediately below the `----------` separator line.
 
 ----------
-
 ```

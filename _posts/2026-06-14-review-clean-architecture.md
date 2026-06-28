@@ -48,6 +48,7 @@ translated from English by Maren Feilen and Knut Lorenzen
 
 
 ## 📝 Appendix: Raw Reading Notes
+{% include book-review-disclaimer.html %}
 
 
 ### PART I — Introduction
@@ -104,7 +105,7 @@ translated from English by Maren Feilen and Knut Lorenzen
 - middle layer: on modul level, directly "over" code level
 - copy all principles with single sentence!!! And explain SOLID
 
-#### Chapter 7 — SRP: The Single Responsibility Principle
+#### Chapter 7 — SRP: The Single-Responsibility Principle
 - NOT: every module should have have Single task (holde for methofs, not for modules)
 - original: there should be only one reason to change a module
 - here: A miduke should be responsible for one Single Autor

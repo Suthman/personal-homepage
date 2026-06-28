@@ -1,5 +1,5 @@
 ---
-title: "Architecture Elevator"    
+title: "The Software Architect Elevator"    
 excerpt: "TODO"
 categories:
   - blog
@@ -9,16 +9,45 @@ toc: true
 toc_sticky: true
 toc_label: "TODO"
 toc_icon: "fa-solid fa-robot"
+header:
+  overlay_image: /assets/images/2026-review-architecture-elevator/architecture-elevator-title.jpg
+  overlay_filter: 0.5 # Darkens the image (0.1 to 1.0) to keep the text readable
 ---
+
+<style>
+  .page__hero--overlay {
+    background-size: contain !important; /* Fit the entire overlay image without cropping */
+  }
+</style>
 
 {% include ai-disclaimer-short.html %}
 
 
 TODO
 
+## 📋 Quick Facts
+
+- **Book:** _The Software Architect Elevator_   
+- **Author:** Gregor Hohpe
+- **Target Audience:** IT Architects / Software Developers
+- **My Rating:** ⭐⭐⭐⭐⭐ (5/5) - Highly Recommended / Must Read
+- **Link:** [The Software Architect Elevator](https://www.oreilly.com/library/view/the-software-architect/9781492077534/) or [ISBN: 9781492077541](https://www.isbn.de/buch/9781492077541)
 
 
-## Bullet Point Summary
+> **Quick Verdict:** TODO
+
+
+
+## 💡 My Key Takeaways & Actions
+
+
+## 🔍 The Deep Dive (Summary)
+{% include book-review-disclaimer.html %}
+
+
+
+## 📝 Appendix: Raw Reading Notes
+{% include book-review-disclaimer.html %}
 
 PART I Architects
 
