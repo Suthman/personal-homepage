@@ -1,0 +1,65 @@
+/* Clean separation: Style changes only apply when JS successfully injected the footer */
+.highlight pre.has-footer {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+/* Base structural layout for the custom footer block */
+.highlight .code-block-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  border-top: 1px solid currentColor !important;
+}
+
+/* Style for the text label on the left (fully managed via JS) */
+.highlight .code-block-footer .code-block-label {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Styles for the copy button on the right */
+.highlight .code-block-footer .btn-copy-footer {
+  background: none !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 1.1em !important;
+  cursor: pointer;
+  padding: 4px 8px; 
+  transition: background-color 0.2s, color 0.2s !important;
+}
+
+/* Separate hover rule for maximum browser compatibility */
+.highlight .code-block-footer .btn-copy-footer:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Custom Scrollbar (Blends perfectly with code blocks & footer)
+   ========================================================================== */
+.highlight pre.has-footer::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.highlight pre.has-footer::-webkit-scrollbar-track {
+  background: transparent; /* Makes the scrollbar track background invisible */
+}
+
+.highlight pre.has-footer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Soft white thumb matching the text label */
+  border-radius: 4px;
+}
+
+.highlight pre.has-footer::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3); /* Brighter on hover */
+}
+
+/* Firefox support */
+.highlight pre.has-footer {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
