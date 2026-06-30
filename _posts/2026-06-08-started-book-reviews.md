@@ -5,6 +5,8 @@ categories:
   - blog
 tags:
   - book-review
+  - productivity
+  - prompt-engineering
 toc: true
 toc_sticky: true
 toc_label: "Professional Book Review"
@@ -74,7 +76,7 @@ The raw reading notes that I jotted down while reading the book are shared here.
 
 ## Prompts
 
-Here are some prompts that help my to post a book review based on my raw reading notes
+Based on the best practices outlined in [Getting started with AI chatbots – Master your prompting skills](/blog/getting-started-with-ai-chatbots), I developed a series of structured prompts designed to streamline the creation of book reviews from raw reading notes.
 
 - Fix and beautify my bullet points of the raw meeting notes
   
@@ -107,6 +109,7 @@ Here are some prompts that help my to post a book review based on my raw reading
 - Tasks
   - Create a summary of the book XXX from my raw meeting notes
   - Link to the book: XXX
+  - keep links to other pages; do not leave links out
 - Context
   - The source text is located immediately below the `----------` separator line.
   - The text should be in English
