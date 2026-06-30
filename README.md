@@ -23,6 +23,8 @@ This repository contains the source code of my personal homepage.
     categories: `blog`, tags: `ai-chatbots` `generative-ai` `prompt-engineering` `prompting-techniques` `productivity`
   - [2026-06-08-started-book-reviews.md](_posts/2026-06-08-started-book-reviews.md)  
     categories: `blog`, tags: `book-review` `productivity` `prompt-engineering`
+  - [2026-06-12-review-domain-driven-design.md](_posts/2026-06-12-review-domain-driven-design.md)  
+    categories: `blog`, tags: `book-review` `domain-driven-design` `software-architecture` `event-storming` `strategic-design`
 
 
 ---
