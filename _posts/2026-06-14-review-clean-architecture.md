@@ -47,6 +47,7 @@ TAKE AWAYS
 - wartbarkeit wichtiger als wiederverwendung
 - deployable units are compilations, not executables -> have to take care in Bewertung
 - TODO ARE METRICS LIKE STABILITY AND ABSTRACTION AVAILABLE IN TOOLS (CH 14)
+- **Efficacy of functional decomposition** in ch 4
 - policies and details  in ch 1
   - use cases are primary objective
   - defer decisions about details -> archtecture probides options -> same argument as in "arch elevator"
@@ -68,73 +69,84 @@ TAKE AWAYS
 ### PART I — Introduction
 
 #### Chapter 1 — What is Design and Architecture?
-- desin and archtecture arew the same
-- goal of architecture on p 30
-- Fallstudie zeigt: kosten steigen bzw productivity sinkt,  wenn ohne wartbarkeit entwickelt wird
-- TDD fördert productivity p 36
-- wrong mindset: wir bringen es erstmal auf den Markt,  refactorn und testen können wir später.
-  - Spoiler: thete will never be the the time
-  - even rebuild will not solve the problem, since market pressure will remain during rebuild phase
+- **Equivalence of concepts**: Software design and software architecture represent identical concepts.
+- **Architectural objectives**: The primary objective of software architecture is detailed on page 30. TODO COPY
+- **Maintainability case study**: The case study demonstrates that developing software without prioritizing maintainability increases the total cost of ownership (TCO) and decreases developer velocity.
+- **Productivity through TDD**: Implementing [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) enhances engineering productivity, as noted on page 36.
+- **Flawed deployment mindsets**: A common, erroneous mindset dictates launching the product to the market immediately while postponing refactoring and testing for a later phase.
+  - Note: That designated time for optimization never materializes.
+  - Rebuilding the system fails to resolve the underlying issue because market pressure persists throughout the entire rebuilding phase.
 
 #### Chapter 2 — A Tale of Two Values
-- two values: behaviour  and structure
-  - behavior  of Systems fulfills (functional) requirements
-  - (good) structure supports adaptability  (maintaibabklity, testability etc)
-  - software: soft means adaptable
-- adaptable Systems superior to correct behaving ones: Former an be fixed, latter are just working
-- focus on architecture is adaptibility!!!
+- **Dual values of software**: Software systems deliver value through two primary dimensions: behavior and structure.
+  - The behavior of a system fulfills the specified functional requirements.
+  - A robust structure supports system adaptability, including maintainability and testability.
+  - The term "software" itself implies a medium designed to be soft and adaptable.
+- **Primacy of adaptability**: Adaptable systems are inherently superior to systems that merely exhibit correct behavior, as adaptable systems can be fixed and evolved, whereas the latter are strictly rigid.
+- **Core architectural focus**: The fundamental purpose and focus of software architecture is to maximize **adaptability**.
 
 
 ### PART II — Starting with the Bricks: Programming Paradigms
 
 #### Chapter 3 — Paradigm Overview
-- 3.1, 3.2 and 3.3: copy the summary!!!
+- 3.1, 3.2 and 3.3: copy the summary!!! TODO
 
 #### Chapter 4 — Structured Programming
-- structured programming
-  - forbids unrestricted goto statements: Substitution by if/then/Else or do/while
-  - complies with finding that Programm can be written with sequence, selection and iteration
-- Software programs are  composeable of smaller units
-  - if it could be  proven tgat these dub-modules work without error, the Programm itself would be error free
-  - testing can only show the presence of errors, not the absence
-  - nevertheless: if the submodules are tested properly, there is a good probabilty that the whole System has few errors
-- functional decomposition works!!!
+- **Structured programming paradigms**: Structured programming restricts the use of unrestricted transfer control statements (such as `goto`) and replaces them with standardized control flows like sequence, selection (`if/then/else`), and iteration (`do/while`).
+  - This paradigm aligns with theoretical findings demonstrating that any computable program can be constructed exclusively using sequence, selection, and iteration.
+- **Composability of software units**: Software architectures are inherently composable, built from smaller, modular sub-units.
+  - Mathematically, if each sub-module could be proven to operate entirely without error, the aggregate program would itself be error-free.
+  - In practice, empirical software testing can only demonstrate the presence of errors, never their complete absence.
+  - Despite this limitation, robust and comprehensive testing of individual sub-modules yields a high statistical probability that the overall system will contain minimal defects.
+- **Efficacy of functional decomposition**: Structured functional decomposition remains a highly effective strategy for managing system complexity.
 
 #### Chapter 5 — Object-Oriented Programming
-- object-orientation provides polymorphy in a safe and stable manner
-  -- thus allows inverse-of-control and is an important value!!!
-- you can structure your dependencies without being forced to follow the program's control Flow
-  - for example: build domain logic independant of database access, i.e. separat domain and technical concerns!
+- **Safety in polymorphism**: Object-oriented programming provides polymorphism in a safe, stable, and highly manageable manner.
+  - This technical capability directly enables the implementation of the Inversion of Control (IoC) paradigm, representing a critical architectural value. TODO PARADIGM
+- **Decoupling of dependency structures**: Software architects can structure source code dependencies independently, removing the constraint to follow the runtime control flow of the program.
+  - For example, this mechanism allows engineering teams to build core domain logic entirely independent of database access layers, successfully separating domain business logic from technical infrastructure concerns.
 
 #### Chapter 6 — Functional Programming
-- functional programming: no variables can be changed explicitly
-  - avoid problems with concurrency / race conditions
-- impact on architecture:
-  - extract variable Manipulations / state changes to explicit modules -> mutable components
-  - put as much domain logic and runtime complxity to immutable components
+- **Immutability in functional programming**: The functional programming paradigm dictates that variables cannot be explicitly altered after initialization.
+  - Eliminating mutable state inherently resolves critical concurrency issues, such as race conditions and resource deadlocks.
+- **Architectural implications of functional programming**: Adopting functional principles shifts how system state and logic are distributed across an application.
+  - Software architects must isolate variable manipulations and state changes into dedicated, explicit modules, designated as mutable components.
+  - Conversely, engineering teams should encapsulate the vast majority of domain logic and runtime complexity within stateless, immutable components.
 
 
 ### Part III — Design Principles
-- enable modification, easy to nachvollziehen,  enable re-use of middle kayer Software architecture
-- middle layer: on modul level, directly "over" code level
-- copy all principles with single sentence!!! And explain SOLID
+- **Architectural goals**: Enable modification, ensure easy traceability, and facilitate the reuse of middle-layer software architecture.
+- **Scope of middle layer**: Define the middle layer at the module level, positioned directly above the source-code level.
+- **Core design principles**: The following five principles are recognized by the acronym SOLID (note the slight differences in the definitions here compared to [Wikipedia](https://en.wikipedia.org/wiki/SOLID)):
+  - **SRP**: The Single-Responsibility Principle  
+  The optimal structure for a software system is heavily influenced by the social structure of the organization utilizing it, ensuring that each software module has one — and only one — reason to change.
+  - **OCP**: The Open-Closed Principle  
+  Design software systems to facilitate easy adaptation, ensuring that behavioral modifications are achieved by adding new code rather than modifying existing code.
+  - **LSP**: The Liskov Substitution Principle  
+  Constructing software systems with interchangeable objects requires that these components must be mutually substitutable.
+  - **ISP**: The Interface Segregation Principle  
+  Avoid dependencies on unutilized modules.
+  - **DIP**: The Dependency Inversion Principle  
+  Code implementing high-level policies must not depend on code implementing low-level details; instead, details must depend on policies.
 
 #### Chapter 7 — SRP: The Single-Responsibility Principle
-- NOT: every module should have have Single task (holde for methofs, not for modules)
-- original: there should be only one reason to change a module
-- here: A miduke should be responsible for one Single Autor
-- will be present in ither layers as common-closures-principle abd axis-of-change-modell later TODO VERWEISE
+- **Definition**: Define a module in this context as being responsible to one single actor.
+- **Misconception correction**: Do not assume every module must perform only a single task; this rule applies strictly to functions and methods, not to modules.
+- **Original definition**: Maintain the original definition stating that there should be only one reason to change a module.
+- **Future architectural mappings**: Anticipate that this concept will reappear in subsequent architectural layers as the Common Closure Principle (CCP) and the axis-of-change model. TODO VERWEISE
 
 #### Chapter 8 — OCP: The Open-Closed Principle
-- Definition on p 91 todo
-- principle is basic Motivation for Software architecture!
-- good example!
-- idea: decompose System to different components and define suitable dependency hierarchy: higher components are geschützt vor changes in lower components
+- **Definition**: A software entity must be open for extension but simultaneously closed to modification.
+- **Architectural motivation**: Recognize this principle as the fundamental motivation driving software architecture.
+- **Core methodology**: 
+  - Decompose the system into distinct components and establish a suitable dependency hierarchy, ensuring higher-level components are protected from changes in lower-level components.
+  - Note that excellent illustrative examples are provided within the book.
 
 #### Chapter 9 — LSP: The Liskov Substitution Principle
-- copy def on p 97
-- originally develop to handle inheritance in programming language -> but should be seen more General for All kinds of Interfaces and components
-- Single violation can have huge impact on maintainabilty (since many exceptions must be added, mainted and understood)
+- **Formal Liskov Substitution Principle definition**: The objective is to achieve a substitution property where if, for each object $o_1$ of type $S$, there exists an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ remains unchanged when $o_1$ is substituted for $o_2$, then $S$ is a subtype of $T$.
+- **Historical context and scope expansion**: The principle was originally developed to handle inheritance in programming languages, but it should be viewed more generally to encompass all types of interfaces and components.
+- **Architectural impact of violations**: A single violation can have a massive impact on maintainability, as numerous exceptions must subsequently be added, maintained, and understood.
+
 
 #### Chapter 10 ISP: The Interface Segregation Principle
 - define different interfaces for different purposes
@@ -244,7 +256,8 @@ TAKE AWAYS
 
 #### Chapter 16 — Independence
 - operations: defere decision as long as possible. If component structure is good, we can later decide on concrete deployent and Operation modi
-- consider Team structure in component Design: Conways law: todo copy from p167
+- consider Team structure in component Design by considering [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law): 
+> [O]rganizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations.
 - Decoupling
   - decouple (horizontal) layers
     - follow SRP and CCP
