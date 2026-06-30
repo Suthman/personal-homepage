@@ -8,7 +8,6 @@ tags:
   - generative-ai
   - prompt-engineering
   - prompting-techniques
-  - ai-for-beginners
   - productivity
 toc: true
 toc_sticky: true
@@ -29,7 +28,7 @@ After a brief example conversation with an AI chatbot, I discuss the key factor 
 
 ## Chatting with an AI Chatbot – An example
 
-An AI chatbot is a tool that allows users to have interactive conversations. The chatbot responds and remembers the entire context of the chat. To demonstrate, I asked Gemini (Google) the question, *"What are the differences between an AI chatbot and a standard web search?"* and started the following conversation:
+An AI chatbot is a tool that allows users to have interactive conversations. The chatbot responds and remembers the entire context of the chat. To demonstrate, I asked Gemini (Google) the question, _"What are the differences between an AI chatbot and a standard web search?"_ and started the following conversation:
 
 > **Me:** What are the differences between an AI chatbot and a standard web search?
 >
@@ -72,13 +71,13 @@ An AI chatbot is a tool that allows users to have interactive conversations. The
 >
 > ### When to Use What
 > {: .no_toc}
-> * **Web Search:** Use for **facts, navigation, and real-time data**. (e.g., "Flight status," "Official tax forms," or "Latest news").
-> * **AI Chatbot:** Use for **explanation, synthesis, and creativity**. (e.g., "Summarize this article," "Write a workout plan," or "Explain a complex concept").
+> - **Web Search:** Use for **facts, navigation, and real-time data**. (e.g., "Flight status," "Official tax forms," or "Latest news").
+> - **AI Chatbot:** Use for **explanation, synthesis, and creativity**. (e.g., "Summarize this article," "Write a workout plan," or "Explain a complex concept").
 >
 > ### Competition or Complement?
 > {: .no_toc}
-> * **They are complementary:** Search finds the **raw data**; AI helps you **process and apply it**.
-> * **They are merging:** Modern tools (like Perplexity or Google AI Overviews) now combine both into a single "Search AI" experience.
+> - **They are complementary:** Search finds the **raw data**; AI helps you **process and apply it**.
+> - **They are merging:** Modern tools (like Perplexity or Google AI Overviews) now combine both into a single "Search AI" experience.
 >
 > **Rule of thumb:** Search for **"Where is it?"** — AI for **"What does it mean?"**
 >
@@ -102,7 +101,7 @@ An AI chatbot is a tool that allows users to have interactive conversations. The
 
 ## Context is the key - Prompts are decisive
 
-Looking at the exemplary chat above, it becomes clear that the chatbot is aware of the whole **_context_** of the chat. For example, it understood that my request for a *"short and concise"* answer related to the previous question, which I did not need to repeat. Additionally, I advised it to answer in English when it answered in German. Thus, I clarified my requirements for and expectations of the AI chatbot during the chat itself — meaning I refined the chatbot's context.
+Looking at the exemplary chat above, it becomes clear that the chatbot is aware of the whole **_context_** of the chat. For example, it understood that my request for a _"short and concise"_ answer related to the previous question, which I did not need to repeat. Additionally, I advised it to answer in English when it answered in German. Thus, I clarified my requirements for and expectations of the AI chatbot during the chat itself — meaning I refined the chatbot's context.
 
 The input provided to an AI chatbot is called a **_prompt_**. The better the prompt, the better the answers of the chatbot will be, since it has a clearer context about its task. Gemini gave examples of bad and good prompts itself:
 
@@ -113,11 +112,11 @@ The input provided to an AI chatbot is called a **_prompt_**. The better the pro
 > ### Topic: Email Drafting
 > {: .no_toc}
 >
->*   **Bad Prompt:** "Write an email about a delay."  
->    *(Too vague: Who is the recipient? Why the delay? What tone?)*
+>-   **Bad Prompt:** "Write an email about a delay."  
+>    _(Too vague: Who is the recipient? Why the delay? What tone?)_
 >
->*   **Good Prompt:** "Write a professional email to my project manager. Explain that the analysis report will be delayed by two days because the data delivery is pending. Apologize for the inconvenience and provide the new deadline: Wednesday."  
->    *(Precise: Defines role, reason, tone, and specific details.)*
+>-   **Good Prompt:** "Write a professional email to my project manager. Explain that the analysis report will be delayed by two days because the data delivery is pending. Apologize for the inconvenience and provide the new deadline: Wednesday."  
+>    _(Precise: Defines role, reason, tone, and specific details.)_
 >
 
 The process of generating good prompts — resulting in good answers — is also called **_prompt engineering_**.
@@ -136,12 +135,12 @@ A good prompt consists of the following elements:
 
 | # | Component | Definition | Example |
 | :--- | :--- | :--- | :--- |
-| **1** | **Role** | Who the AI should pretend to be. | *"Act as an experienced social media manager."* |
-| **2** | **Task** | What exactly the AI should do. | *"Write a LinkedIn post about the benefits of remote work."* |
-| **3** | **Context** | The background, goal, or target audience. | *"The post is for mid-sized company CEOs who are still skeptical about working from home."* |
-| **4** | **Constraints** | What the AI must avoid or specific limits. | *"Do not use clichés or corporate buzzwords. Maximum 150 words."* |
-| **5** | **Tone** | How the AI should sound. | *"The tone should be professional yet approachable and persuasive."* |
-| **6** | **Format** | How the final output should be organized. | *"Use short paragraphs and end the post with a question (Call to Action)."* |
+| **1** | **Role** | Who the AI should pretend to be. | _"Act as an experienced social media manager."_ |
+| **2** | **Task** | What exactly the AI should do. | _"Write a LinkedIn post about the benefits of remote work."_ |
+| **3** | **Context** | The background, goal, or target audience. | _"The post is for mid-sized company CEOs who are still skeptical about working from home."_ |
+| **4** | **Constraints** | What the AI must avoid or specific limits. | _"Do not use clichés or corporate buzzwords. Maximum 150 words."_ |
+| **5** | **Tone** | How the AI should sound. | _"The tone should be professional yet approachable and persuasive."_ |
+| **6** | **Format** | How the final output should be organized. | _"Use short paragraphs and end the post with a question (Call to Action)."_ |
 
 As stated above, the prompt should describe the exact result that you expect from the AI chatbot. All six components in the table are important to define before the AI generates its answer. Of course, you can iteratively refine your initial prompt to improve the output. However, the more information you provide upfront, the better the generated result will be.
 
@@ -162,8 +161,8 @@ AI predicts text one word at a time; **its typing is its thinking**. By forcing 
 #### How to use it?
 {: .no_toc}
 You do not need complex code. Just add a simple trigger phrase to the end of your prompt:
-*   *"Think step-by-step before answering."*
-*   *"Explain your reasoning path."*
+-   _"Think step-by-step before answering."_
+-   _"Explain your reasoning path."_
 
 **Basic idea:** Treat the AI like a student. If you force it to show its work, it will get the answer right.
 
@@ -185,11 +184,11 @@ AI models are massive pattern-recognition engines. While written instructions ca
 {: .no_toc}
 Structure your prompt by showing the AI how to do the task first, then give it the new task:
 
-*   Example 1: `Input: "Movie: Inception"`  
+-   Example 1: `Input: "Movie: Inception"`  
 -> `Output: "Genre: Sci-Fi ; Rating: 9/10"`
-*   Example 2: `Input: "Movie: The Lion King"`  
+-   Example 2: `Input: "Movie: The Lion King"`  
 -> `Output: "Genre: Animation ; Rating: 8/10"`
-* Actual: `Input: "Movie: Interstellar"`  -> AI will now automatically output the exact format: `"Genre: Sci-Fi ; Rating: 9/10"`
+- Actual: `Input: "Movie: Interstellar"`  -> AI will now automatically output the exact format: `"Genre: Sci-Fi ; Rating: 9/10"`
 
 **Basic idea:** Don't just tell the AI what you want — show it. 
 
@@ -211,7 +210,7 @@ Standard prompts are **"single-pass"** — the AI prints the first thoughts that
 {: .no_toc}
 You can build a reflection mechanism right into your prompt with a simple instruction:
 
-*   *"Draft a solution for `<Task>`. Then, review your own draft from the perspective of a harsh critic, list two potential flaws, and rewrite the final response to fix those flaws."*
+_"Draft a solution for `<Task>`. Then, review your own draft from the perspective of a harsh critic, list two potential flaws, and rewrite the final response to fix those flaws."_
 
 **Basic idea:** Treat the AI like a business partner. Don't accept its very first draft; ask it to review its own thinking for better quality.
 
@@ -233,7 +232,7 @@ AI models contain a vast ocean of general knowledge. By assigning a role, you te
 {: .no_toc}
 Always start your prompt by clearly defining the identity, experience level, and goal of the persona:
 
-*   *"Act as a Senior Financial Advisor with 15 years of experience in startup investments. Review this business proposal and highlight the top 3 financial risks."*
+_"Act as a Senior Financial Advisor with 15 years of experience in startup investments. Review this business proposal and highlight the top 3 financial risks."_
 
 **Basic idea:** Before asking the AI to do something, tell it **who** it needs to be to do the job perfectly.
 

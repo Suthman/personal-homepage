@@ -8,9 +8,7 @@ tags:
   - jekyll
   - minimal-mistakes
   - static-site-generator
-  - it-architecture
   - github-flow
-  - personal-website
 toc: true
 toc_sticky: true
 toc_label: "Creating my website"
@@ -70,7 +68,7 @@ Two key questions emerged:
 1. Is Jekyll the right choice for generating the site?
 2. Is GitHub the right platform for hosting a Jekyll-based page?
 
-After some research, I arrived at the following answer to question (1): *Jekyll is still a solid choice.*
+After some research, I arrived at the following answer to question (1): **Jekyll is still a solid choice.**
 
 - Jekyll transforms Markdown into static HTML pages.
 - It is quite old (first released in 2008), but it is mature and stable.
@@ -80,7 +78,7 @@ After some research, I arrived at the following answer to question (1): *Jekyll 
 - Other frameworks may offer faster build times or more interactive layouts, but for my use case, Jekyll is more than sufficient.
 - Jekyll is free of charge.
 
-For question (2), my research led to a clear conclusion: *GitHub is a very convenient choice.*
+For question (2), my research led to a clear conclusion: **GitHub is a very convenient choice.**
 
 - GitHub provides native Jekyll integration. I do not need to write any build scripts or GitHub Actions workflows to get my website running.
 - Other providers also support Jekyll, which means choosing GitHub does not create vendor lock-in. Migrating my site to another provider — for example, [GitLab Pages](https://docs.gitlab.com/user/project/pages/) — would require only a modest amount of effort.
@@ -111,17 +109,17 @@ To use my own domain and set up the CNAME, I needed to:
 - create A-records pointing my domain to the GitHub Pages IP addresses
 - create a CNAME entry delegating my domain to the corresponding github.io address
 
-After that, I added additional pages — *About Me*, *Publications*, and *Imprint, Disclaimer, and Privacy Policy* — and linked them together within the Markdown files.
+After that, I added additional pages — 'About Me', 'Publications', and 'Imprint, Disclaimer, and Privacy Policy' — and linked them together within the Markdown files.
 
 Everything worked, but the design was extremely basic. On the other hand, I now had all my content stored as clean Markdown files, without any external dependencies — a solid foundation to build upon.
 
 
 
-### Applying the Jekyll Theme *Minimal Mistakes*
+### Applying the Jekyll Theme 'Minimal Mistakes'
 
 To improve the design of my website, I began searching for a suitable theme and quickly discovered [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/).
 
-Google’s AI describes *Minimal Mistakes* as follows (March 2026):
+Google’s AI describes Minimal Mistakes as follows (March 2026):
 
 > “Minimal Mistakes is a true ‘workhorse’ among Jekyll themes. It is less intended for playful, highly visual lifestyle blogs and instead shines where structure, information, and depth of content are the main focus.”
 {: .notice--info}
