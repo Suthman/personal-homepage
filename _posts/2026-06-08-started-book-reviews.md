@@ -132,3 +132,11 @@ Here is the additional text. It is located immediately below the `----------` se
 
 ----------
 ```
+
+- Propose 3 - 5 tags for a blog post
+
+```markdown
+Propose 3 - 5 tags for the blog post. It is located immediately below the `----------` separator line.
+
+----------
+```
