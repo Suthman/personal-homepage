@@ -30,7 +30,7 @@ This repository contains the source code of my personal homepage.
 - Maximum of 2 levels in the table of contents
 - **_Technical terms_** in bold and italic
 - **Important information** in bold
-- *Quotes* or *Calls-to-Action* in italic
+- _Quotes_ or _Calls-to-Action_ in italic
 
 
 ---

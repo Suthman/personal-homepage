@@ -74,7 +74,7 @@ During my advanced studies, I specialized in knowledge-based systems.
 
 From December 2004 to December 2006, I worked as a Student Research Assistant at the [Knowledge-Based Systems Group](https://kbsg.rwth-aachen.de/). This position marked my introduction to robotics and shaped much of my later academic interest.
 
-I was an active member of RWTH Aachen’s RoboCup team *AllemaniACs*, competing in the [Middle Size League](https://en.wikipedia.org/wiki/RoboCup_Middle_Size_League) of the [RoboCup](https://en.wikipedia.org/wiki/RoboCup) competition.
+I was an active member of RWTH Aachen’s RoboCup team _AllemaniACs_, competing in the [Middle Size League](https://en.wikipedia.org/wiki/RoboCup_Middle_Size_League) of the [RoboCup](https://en.wikipedia.org/wiki/RoboCup) competition.
 
 Through this work, I gained hands-on experience in:
 - robotics hardware and software integration,
@@ -86,6 +86,6 @@ Through this work, I gained hands-on experience in:
 ## Community & Personal Interests
 
 - **Cultural Heritage & Engagement:** As an active member of [Ernte-Verein Donrath 1925 e.V.](https://evd-tanzfloehe.de), I am deeply committed to preserving local traditions. I value the strong sense of community and the collective effort required to maintain these generations-old customs.
-- **Social Commitment:** Every Shrove Tuesday (*Veilchendienstag*), I participate in the traditional procession of [Ääzebär e.V. Lohmar](https://aeaezebaer.de). Our mission is charitable: we collect donations for the local Red Cross and support various local charitable and non-profit community initiatives.
+- **Social Commitment:** Every Shrove Tuesday (_Veilchendienstag_), I participate in the traditional procession of [Ääzebär e.V. Lohmar](https://aeaezebaer.de). Our mission is charitable: we collect donations for the local Red Cross and support various local charitable and non-profit community initiatives.
 - **Sports & Team Spirit:** I stay active through a balance of individual and team sports. I am a lifelong supporter of [1. FC Köln](https://fc.de), embodying the local "Rhenish resilience" by standing by my club through every high and low. To keep fit, I go jogging regularly and enjoy the camaraderie of a weekly football match with friends.
 - **Lifelong Learning & Gaming:** I am an avid reader, constantly exploring new perspectives through literature—both professional and fiction. In my downtime, I enjoy gaming, which I appreciate for its storytelling, complex mechanics, and the strategic thinking it requires.
