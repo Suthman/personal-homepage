@@ -1,6 +1,6 @@
 ---
 title: "New Format: Professional Book Review"    
-excerpt: "Introducing a new series of structured book reviews to share key takeaways, deep dives, and raw reading notes from professional literature"
+excerpt: "Introducing a new series of structured book reviews to share key takeaways, deep dives, and raw reading notes from professional literature."
 categories:
   - blog
 tags:
