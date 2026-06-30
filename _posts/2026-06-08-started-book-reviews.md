@@ -85,8 +85,9 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
   - Act as an experienced author of technical and IT research papers.
 - **Tasks**
   - Fix spelling, punctuation, and grammatical errors within the raw meeting notes.
-  - Equip each top-level bullet point (Level 1) with a concise, bold-printed heading.
+  - Equip each top-level bullet point (Level 1) with a concise, bold-printed heading. Example: **concise bullet point**: TEXT
   - Translate the entire content into professional English.
+  - Keep links to other pages; do not leave links out
 - **Context**
   - The source text is located immediately below the `----------` separator line.
   - The final output must be written entirely in English.
@@ -97,6 +98,10 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
   - The tone must be strictly professional, academic, and objective.
 - **Format**
   - Provide the final output in Markdown format, delivering both the rendered preview and a clean markdown-copy-and-paste code block.
+  - Use the following notations
+    - minus for unordered lists
+    - ** for bold text
+    - _ for italic text
 
 ----------
 ```
@@ -109,7 +114,7 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
 - Tasks
   - Create a summary of the book XXX from my raw meeting notes
   - Link to the book: XXX
-  - keep links to other pages; do not leave links out
+  - Keep links to other pages; do not leave links out
 - Context
   - The source text is located immediately below the `----------` separator line.
   - The text should be in English
@@ -121,6 +126,10 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
   - your tone should be professional and objective
 - Format
   - Provide answers in Markdown: render as well as a markdown-copy-and-paste block
+  - Use the following notations
+    - minus for unordered lists
+    - ** for bold text
+    - _ for italic text
 
 ----------
 ```
