@@ -51,18 +51,18 @@ I read the book some years ago and re-read it for this review. At the time, it w
 
 The primary takeaways from this book can be summarized as follows:
 
-* **Event Storming**: The sticky-note method enables genuine cross-functionality across teams.
-* **Distributed architecture**: Establishes a distributed business and domain model.
-* **No monolithic model**: Finally eliminates the need for a single, all-encompassing model (such as a global glossary or universal technical data model).
-* **System interactions**: Only two core interactions between systems exist:
+- **Event Storming**: The sticky-note method enables genuine cross-functionality across teams.
+- **Distributed architecture**: Establishes a distributed business and domain model.
+- **No monolithic model**: Finally eliminates the need for a single, all-encompassing model (such as a global glossary or universal technical data model).
+- **System interactions**: Only two core interactions between systems exist:
   1. Publishing Domain Events.
   2. Accepting Commands.
-* **Interaction patterns**: Organizational and technical interaction patterns are highly sophisticated and provide an excellent selection of strategies.
-* **Strategic categorization**: Core, Supporting, and Generic Domains offer a valuable classification framework to determine where to invest the most effort.
-* **Bounded Context definition**: I do not agree with the statement that "a Bounded Context is code only."   
+- **Interaction patterns**: Organizational and technical interaction patterns are highly sophisticated and provide an excellent selection of strategies.
+- **Strategic categorization**: Core, Supporting, and Generic Domains offer a valuable classification framework to determine where to invest the most effort.
+- **Bounded Context definition**: I do not agree with the statement that "a Bounded Context is code only."   
 It must also encompass: 
-  * Documentation, or at least the definition of its single responsibility.
-  * Test cases with acceptance criteria.
+  - Documentation, or at least the definition of its single responsibility.
+  - Test cases with acceptance criteria.
 
 Note: If you want to dive deeper into DDD, check out the [Domain-Driven Design Crew](https://github.com/ddd-crew) on GitHub. This globally active open-source community offers free, practical tools, step-by-step guides, and visual templates to help you apply DDD effectively
 
@@ -76,7 +76,7 @@ Please note that all terms from the glossary below are formatted in bold and ita
 ### Domain-Driven Design: Summary of Core Structural and Behavioral Principles
 
 #### 1 DDD for Me
-Domain-Driven Design (DDD) serves a dual purpose by dividing software design into strategic and tactical dimensions. Strategically, it provides organizational alignment by focusing development efforts on the core business priorities. Tactically, it refines these strategic objectives into robust, well-architected technical solutions. A fundamental premise of DDD is that it prioritizes business processes over static data models or specific technological implementations. The framework operates on the philosophy that a total lack of design does not exist; instead, neglecting design simply results in poor design. Achieving effective design requires a deliberate acquisition of domain knowledge, which involves upfront investment but yields rapid financial and operational returns. Furthermore, DDD is inherently cross-functional, requiring active participation and continuous contribution from ***Domain Experts***, management, and all software development roles.
+Domain-Driven Design (DDD) serves a dual purpose by dividing software design into strategic and tactical dimensions. Strategically, it provides organizational alignment by focusing development efforts on the core business priorities. Tactically, it refines these strategic objectives into robust, well-architected technical solutions. A fundamental premise of DDD is that it prioritizes business processes over static data models or specific technological implementations. The framework operates on the philosophy that a total lack of design does not exist; instead, neglecting design simply results in poor design. Achieving effective design requires a deliberate acquisition of domain knowledge, which involves upfront investment but yields rapid financial and operational returns. Furthermore, DDD is inherently cross-functional, requiring active participation and continuous contribution from **_Domain Experts_**, management, and all software development roles.
 
 #### 2 Strategic Design with Bounded Contexts and the Ubiquitous Language
 Strategic design relies heavily on establishing ***Bounded Contexts***, which serve as explicit contextual boundaries. Within each boundary, every software component has a clear meaning and performs defined actions. This boundary isolates a specific ***Ubiquitous Language***, a precise and clear terminology spoken by the team and directly implemented within the code. When a ***Bounded Context*** encapsulates the core competitive strategy of the enterprise, it is classified as the ***Core Domain***. The organizational alignment dictates a one-to-many relationship where a single ***Bounded Context*** is strictly assigned to and worked on by a single team, preventing cross-team friction. Conversely, contexts that grow too large inevitably degrade into a ***Big Ball of Mud*** architectural anti-pattern. To prevent this, design sessions must include business stakeholders and ***Domain Experts*** across all relevant organizational disciplines. 
