@@ -213,33 +213,32 @@ TAKE AWAYS
 - **SDP: Stable-Dependencies Principle**
   - Definition: Dependencies should run in the direction of stability.
   - Stability of components is defined as the effort required to change the component.
-  - Metrics for instability ($I$):
-    - Fan-in: number of incoming dependencies.
-    - Fan-out: number of outgoing dependencies.
-    - $I = \text{fan-out} / (\text{fan-out} + \text{fan-in})$
-    - $I=0$ is maximally stable, $I=1$ is maximally unstable.
-  - SDP states that the $I$-value of a component should be higher than the $I$-values of the components it depends upon.
+  - Metrics for instability (`I`):
+    - `Fan-in`: number of incoming dependencies.
+    - `Fan-out`: number of outgoing dependencies.
+    - `I = fan-out / (fan-out + fan-in)`
+    - `I = 0` is maximally stable, `I = 1` is maximally unstable.
+  - SDP states that the `I`-value of a component should be higher than the `I`-values of the components it depends upon.
   - Note: Not all components should be stable.
 - **SAP: Stable-Abstractions Principle**
   - Definition: A component should be as abstract as it is stable.
   - Common components should be stable but also accessible by many components; therefore, they should be abstract.
   - SAP states that the stability of a component should relate to its abstraction.
   - SAP and SDP combined represent a component-level equivalent of the Dependency Inversion Principle (DIP).
-  - Metrics for abstraction ($A$) of components:
-    - $N_c$: Number of classes in a component.
-    - $N_a$: Number of abstract classes and interfaces in a component.
-    - $A$: Degree of abstraction. $A = N_a / N_c$
-    - $A=0$ means no abstract classes, $A=1$ means all classes are abstract.
-- **The $I$/$A$ Graph and Zones of Exclusion**
-  - The $I$/$A$ graph with zones of exclusion on page 145 depicts the following relationships:
+  - Metrics for abstraction (`A`) of components:
+    - `N_c`: Number of classes in a component.
+    - `N_a`: Number of abstract classes and interfaces in a component.
+    - `A`: Degree of abstraction. `A = N_a / N_c`
+    - `A=0` means no abstract classes, `A=1` means all classes are abstract.
+- **The `I`/`A` Graph and Zones of Exclusion**
+  - The `I`/`A` graph with zones of exclusion on page 145 depicts the following relationships:
   - Zone of Pain: Highly stable (many dependent components) and highly concrete (hard to change). Examples include database schemas and the Java `String` class.
   - Zone of Uselessness: Highly abstract classes that are not referenced by any other components.
   - Main Sequence: Represents the optimal balance between stability and abstraction.
-  - Distance $D$ from the Main Sequence: $D = |A + I - 1|$
+  - Distance `D` from the Main Sequence: `D = |A + I - 1|`
   - This metric enables statistical analysis, such as:
-    - Examining the normal distribution and analyzing components where $D$ is greater than the standard deviation.
-    - Monitoring the value of $D$ for a specific component over time.
-
+    - Examining the normal distribution and analyzing components where `D` is greater than the standard deviation.
+    - Monitoring the value of `D` for a specific component over time.
 
 
 ### Part V — Architecture
@@ -504,5 +503,3 @@ TAKE AWAYS
 
 #### Appendix A — Archtitecture Archäologie
 - interesting collection of Uncle Bob's projects and experience
-
-
