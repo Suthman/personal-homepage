@@ -149,90 +149,97 @@ TAKE AWAYS
 
 
 #### Chapter 10 ISP: The Interface Segregation Principle
-- define different interfaces for different purposes
-- originally drfind for Statistik LinkedIn programming languages
-- but also generalizes to All kinds oh components
-- more General formulation: do not rely on modules that provide more than you require
-- common-reuse-principle in Ch13 -> link!
+- **Interface specialization**: Design distinct interfaces tailored to specific architectural purposes.
+- **Historical origin**: The concept was originally defined for statically linked programming languages.
+- **Component generalization**: The principle successfully generalizes to all categories of software components.
+- **General formulation**: Avoid relying on modules that provide a broader scope of functionality than required.
+- **Component cohesion link**: This concept correlates directly with the Common Reuse Principle detailed in Chapter 13. TODO LINK
+
 
 #### Chapter 11 — DIP: The Dependency Inversion Principle
-- source code dependencies should be abstractions, only. Thus rule is very strict and hard to implementiert. But it is possible to isolate concrete dependencies in factories.
-- operating system and Plattform entities are usually excluded from this rule (eq String class in Java
-- stable abstractions
-  - do not reference concrete classes
-  - do non inherit from concrete classes
-  - do not overide concrete methods
-  - do not mention  concrete elements by name - never ever
-- use abstract factories to instantiate concrete implementations
-  - example of p. 110
-  - Spring (Boot) context does automate this kind of instantiation
+- **Abstraction enforcement**: Source code dependencies must strictly consist of abstractions, a constraint that is historically challenging to implement.
+- **Dependency isolation**: It remains entirely feasible to isolate concrete dependencies by utilizing factory components.
+- **Platform exemptions**: Operating system components and core platform entities, such as the Java `String` class, are typically exempted from this architectural rule.
+- **Stable abstraction constraints**: Architectural stability requires adhering to strict rules regarding concrete implementation structures.
+  - Do not reference concrete classes.
+  - Do not inherit from concrete classes.
+  - Do not override concrete methods.
+  - Do not explicitly reference concrete elements by name under any circumstances.
+- **Abstract Factory integration**: Implement the abstract [factory design pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern) to manage dependency creation cleanly.
+  - A definitive illustrative diagram of this pattern is available on page 110.
+  - Framework mechanisms, such as the Spring (Boot) application context, fully automate this specific instantiation workflow.
+
 
 
 ### PART IV — Component Principles
 
 #### Chapter 12 — Components
-- components are deployable units, eg har files
-- historical overview for Compiler and linker. In short: plugin System for jars, DLLs, ... is Standard nowadays
+- **Component definition**: Components represent the smallest deployable units within an architecture, exemplified by formats such as JAR files.
+- **Deployment evolution**: A historical review of compilers and linkers demonstrates that modern plug-in architectures—utilizing artifacts like JARs and DLLs—have become the industry standard.
+
 
 #### Chapter 13 — Component Cohesion
-- REP: reuse-release-equivalence-principle
-  - todo: Definition p 121
-  - you can just reuse, what is in in one named component with same Version number, relesse doc, etc
-- CCP: common-closure-principle
-  - todo: Definition on p 123
-  - there should only be one reason to change the module
-  - generalization of SRP TODO LONG VERSION
-  - also related to OCP TODO LONG VERSION: "closed for modications" cannot be reached completel. CCP requires thus on "higher component level"
-  - generalization of SRP and OCP TODO ON P 124
-- CRP: common-reuse-principle
-  - TODO DEFINITION on p 124
-  - put components together that are usually used together
-  - separate classes thatvare usually not used together
-  - relation to ISP TODO LONG NAME: ISP requires to separate interfaces when methods are usually not used together.
-- Common Nenner of ISP and CRP: TODO COPY FROM P 125
-- the 3 principles are in Opposition
-  - REP tends to create big components to reduce their number
-  - CRP tends to create small components to reduce non-needed dependencies
-  - CCP organizes the components from a maintenance efgort point of view
-  - the optimal components Definition may change iver time anf project affordances. A Tenside dusgram is on p 126
+- **REP: Reuse-Release-Equivalence Principle**
+  - Definition: The granularity of reuse is the granularity of the release.
+  - You can only reuse what is in one named component with the same version number, release documentation, etc.
+- **CCP: Common-Closure Principle**
+  - Definition: Group classes that are modified for the same reasons and at the same time into the same components. Conversely, separate classes that are modified for different reasons and at different times into different components.
+  - There should only be one reason to change a module.
+  - This is a generalization of the Single-Responsibility Principle (SRP).
+  - It is also related to the Open-Closed Principle (OCP): "Closed for modifications" cannot be reached completely. CCP requires this on a "higher component level."
+  - Generalization of SRP and OCP: Group all elements that are modified for the same reasons and at the same time. Conversely, separate all elements that are modified for different reasons and at different times.
+- **CRP: Common-Reuse Principle**
+  - Definition: Do not force the users of a component to depend on elements that they do not require.
+  - Put components together that are usually used together.
+  - Separate classes that are usually not used together.
+  - It relates to the Interface Segregation Principle (ISP): ISP requires separating interfaces when methods are usually not used together.
+  - Common denominator of ISP and CRP: Do not create dependencies on elements that you do not require.
+- **The Tension Triad of Component Principles**
+  - The 3 principles are in opposition.
+  - REP tends to create big components to reduce their number.
+  - CRP tends to create small components to reduce non-needed dependencies.
+  - CCP organizes the components from a maintenance effort point of view.
+  - The optimal component definition may change over time and project affordances. A tension diagram is on page 126.
+
 
 #### Chapter 14 — Component Coupling
-- ADP: acyclic-dependency-principle
- - todo Definition p 129
-  - violations result in complex integration Management and betroffenheitsanalsen
-  - overcome cyvles: DIP TODO LONG or create New component
-- top down Design not recomnended
-  - not enough kniwledge upfront
-  - design is controlled by SRP and CCP todo long versions
-- SDP: stable-dependeny-principle
-  - todo Definition p 139
-  - stability of components := effort to change the component
-  - metrics for stability I:
-    - todo define fan-in and out!!
-    - I = fan-out / (fan-out + fan-in)
-    - I=0 maximal stable, I=1 maximal instable
-  - SDP: I-value of a component should be higher since I-values of dependent components
-  - Note: Not all components should be stable
-- SAP: stable-abstraction-principle
-  - todo Definition p 143
-  - common politische should be stable but also accessable by many components-> they should be abstract!
-  - SAP: stability of a component should relate to its abstraction
-  - SAP + SDP are somehow a "DIP for components"
-  - metrics for abstraction if components:
-    - copy from p144 todo
-    - A=0 no abstract classes, A=1 all classes are abstract
-- the I/A graph copy  todo p 145
-  - Zone of pain
-    - stable (many dependen components) and concrete (hard to change)
-    - examples: database Schema, java String class
-  - Zone of Uselessness
-    - many absteact classes that are not referenced
-  - Hauptreihe todo translate!
-    - represents the desired offset of stability and abstraction
-    - distance D from Hauptreihe: D=|A+I-1|
-    - enables statisticalanalysis, eg
-      - look at normal dustrubtion and analyse components with D>standard deviation
-      - Look at D of a component over time
+- **ADP: Acyclic-Dependencies Principle**
+  - Definition: Allow no cycles in the component dependency graph.
+  - Violations result in complex integration management and impact analyses.
+  - Overcome cycles by applying the Dependency Inversion Principle (DIP) or by creating a new component.
+- **Top-Down Design Pitfalls**
+  - Top-down design is not recommended because there is not enough knowledge upfront.
+  - Component design is controlled by the Single-Responsibility Principle (SRP) and the Common-Closure Principle (CCP).
+- **SDP: Stable-Dependencies Principle**
+  - Definition: Dependencies should run in the direction of stability.
+  - Stability of components is defined as the effort required to change the component.
+  - Metrics for instability ($I$):
+    - Fan-in: number of incoming dependencies.
+    - Fan-out: number of outgoing dependencies.
+    - $I = \text{fan-out} / (\text{fan-out} + \text{fan-in})$
+    - $I=0$ is maximally stable, $I=1$ is maximally unstable.
+  - SDP states that the $I$-value of a component should be higher than the $I$-values of the components it depends upon.
+  - Note: Not all components should be stable.
+- **SAP: Stable-Abstractions Principle**
+  - Definition: A component should be as abstract as it is stable.
+  - Common components should be stable but also accessible by many components; therefore, they should be abstract.
+  - SAP states that the stability of a component should relate to its abstraction.
+  - SAP and SDP combined represent a component-level equivalent of the Dependency Inversion Principle (DIP).
+  - Metrics for abstraction ($A$) of components:
+    - $N_c$: Number of classes in a component.
+    - $N_a$: Number of abstract classes and interfaces in a component.
+    - $A$: Degree of abstraction. $A = N_a / N_c$
+    - $A=0$ means no abstract classes, $A=1$ means all classes are abstract.
+- **The $I$/$A$ Graph and Zones of Exclusion**
+  - The $I$/$A$ graph with zones of exclusion on page 145 depicts the following relationships:
+  - Zone of Pain: Highly stable (many dependent components) and highly concrete (hard to change). Examples include database schemas and the Java `String` class.
+  - Zone of Uselessness: Highly abstract classes that are not referenced by any other components.
+  - Main Sequence: Represents the optimal balance between stability and abstraction.
+  - Distance $D$ from the Main Sequence: $D = |A + I - 1|$
+  - This metric enables statistical analysis, such as:
+    - Examining the normal distribution and analyzing components where $D$ is greater than the standard deviation.
+    - Monitoring the value of $D$ for a specific component over time.
+
 
 
 ### Part V — Architecture
