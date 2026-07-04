@@ -56,6 +56,10 @@ TAKE AWAYS
 - Problem of microservices, when cross cutting concerns is across services abd not between! Can only be solved, when each service is based on SOLID components
 - ch 24 partial boundaries: can risks be reduced by arcunit? Same holds for ch 34
   - forgot the name
+- Strict definition of level: 
+  > A level is defined by the distance from the system inputs and outputs.
+- Architecture and options
+  > A good software architect maximizes the number of decisions not yet made.
 
 
 ## 🔍 The Deep Dive (Summary)
@@ -70,7 +74,8 @@ TAKE AWAYS
 
 #### Chapter 1 — What is Design and Architecture?
 - **Equivalence of concepts**: Software design and software architecture represent identical concepts.
-- **Architectural objectives**: The primary objective of software architecture is detailed on page 30. TODO COPY
+- **Primary Architectural objective** (see page 30): 
+> The objective of software architecture is to minimize the human resources required to build and maintain the required system.
 - **Maintainability case study**: The case study demonstrates that developing software without prioritizing maintainability increases the total cost of ownership (TCO) and decreases developer velocity.
 - **Productivity through TDD**: Implementing [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) enhances engineering productivity, as noted on page 36.
 - **Flawed deployment mindsets**: A common, erroneous mindset dictates launching the product to the market immediately while postponing refactoring and testing for a later phase.
@@ -108,7 +113,7 @@ TAKE AWAYS
 
 #### Chapter 5 — Object-Oriented Programming
 - **Safety in polymorphism**: Object-oriented programming provides polymorphism in a safe, stable, and highly manageable manner.
-  - This technical capability directly enables the implementation of the Inversion of Control (IoC) paradigm, representing a critical architectural value. TODO PARADIGM
+  - This technical capability directly enables the implementation of the Inversion of Control (IoC) paradigm, representing a critical architectural value. TODO VERWEIS
 - **Decoupling of dependency structures**: Software architects can structure source code dependencies independently, removing the constraint to follow the runtime control flow of the program.
   - For example, this mechanism allows engineering teams to build core domain logic entirely independent of database access layers, successfully separating domain business logic from technical infrastructure concerns.
 
@@ -341,7 +346,7 @@ TAKE AWAYS
 
 #### Chapter 21 — Screaming Architecture
 - **Screaming Architecture**: An application's architecture should clearly broadcast its underlying purpose. Because application use cases are first-class citizens and represent the primary objective of the system, the architecture must prominently emphasize these use cases rather than the frameworks being utilized.
-- **Frameworks as Details**: Software frameworks are merely technical tools rather than an overriding philosophy or way of life (_"Lebenseinstellung"_). They should be treated strictly as low-level implementation details.
+- **Frameworks as Details**: Software frameworks are merely technical tools rather than an overriding philosophy or way of life. They should be treated strictly as low-level implementation details.
 - **Decoupled Unit Testing**: When use cases are kept completely free of framework dependencies, developers can easily apply lightweight unit tests to verify both application use cases and business entities in isolation.
 
 
