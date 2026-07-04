@@ -347,8 +347,8 @@ TAKE AWAYS
 
 #### Chapter 22 — The Clean Architecture
 - **Architectures influencing clean architecture**
-  - List
-    - [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (später auch oft als **_Ports and Adpaters_** bezeichnet)
+  - Three important influencing architectures:
+    - [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adpaters_**)
     - DCI - [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction)
     - BCE - [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary)
   - Common Architectural Characteristics: These structural designs share fundamental operational principles.
