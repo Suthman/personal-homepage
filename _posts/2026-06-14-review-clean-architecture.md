@@ -89,7 +89,13 @@ TAKE AWAYS
 ### PART II — Starting with the Bricks: Programming Paradigms
 
 #### Chapter 3 — Paradigm Overview
-- 3.1, 3.2 and 3.3: copy the summary!!! TODO
+- **Structured Programming Paradigm**: The paradigm of structured programming.
+  - > Structured programming imposes disciplined control over direct transfer of control.
+- **Object-Oriented Programming**: Object-oriented programming concepts.
+  - > Object-oriented programming imposes disciplined control over indirect transfer of control.
+- **Functional Programming**: Functional programming concepts.
+  - > Functional programming imposes disciplined control over variable assignment.
+
 
 #### Chapter 4 — Structured Programming
 - **Structured programming paradigms**: Structured programming restricts the use of unrestricted transfer control statements (such as `goto`) and replaces them with standardized control flows like sequence, selection (`if/then/else`), and iteration (`do/while`).
@@ -130,20 +136,21 @@ TAKE AWAYS
   Code implementing high-level policies must not depend on code implementing low-level details; instead, details must depend on policies.
 
 #### Chapter 7 — SRP: The Single-Responsibility Principle
-- **Definition**: Define a module in this context as being responsible to one single actor.
+- > Define a module in this context as being responsible to one single actor.
 - **Misconception correction**: Do not assume every module must perform only a single task; this rule applies strictly to functions and methods, not to modules.
 - **Original definition**: Maintain the original definition stating that there should be only one reason to change a module.
 - **Future architectural mappings**: Anticipate that this concept will reappear in subsequent architectural layers as the Common Closure Principle (CCP) and the axis-of-change model. TODO VERWEISE
 
 #### Chapter 8 — OCP: The Open-Closed Principle
-- **Definition**: A software entity must be open for extension but simultaneously closed to modification.
+- > A software entity must be open for extension but simultaneously closed to modification.
 - **Architectural motivation**: Recognize this principle as the fundamental motivation driving software architecture.
 - **Core methodology**: 
   - Decompose the system into distinct components and establish a suitable dependency hierarchy, ensuring higher-level components are protected from changes in lower-level components.
   - Note that excellent illustrative examples are provided within the book.
 
 #### Chapter 9 — LSP: The Liskov Substitution Principle
-- **Formal Liskov Substitution Principle definition**: The objective is to achieve a substitution property where if, for each object $o_1$ of type $S$, there exists an object $o_2$ of type $T$ such that for all programs $P$ defined in terms of $T$, the behavior of $P$ remains unchanged when $o_1$ is substituted for $o_2$, then $S$ is a subtype of $T$.
+- **Formal Liskov Substitution Principle definition**: 
+> The objective is to achieve a substitution property where if, for each object `o1` of type `S`, there exists an object `o2` of type `T` such that for all programs `P` defined in terms of `T`, the behavior of `P` remains unchanged when `o1` is substituted for `o2`, then `S` is a subtype of `T`.
 - **Historical context and scope expansion**: The principle was originally developed to handle inheritance in programming languages, but it should be viewed more generally to encompass all types of interfaces and components.
 - **Architectural impact of violations**: A single violation can have a massive impact on maintainability, as numerous exceptions must subsequently be added, maintained, and understood.
 
@@ -174,22 +181,22 @@ TAKE AWAYS
 ### PART IV — Component Principles
 
 #### Chapter 12 — Components
-- **Component definition**: Components represent the smallest deployable units within an architecture, exemplified by formats such as JAR files.
+- > Components represent the smallest deployable units within an architecture, exemplified by formats such as JAR files.
 - **Deployment evolution**: A historical review of compilers and linkers demonstrates that modern plug-in architectures—utilizing artifacts like JARs and DLLs—have become the industry standard.
 
 
 #### Chapter 13 — Component Cohesion
 - **REP: Reuse-Release-Equivalence Principle**
-  - Definition: The granularity of reuse is the granularity of the release.
+  - > The granularity of reuse is the granularity of the release.
   - You can only reuse what is in one named component with the same version number, release documentation, etc.
 - **CCP: Common-Closure Principle**
-  - Definition: Group classes that are modified for the same reasons and at the same time into the same components. Conversely, separate classes that are modified for different reasons and at different times into different components.
+  - > Group classes that are modified for the same reasons and at the same time into the same components. Conversely, separate classes that are modified for different reasons and at different times into different components.
   - There should only be one reason to change a module.
   - This is a generalization of the Single-Responsibility Principle (SRP).
   - It is also related to the Open-Closed Principle (OCP): "Closed for modifications" cannot be reached completely. CCP requires this on a "higher component level."
   - Generalization of SRP and OCP: Group all elements that are modified for the same reasons and at the same time. Conversely, separate all elements that are modified for different reasons and at different times.
 - **CRP: Common-Reuse Principle**
-  - Definition: Do not force the users of a component to depend on elements that they do not require.
+  - > Do not force the users of a component to depend on elements that they do not require.
   - Put components together that are usually used together.
   - Separate classes that are usually not used together.
   - It relates to the Interface Segregation Principle (ISP): ISP requires separating interfaces when methods are usually not used together.
@@ -204,14 +211,14 @@ TAKE AWAYS
 
 #### Chapter 14 — Component Coupling
 - **ADP: Acyclic-Dependencies Principle**
-  - Definition: Allow no cycles in the component dependency graph.
+  - > Allow no cycles in the component dependency graph.
   - Violations result in complex integration management and impact analyses.
   - Overcome cycles by applying the Dependency Inversion Principle (DIP) or by creating a new component.
 - **Top-Down Design Pitfalls**
   - Top-down design is not recommended because there is not enough knowledge upfront.
   - Component design is controlled by the Single-Responsibility Principle (SRP) and the Common-Closure Principle (CCP).
 - **SDP: Stable-Dependencies Principle**
-  - Definition: Dependencies should run in the direction of stability.
+  - > Dependencies should run in the direction of stability.
   - Stability of components is defined as the effort required to change the component.
   - Metrics for instability (`I`):
     - `Fan-in`: number of incoming dependencies.
@@ -221,7 +228,7 @@ TAKE AWAYS
   - SDP states that the `I`-value of a component should be higher than the `I`-values of the components it depends upon.
   - Note: Not all components should be stable.
 - **SAP: Stable-Abstractions Principle**
-  - Definition: A component should be as abstract as it is stable.
+  - > A component should be as abstract as it is stable.
   - Common components should be stable but also accessible by many components; therefore, they should be abstract.
   - SAP states that the stability of a component should relate to its abstraction.
   - SAP and SDP combined represent a component-level equivalent of the Dependency Inversion Principle (DIP).
@@ -244,116 +251,135 @@ TAKE AWAYS
 ### Part V — Architecture
 
 #### Chapter 15 — What is Architecture?
-- Provide a "form", i.e. structure, for software systems
-  - structure: components and its interactions
-- Note: behaviour is determined by functional requirements, i.e. support of the required use cases primary objective
-- goal: minimize lifetime costs over phases:
-  - development
-  - deployment
+- **System Structure**: Provide a "form" or structure for software systems.
+  - Components and their interactions form this structure.
+- **Behavior Determination**: Note that system behavior is determined by functional requirements.
+  - Supporting the required use cases is the primary objective.
+- **Cost Minimization**: Goal is to minimize lifetime costs across multiple phases.
+  - Development
+  - Deployment
   - Operations
-  - maintenace
-- create/maintain options
-  - todo copy Italien  sentence of p 159
-  - separate policies (business logic) from details
-  - examples for details:
-    - database
-    - web framework
-    - Device specifics
+  - Maintenance
+- **Option Management**: Create and maintain architectural options.
+  - > A good software architect maximizes the number of decisions not yet made.
+  - Separate policies (business logic) from details.
+  - Examples of details include databases, web frameworks, and device specifics.
+
 
 #### Chapter 16 — Independence
-- operations: defere decision as long as possible. If component structure is good, we can later decide on concrete deployent and Operation modi
-- consider Team structure in component Design by considering [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law): 
-> [O]rganizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations.
-- Decoupling
-  - decouple (horizontal) layers
-    - follow SRP and CCP
-    - decouple details (e.g. UI and database access) fro. Business rules
-  - decouple (vertical) use cases
-    - "A order" is different from "Delete order"
-  - enables independant development and deployment!
-- Duplication
-  - two kinds: Real duplication vs. Versehentlich duplication todo translation
-  - eliminate first one!
-  - resist to eliminate second one! Example: similar looking Display output: good Chance hat they will differ in future when not Displaying the same
-- decoupling (again)
-  - different levels: source code, deployment, service
-  - Also defer as long as possible
-  - note: most suitable level might change over time!
+- **Operations Planning**: Defer decisions regarding operations as long as possible.
+  - If the component structure is robust, concrete deployment and operational modes can be determined at a later stage.
+- **Team Structure Alignment**: Consider team organization within component design by accounting for [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law).
+  - > [O]rganizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations.
+- **Decoupling**: Implement architectural decoupling across multiple dimensions.
+  - Decouple horizontal layers.
+    - Adhere to the Single Responsibility Principle (SRP) and the Common Closure Principle (CCP).
+    - Decouple implementation details (e.g., UI and database access) from core business rules.
+  - Decouple vertical use cases.
+    - For example, "Creating an order" is distinct from "Deleting an order."
+  - This separation enables independent development and deployment.
+- **Duplication Classification**: Differentiate between real duplication and accidental duplication.
+  - Eliminate real duplication systematically.
+  - Resist the urge to eliminate accidental duplication.
+  - For example, similar-looking display outputs have a high probability of diverging in the future if they do not represent the same core concept.
+- **Decoupling (again()**: Evaluate decoupling across different architectural levels.
+  - Decoupling can occur at the source code, deployment, or service level.
+  - Defer the selection of the specific level as long as possible.
+  - Note that the most suitable decoupling level for a system may change over time.
+
 
 #### Chapter 17 — Boundaries: Drawing Lines
-- draw lines to protect omportant parts (business rules, policies, ...) from details
-- imagine lines as plugin-system: you can plugin different GUIs or databases to your system as long as the businnes cases are protected against these details
-- lines are an application of DIP and SAP
+- **Boundary Separation**: Draw lines to protect important components, such as business rules and policies, from implementation details.
+- **Plugin Architecture**: Imagine these boundary lines as a plugin system.
+  - You can plug in different GUIs or databases to your system as long as the business cases remain protected against these volatile details.
+- **Architectural Principles**: Boundary lines represent a concrete application of the Dependency Inversion Principle (DIP) and the Stable Abstractions Principle (SAP).
+
 
 #### Chapter 18 — Boundary Anatomy
-- Monolith vs deployments (package boundaries)
-  - different methods to ensure the component paradigms
-  - modulith: one deployment unit for all (logical) components -> component paradigms still valuable for testing, simplicity etc
-  - deployments: each component is one deployment unit
-- runtime execution bundaries
-  - threads: different runtime executions in same process.
-    - Very fast exchange via common memory access.
-  - local processes: several instances of components run on same machine within different os-procsses
-    - slower communication via inter-procces communication
-  - each process can itself employ several threads if desired
-- services: several instances started as several services
-  - communication via Network protocols: quite slow
-  - each service can use local processes or thread if desired
-  - services can be deployed to different machines
+- **Deployment Monoliths**: Contrast monolithic architectures with multi-deployment unit configurations regarding package boundaries.
+  - These represent different methodology variations used to enforce component paradigms.
+  - Modulith: A single deployment unit contains all logical components, meaning component paradigms remain highly valuable for isolation, testing, and structural simplicity.
+  - Deployments: Each individual component is built and isolated as a separate deployment unit.
+- **Runtime Execution Boundaries**: Define execution boundaries operating within a single physical runtime environment.
+  - Threads: 
+    - Distinct runtime execution paths operating within the exact same process space.
+    - Thread communication features highly efficient data exchange via shared memory access.
+  - Local Processes: 
+    - Multiple component instances run on the same physical machine but inside isolated operating system processes.
+    - Process communication relies on slower mechanisms via standard inter-process communication (IPC).
+    - Each individual process can internally spawn and employ multiple threads if required.
+- **Service Boundaries**: Establish architectural boundaries across distributed services.
+  - Multiple components or instances are instantiated as independent services.
+  - Service communication occurs via standard network protocols, which introduces latency and is relatively slow.
+  - Each individual service can internally utilize local processes or threads if desired.
+  - Services offer the flexibility to be deployed across completely different physical or virtual machines.
+
 
 #### Chapter 19 — Policies and Level
-- policies represent (high level?) business logic
-- level
-  - Definition of level: distance between input and output
-  - components with same distance should be grouped on same level
-  - note: example uses SRP, OCP, CCP, DIP, SDP and SAP
+- **Business Logic Classification**: Policies represent high-level business logic within the application core.
+- **Architectural Level Definition**: Define the precise metric for an architectural "level" within a system.
+  - Strict definition of level: 
+  > A level is defined by the distance from the system inputs and outputs.
+  - Components sharing the exact same relative distance from inputs or outputs should be grouped together on the same architectural level.
+  - Note: The architectural case study spanning pages 196–198 explicitly applies the Single Responsibility Principle (SRP), Open-Closed Principle (OCP), Common Closure Principle (CCP), Dependency Inversion Principle (DIP), Stable Dependencies Principle (SDP), and Stable Abstractions Principle (SAP).
+
 
 #### Chapter 20 — Business Rules
-- business rules
-  - Critical business rules: Richtlinie oder Verfahren,  das zur erwirtschaftung oder Einsparung von geschäftskapital führt  todo translate
-    - would also be applied without computer systems!
-  - critical business data: Daten zur Berechnung der crtical business rules
-  - entity: object within an computer system representing a (small) portion of critical  business rules
-    - create class and separate it from all other aspects of the system!
-- use cases
-  - not as puristic as critical  business rules -> application specific business rules
-  - are required to be handled in an automatic system
-  - example: contact data of customers have to be created befor she can order something
-  - use case orchestrate entities,  but entitues are not Amaretto of use cases. Use case are "closer" to input / output but still protected from details
-  - request/Response models
-    - required sube use cases get input and produce output. BUT: the classes should be without any dependencies to frameworks or even entities.  They will change over time for different reasons and violate CCP and SRP
+- **Critical Business Rules**: These represent policies or procedures that directly result in earning or saving business capital.
+  - They would also be applied even if no computer systems were used.
+- **Critical Business Data**: This refers to the data required to calculate or execute the critical business rules.
+- **Entity**: An object within a computer system that represents a small portion of the critical business rules.
+  - Developers should create a dedicated class for this and separate it completely from all other aspects of the system.
+- **Application Use Cases**: These rules are not as puristic as critical business rules and represent application-specific business rules instead.
+  - They are required to be handled specifically within an automated system.
+  - For example, the contact data of a customer must be created before she can place an order.
+  - Use cases orchestrate entities, but entities are not aware of the use cases. Use cases operate closer to the input and output mechanisms but remain strictly protected from system details.
+- **Request and Response Models**: These models are required so that use cases can receive input and produce output.
+  - However, these classes must remain entirely free of dependencies on frameworks or even on the entities themselves.
+  - They will change over time for different reasons, and coupling them would violate both the Common Closure Principle (CCP) and the Single Responsibility Principle (SRP).
 
-#### Chapter 21 — Screaming Architecture TODO CHECK TRANSLATION (FOR ALL CHAPTERS)
-- an applications archtectur should should its purpose. Since use cases are first class citizebs and primary objective: it should shout its use cases and not its frameworks!
-- frameworks are tools and no lebenseinstellung - they are just details !
-- when zse cases are free of frameworks, simple unit tests can be applied to test your use cases and entities
+
+#### Chapter 21 — Screaming Architecture
+- **Screaming Architecture**: An application's architecture should clearly broadcast its underlying purpose. Because application use cases are first-class citizens and represent the primary objective of the system, the architecture must prominently emphasize these use cases rather than the frameworks being utilized.
+- **Frameworks as Details**: Software frameworks are merely technical tools rather than an overriding philosophy or way of life (_"Lebenseinstellung"_). They should be treated strictly as low-level implementation details.
+- **Decoupled Unit Testing**: When use cases are kept completely free of framework dependencies, developers can easily apply lightweight unit tests to verify both application use cases and business entities in isolation.
+
 
 #### Chapter 22 — The Clean Architecture
-- todo mention references from p211
-  - common:
-    - usage of layers to separate system aspects TODO REFINE TEXT p212
-    - framework independency
-    - testability
-    - UI independency
-    - DC independency
-    - External independency
-- Clean architecture picture: p212 (better with color?!)
-- Dependency Rule
-  - Definition from p213 todo
-  - entities encapsulate enterpriese wide business rule, ie critical business rules
-    - change probability is low!
-  - use cases realize application specific business rules
-    - changes here will not affect entities, e.g. changes in GUI or DB will have not impact here!
-- interface adapters
-  - goal: adapt between entities and usecase on the one fand and external components like DB or web-ui
-  - still be independant of frameworks or concrete technologies
-- frameworks and drivers
-  - here are all the concrete details
-  - highest distance to business logic
-- you can add more layers/circles if you want, but: the dependency rule must hold!
-- cross boundaries by applying DIP
-  - ! use simple data Transfer objects to cross the border. Do not uses entities or framework specific types!
-- see example on p217 for a typical application flow with boundary crossing
+- **Architectures influencing clean architecture**
+  - List
+    - [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (später auch oft als **_Ports and Adpaters_** bezeichnet)
+    - DCI - [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction)
+    - BCE - [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary)
+  - Common Architectural Characteristics: These structural designs share fundamental operational principles.
+    - Usage of layers to separate distinct system aspects: At least one level for business rules and an additional level for user and system interfaces.
+    - Comprehensive framework independence.
+    - High testability.
+    - Complete UI independence.
+    - Complete database independence.
+    - Independence from external agencies.
+- **Clean Architecture Overview**: The schematic diagram illustrates the concentric layout of the architecture.
+  ![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+- **Dependency Rule**: This central rule governs the direction of all source code dependencies.
+  - Definition:
+  > Source code dependencies must only point inward, toward higher-level policies.
+  - Entities encapsulate enterprise-wide business rules, representing critical business logic.
+    - The probability of structural change is low.
+  - Use cases realize application-specific business rules.
+    - Structural modifications here do not affect entities, meaning changes in the GUI or database have no impact on the core logic.
+- **Interface Adapters**: This layer translates data between the format convenient for use cases and entities, and the format convenient for external components.
+  - Goal: Adapt interfaces between entities and use cases on one side and external mechanisms like databases or web UIs on the other.
+  - Maintain absolute independence from specific frameworks or concrete technologies.
+- **Frameworks and Drivers**: This outermost layer contains concrete technological details and external tools.
+  - Contains all technological implementations and configuration details.
+  - Demonstrates the highest structural distance from the core business logic.
+- **Layer Scalability**: The system permits structural modifications to the number of architectural circles.
+  - Engineers can introduce additional layers if required, provided the dependency rule strictly holds.
+- **Boundary Crossing**: Architectural boundaries are crossed by consistently applying the Dependency Inversion Principle (DIP).
+  - Employ simple **_Data Transfer Objects (DTOs)_** to cross layer boundaries. Do not utilize entities or framework-specific types for communication.
+- **Application Flow Reference**: Page 217 includes a concrete example demonstrating standard cross-boundary data flows.
+
+
 
 #### Chapter 23 — Presenters and Humble Objects
 - Humble Object as test support
@@ -436,11 +462,11 @@ TAKE AWAYS
 
 ### PART VI — Details
 
-#### Chapter 30 — The Database is a Detail
+#### Chapter 30 — The Database Is a Detail
 - data models are important, databases are a detail
 - why is discussion so intense? Data is stored on hard drives, which are slow! A lot of effort is required to make it as fast as possible. But in the end is a database just a technology to store sata persistently
 
-#### Chapter 31 — The Web is a Detail
+#### Chapter 31 — The Web Is a Detail
 - permanent pendelausschlag: put compute to cenzral Servers or to decentral clients?
 - GUI Layouts can change fo Marketing reasons
   - treat UI as a detail and protect higher components from changes!

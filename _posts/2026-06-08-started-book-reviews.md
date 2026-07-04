@@ -88,6 +88,7 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
   - Equip each top-level bullet point (Level 1) with a concise, bold-printed heading. Example: **concise bullet point**: TEXT
   - Translate the entire content into professional English.
   - Keep links to other pages; do not leave links out
+  - Keep Blockquotes; do not leave Blockquotes out
 - **Context**
   - The source text is located immediately below the `----------` separator line.
   - The final output must be written entirely in English.
@@ -115,6 +116,7 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
   - Create a summary of the book XXX from my raw meeting notes
   - Link to the book: XXX
   - Keep links to other pages; do not leave links out
+  - Keep Blockquotes; do not leave Blockquotes out
 - Context
   - The source text is located immediately below the `----------` separator line.
   - The text should be in English
