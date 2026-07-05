@@ -177,7 +177,7 @@ TAKE AWAYS
   - Do not inherit from concrete classes.
   - Do not override concrete methods.
   - Do not explicitly reference concrete elements by name under any circumstances.
-- **Abstract Factory integration**: Implement the abstract [factory design pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern) to manage dependency creation cleanly.
+- **Abstract Factory integration**: Implement the [abstract factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern) to manage dependency creation cleanly.
   - A definitive illustrative diagram of this pattern is available on page 110.
   - Framework mechanisms, such as the Spring (Boot) application context, fully automate this specific instantiation workflow.
 
@@ -427,8 +427,8 @@ TAKE AWAYS
 - is an non-clean component in the outmost ring of the clean architecture
 
 #### Chapter 27 — Services: Great and Small
-- Service archtecture?
-  - usage of services is a deployment and runtime details, no archtecture
+- Service architecture?
+  - usage of services is a deployment and runtime details, no architecture
   - architecture is defined by  boundaries separating übergeordnete policies from untergeordneten details
 - Advantages of services?
   - Trap 1: decoupling
@@ -458,7 +458,7 @@ TAKE AWAYS
 - solution for embedded systems: 3 layers
   - Software, Firmware, Hardware
   - put HAL (hardware abstraction layer) between software and firmware
-    - no new concept; For PCs it exists länger than Windows
+    - no new concept; For PCs it exists longer than Windows
     - HAL must know hardware details
   - processor is a detail: firmware layer must protect rest of system from processor  specialities
 - operating system is a detail
