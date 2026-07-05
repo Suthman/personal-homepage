@@ -15,7 +15,6 @@ toc_icon: "fa-solid fa-book-open"
 
 {% include ai-disclaimer-short.html %}
 
-TODO: CHECK PROMPT
 
 Welcome to a new chapter of this blog! I am excited to introduce a dedicated space for professional literature. 
 
@@ -74,7 +73,7 @@ The raw reading notes that I jotted down while reading the book are shared here.
 
 
 
-## Prompts
+## Prompt Templates for the Book Review Format 
 
 Based on the best practices outlined in [Getting started with AI chatbots – Master your prompting skills](/blog/getting-started-with-ai-chatbots), I developed a series of structured prompts designed to streamline the creation of book reviews from raw reading notes.
 
