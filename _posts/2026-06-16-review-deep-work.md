@@ -47,7 +47,7 @@ TODO: STICHPUNKTE FORMATIEREN - TODO BEARBEITEN - SUMMARY NEU GENERIEREN - TAGS 
 
 
 ## 📝 Appendix: Raw Reading Notes
-{% include book-review-disclaimer.html %}
+{% include book-review-reading-notes.html %}
 
 ### Introduction
 - TODO definition of deep work on p3

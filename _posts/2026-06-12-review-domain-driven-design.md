@@ -140,7 +140,7 @@ Acquiring deep business knowledge is a time-consuming process, and attempting to
 
 
 ## 📝 Appendix: Raw Reading Notes
-{% include book-review-disclaimer.html %}
+{% include book-review-reading-notes.html %}
 
 
 ### 1 DDD for Me

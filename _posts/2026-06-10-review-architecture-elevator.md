@@ -47,7 +47,7 @@ TODO
 
 
 ## 📝 Appendix: Raw Reading Notes
-{% include book-review-disclaimer.html %}
+{% include book-review-reading-notes.html %}
 
 PART I Architects
 
