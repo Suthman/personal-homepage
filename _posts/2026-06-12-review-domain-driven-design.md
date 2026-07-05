@@ -49,7 +49,7 @@ translated from English by Carola Lilienthal and Henning Schwentner
 
 I read the book some years ago and re-read it for this review. At the time, it was my first encounter with the "wonderful world of DDD." I immediately organized and facilitated several Event Storming sessions with my team back then to rediscover how an old legacy application functioned and to begin the work on replacing it. The whole thing worked so well that I have applied a lot of Domain-Driven Design since then — and have even given foundational training courses on it.
 
-The primary takeaways from this book can be summarized as follows:
+My primary takeaways from this book can be summarized as follows:
 
 - **Event Storming**: The sticky-note method enables genuine cross-functionality across teams.
 - **Distributed architecture**: Establishes a distributed business and domain model.
@@ -63,8 +63,9 @@ The primary takeaways from this book can be summarized as follows:
 It must also encompass: 
   - Documentation, or at least the definition of its single responsibility.
   - Test cases with acceptance criteria.
+- **The glossary**: The [Glossary](#glossary) introduces key concepts of DDD.
 
-Note: If you want to dive deeper into DDD, check out the [Domain-Driven Design Crew](https://github.com/ddd-crew) on GitHub. This globally active open-source community offers free, practical tools, step-by-step guides, and visual templates to help you apply DDD effectively
+Note: If you want to dive deeper into DDD, check out the [Domain-Driven Design Crew](https://github.com/ddd-crew) on GitHub. This globally active open-source community offers free, practical tools, step-by-step guides, and visual templates to help you apply DDD effectively.
 
 
 
