@@ -21,6 +21,8 @@ This repository contains the source code of my personal homepage.
     categories: `blog`, tags: `github-pages` `jekyll` `minimal-mistakes` `static-site-generator` `github-flow` 
   - [2026-05-17-getting-started-with-ai-chatbots.md](_posts/2026-05-17-getting-started-with-ai-chatbots.md)  
     categories: `blog`, tags: `ai-chatbots` `generative-ai` `prompt-engineering` `prompting-techniques` `productivity`
+  - [2026-07-05-started-book-reviews.md](_posts/2026-07-05-started-book-reviews.md)  
+    categories: `blog`, tags: `book-review` `productivity` `prompt-engineering`
 
 
 ---
