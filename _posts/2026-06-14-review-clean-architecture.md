@@ -32,7 +32,7 @@ TODO: STICHPUNKTE FORMATIEREN - TODO BEARBEITEN - SUMMARY NEU GENERIEREN - TAGS 
 **Book:** _Clean Architecture_   
 German translation of [Clean Architecture](https://www.isbn.de/9780134494166)
 - **Author:** Robert C. Martin   
-translated from English by Maren Feilen and Knut Lorenzen
+Translated from English by Maren Feilen and Knut Lorenzen
 - **Target Audience:** IT Architects / Software Developers
 - **My Rating:** ⭐⭐⭐⭐⭐ (5/5) - Highly Recommended / Must Read
 - **Link:** [Clean Architecture](https://www.mitp.de/IT-WEB/Software-Entwicklung/Clean-Architecture.html) or [ISBN: 9783958457249](https://www.isbn.de/9783958457249)
