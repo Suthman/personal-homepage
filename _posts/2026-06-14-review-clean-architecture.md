@@ -47,6 +47,7 @@ TAKE AWAYS
 - see chapter 27: True architecture is defined by boundaries that separate high-level policies from low-level details.
 - wartbarkeit wichtiger als wiederverwendung
 - deployable units are compilations, not executables -> have to take care in Bewertung
+- read - https://c4model.com/abstractions/component ???
 - TODO ARE METRICS LIKE STABILITY AND ABSTRACTION AVAILABLE IN TOOLS (CH 14)
 - **Efficacy of functional decomposition** in ch 4
 - policies and details  in ch 1
