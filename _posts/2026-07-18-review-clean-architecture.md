@@ -26,8 +26,9 @@ header:
 
 {% include ai-disclaimer-short.html %}
 
-This post is my second book review, as introduced in [Professional Book Review](/blog/started-book-reviews).
+This post is a book review as introduced in [Professional Book Review](/blog/started-book-reviews)
 
+TODO: Rechtschreibung auf "My Key Takeaways & Actions"
 
 ## 📋 Quick Facts
 
@@ -52,13 +53,13 @@ After reading the book, I immediately realized that it had fundamentally shifted
 
 My primary takeaways from this book are the following:
 - The rules of architecture are always the same.
-- The ultimate goal of software architecture or design is **long-term efficiency**: 
+- Ultimate goal of software architecture or design is **long-term efficiency**: 
 > The objective of software architecture is to minimize the human resources required to build and maintain the required system.
 - Consequently, the fundamental purpose and focus of software architecture is to maximize **adaptability**.
-- Programming Paradigms:
-  - Structured Programming enabled **functional decomposition** to reduce system complexity. 
-  - Object-Oriented Programming enabled **Inversion of Control**, providing the ability to decouple domain logic from infrastructure.
-  - Functional Programming enabled the **isolation of variable manipulations and state changes**, allowing the vast majority of system complexity to become stateless and immutable.
+- Programming Paradigms
+  - Structured Programming enabled **functional decomposition** to reduce system complexity 
+  - Object-Oriented Programming enabled **Inversion of Control**, enabling the possibility to decouple domain logic from infrastructure
+  - Functional Programming enabled the **isolation of variable manipulations and state changes** to allow the vast majority of system complexity to become stateless and immutable
 - **SOLID design principles**:
   - SRP: The Single-Responsibility Principle
   - OCP: The Open-Closed Principle
@@ -75,21 +76,20 @@ My primary takeaways from this book are the following:
   - Stable-Abstractions Principle (SAP)
 - Architecture must create and maintain **architectural options** over time:
   > A good software architect maximizes the number of decisions not yet made.
-- Architecture is about **drawing lines** to create independent components.
+- Architecture is about **drawing lines** to create independent components
 - **Architectural boundaries** manifest across a spectrum of deployment and runtime configurations.
   - Implementing full architectural boundaries introduces significant up-front costs and ongoing maintenance overhead. 
   - Conversely, omitting necessary boundaries can impose even greater long-term maintenance and technical debt costs.  
 - **Architecture level**: 
   > A level is defined by the distance from the system inputs and outputs.
-- An architecture must **scream** its purpose: **application use cases are first-class citizens**, not technology or frameworks.
+- An architecture must **scream** its purpose: **application use cases are first-class citizens**, not technology or frameworks
 - **Clean Architecture overview** schematic diagram (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)):
 ![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
-- **Dependency rule**:
+- **dependency rule**:
 > Source code dependencies must only point inward, toward higher-level policies.
-- Services are a runtime detail; note the decoupling trap! **Cross-cutting concerns can span across services** and are not necessarily in between them! 
-- **In-depth details**: database, web, and frameworks.
-- Read **[Chapter 34 — The Missing Chapter](#chapter-34--the-missing-chapter)** over and over.
-
+- Services are a runtime detail; note the decoupling trap! **Cross-cutting concerns can be across services** and not necessarily in between! 
+- **A lot of details**: database, web, frameworks
+- Read **[Chapter 34 — The Missing Chapter](#chapter-34--the-missing-chapter)** over and over
 
 
 
