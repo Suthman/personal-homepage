@@ -67,6 +67,216 @@ TAKE AWAYS
 ## 🔍 The Deep Dive (Summary)
 {% include book-review-disclaimer.html %}
 
+### PART I — Introduction
+
+#### Chapter 1 — What is Design and Architecture?
+Software design and software architecture represent identical concepts. The ultimate goal of these disciplines focuses entirely on long-term efficiency. 
+> The objective of software architecture is to minimize the human resources required to build and maintain the required system.
+
+Failing to prioritize maintainability leads to severe technical debt, which increases the total cost of ownership (TCO) and drastically decreases developer velocity. Conversely, engineering productivity increases significantly by implementing workflows like [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development). A common, erroneous mindset dictates launching the product to the market immediately while postponing refactoring and testing for a later phase. This approach fails because the designated time for optimization never materializes. Furthermore, attempts at rebuilding the entire system from scratch fail to resolve the underlying issue because market pressure persists throughout the entire rebuilding phase.
+
+#### Chapter 2 — A Tale of Two Values
+Software systems deliver value through two primary dimensions, which are behavior and structure. The behavior of a system fulfills the specified functional requirements, while a robust structure supports system adaptability, including maintainability and testability. The term "software" itself implies a medium designed to be soft and adaptable. Adaptable systems are inherently superior to systems that merely exhibit correct behavior. Adaptable systems can be fixed and evolved easily, whereas feature-complete but poorly structured systems are strictly rigid. Consequently, the fundamental purpose and focus of software architecture is to maximize **adaptability**.
+
+### PART II — Starting with the Bricks: Programming Paradigms
+
+#### Chapter 3 — Paradigm Overview
+Programming paradigms limit the capabilities of the programmer by enforcing boundaries on architectural control flow. Each paradigm removes specific freedoms to establish behavioral discipline.
+> Structured programming imposes disciplined control over direct transfer of control.
+
+By eliminating arbitrary jumps, code organization becomes predictable. Object-oriented development changes how modules interact.
+> Object-oriented programming imposes disciplined control over indirect transfer of control.
+
+Finally, state management shifts fundamentally in functional systems.
+> Functional programming imposes disciplined control over variable assignment.
+
+
+#### Chapter 4 — Structured Programming
+Structured programming restricts the use of unconstrained transfer-of-control statements (such as `goto`) and replaces them with standardized control flows like sequence, selection (`if/then/else`), and iteration (`do/while`). This paradigm aligns with theoretical findings demonstrating that any computable program can be constructed exclusively using sequence, selection, and iteration. Software architectures are inherently composable, built from smaller, modular sub-units. Mathematically, if each sub-module could be proven to operate entirely without error, the aggregate program would itself be error-free. In practice, empirical software testing can only demonstrate the presence of errors, never their complete absence. Despite this limitation, robust and comprehensive testing of individual sub-modules yields a high statistical probability that the overall system will contain minimal defects. Consequently, structured functional decomposition remains a highly effective strategy for managing system complexity.
+
+#### Chapter 5 — Object-Oriented Programming
+Object-oriented programming provides polymorphism in a safe, stable, and highly manageable manner. This technical capability directly enables the implementation of the [Inversion of Control (IoC)](https://en.wikipedia.org/wiki/Inversion_of_control) paradigm, representing a critical architectural value. Through this mechanism, software architects can structure source code dependencies independently, removing the constraint to follow the runtime control flow of the program. For example, this mechanism allows engineering teams to build core domain logic entirely independent of database access layers, successfully separating domain business logic from technical infrastructure concerns.
+
+#### Chapter 6 — Functional Programming
+The functional programming paradigm dictates that variables cannot be explicitly altered after initialization. Eliminating mutable state inherently resolves critical concurrency issues, such as race conditions and resource deadlocks. Adopting functional principles shifts how system state and logic are distributed across an application. Software architects must isolate variable manipulations and state changes into dedicated, explicit modules, designated as mutable components. Conversely, engineering teams should encapsulate the vast majority of domain logic and runtime complexity within stateless, immutable components.
+
+
+### Part III — Design Principles
+
+The primary architectural goals of middle-layer design are to enable modification, ensure easy traceability, and facilitate the reuse of architectural components. The middle layer resides at the module level, positioned directly above the source-code level. The core design principles governing this layer are recognized by the acronym SOLID, though they exhibit slight differences in definitions compared to [Wikipedia](https://en.wikipedia.org/wiki/SOLID). These principles include the Single-Responsibility Principle (SRP), which dictates that organizational social structures heavily influence system design to ensure modules have only one reason to change. The Open-Closed Principle (OCP) ensures behavioral modifications occur by adding new code rather than modifying existing code. The Liskov Substitution Principle (LSP) requires interchangeable objects to be mutually substitutable, while the Interface Segregation Principle (ISP) mandates avoiding dependencies on unutilized modules. Finally, the Dependency Inversion Principle (DIP) states that code implementing high-level policies must not depend on code implementing low-level details, meaning details must depend on policies.
+
+#### Chapter 7 — SRP: The Single-Responsibility Principle
+The Single-Responsibility Principle clarifies module boundaries based on organizational stakeholders. 
+> Define a module in this context as being responsible to a single actor.
+
+A common misconception assumes every module must perform only a single task; however, this rule applies strictly to functions and methods, not to modules. The original definition remains paramount, stating that there should be only one reason to change a module. This concept serves as a foundation for future architectural mappings, reappearing in subsequent architectural layers as the Common-Closure Principle (CCP) in chapter 13 and within the axis-of-change model.
+
+#### Chapter 8 — OCP: The Open-Closed Principle
+The Open-Closed Principle serves as the primary force shaping system boundaries.
+> A software entity must be open for extension but simultaneously closed to modification.
+
+This principle represents the fundamental motivation driving software architecture. The core methodology requires decomposing the system into distinct components and establishing a suitable dependency hierarchy. This organization ensures higher-level components remain protected from changes in lower-level components, as demonstrated by excellent illustrative examples provided within the book.
+
+#### Chapter 9 — LSP: The Liskov Substitution Principle
+The Liskov Substitution Principle defines structural substitutability through a strict mathematical lens.
+> The objective is to achieve a substitution property where if, for each object `o1` of type `S`, there exists an object `o2` of type `T` such that for all programs `P` defined in terms of `T`, the behavior of `P` remains unchanged when `o1` is substituted for `o2`, then `S` is a subtype of `T`.
+
+While the principle was originally developed to handle inheritance in programming languages, it must be viewed more generally to encompass all types of interfaces and components. The architectural impact of violations is severe; a single violation can have a massive impact on maintainability because numerous exceptions must subsequently be added, maintained, and understood.
+
+#### Chapter 10 — ISP: The Interface Segregation Principle
+The Interface Segregation Principle focuses on interface specialization, requiring teams to design distinct interfaces tailored to specific architectural purposes. Although the concept was originally defined for statically linked programming languages, the principle successfully generalizes to all categories of software components. The general formulation mandates avoiding reliance on modules that provide a broader scope of functionality than required. This concept correlates directly with the Common-Reuse Principle detailed in Chapter 13.
+
+#### Chapter 11 — DIP: The Dependency Inversion Principle
+The Dependency Inversion Principle demands that source code dependencies strictly consist of abstractions, a constraint that is historically challenging to implement. However, it remains entirely feasible to isolate concrete dependencies by utilizing factory components. Operating system components and core platform entities, such as the Java `String` class, are typically exempted from this architectural rule. Achieving architectural stability requires adhering to strict rules regarding concrete implementation structures: developers must not reference concrete classes, inherit from concrete classes, override concrete methods, or explicitly reference concrete elements by name under any circumstances. To manage dependency creation cleanly, engineering teams should implement the [abstract factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern), which features a definitive illustrative diagram on page 110. Modern framework mechanisms, such as the Spring (Boot) application context, fully automate this specific instantiation workflow.
+
+
+### PART IV — Component Principles
+
+#### Chapter 12 — Components
+Components represent the smallest deployable units within an architecture, exemplified by formats such as JAR files. A historical review of compilers and linkers demonstrates that modern plug-in architectures — utilizing artifacts like JARs and DLLs — have become the industry standard.
+
+#### Chapter 13 — Component Cohesion
+Component cohesion is governed by three primary principles that dictate how classes should be grouped into larger deployment units. The first is the **Reuse-Release-Equivalence Principle (REP)**:
+> The granularity of reuse is the granularity of the release.
+
+This means you can only reuse what is in one named component with the same version number and release documentation. The second is the **Common-Closure Principle (CCP)**:
+> Group classes that are modified for the same reasons and at the same time into the same components. Conversely, separate classes that are modified for different reasons and at different times into different components.
+
+This principle dictates that there should only be one reason to change a module, serving as a direct generalization of the Single-Responsibility Principle (SRP). It is also related to the Open-Closed Principle (OCP), acknowledging that because "closed for modifications" cannot be reached completely, the CCP requires this isolation on a higher component level. The common denominator of this generalization of SRP and OCP is to group all elements that are modified for the same reasons and at the same time, while separating all elements that are modified for different reasons and at different times. The third principle is the **Common-Reuse Principle (CRP)**:
+> Do not force the users of a component to depend on elements that they do not require.
+
+The CRP instructs engineers to put components together that are usually used together, and to separate classes that are usually not used together. It relates closely to the Interface Segregation Principle (ISP), which requires separating interfaces when methods are usually not used together. The common denominator of ISP and CRP is that systems must not create dependencies on elements that they do not require. 
+
+![Tension Triad of Component Principles](/assets/images/2026-review-clean-architecture/tension-triad-component-principles.png "Tension Triad of Component Principles")
+Tension Triad of Component Principles (adapted from page 126)
+{: .text-center}
+
+These three concepts form the Tension Triad of Component Principles depict above, as they are in constant opposition. REP tends to create big components to reduce their overall number, whereas CRP tends to create small components to reduce unnecessary dependencies. Meanwhile, CCP organizes the components strictly from a maintenance effort point of view. Because of these competing forces, the optimal component definition may change over time and project affordances, as illustrated by the tension diagram on page 126.
+
+#### Chapter 14 — Component Coupling
+Component coupling focuses on managing relationships between deployment units, beginning with the **Acyclic-Dependencies Principle (ADP)**:
+> Allow no cycles in the component dependency graph.
+
+Violations of the ADP result in complex integration management and difficult impact analyses. Engineering teams can overcome cycles by applying the Dependency Inversion Principle (DIP) or by creating an entirely new component. Because of these structural dynamics, top-down design is not recommended because there is not enough knowledge upfront; instead, component design must be controlled organically by the Single-Responsibility Principle (SRP) and the Common-Closure Principle (CCP). Coupling is further refined by the **Stable-Dependencies Principle (SDP)**:
+> Dependencies should run in the direction of stability.
+
+Stability of components is defined as the effort required to change the component. It is measured using metrics for instability (`I`), which rely on `Fan-in` (the number of incoming dependencies) and `Fan-out` (the number of outgoing dependencies) to calculate `I = Fan-out / (Fan-out + Fan-in)`. An `I` value of 0 indicates a component is maximally stable, while an `I` value of 1 means it is maximally unstable. The SDP states that the `I`-value of a component should be higher than the `I`-values of the components it depends upon, though it is important to note that not all components should be stable. This balances with the **Stable-Abstractions Principle (SAP)**:
+> A component should be as abstract as it is stable.
+
+Common components should be stable but also accessible by many components; therefore, they should be abstract. The SAP states that the stability of a component should relate directly to its abstraction. When combined, the SAP and SDP represent a component-level equivalent of the Dependency Inversion Principle (DIP). The degree of abstraction (`A`) of components is measured using the number of classes in a component (`N_c`) and the number of abstract classes and interfaces in a component (`N_a`), formulated as `A = N_a / N_c`. Here, `A = 0` means no abstract classes exist, and `A = 1` means all classes are abstract. 
+
+  ![Zones of Exclusion](/assets/images/2026-review-clean-architecture/zones-of-exclusion.png "Zones of Exclusion")
+Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean Architecture’ by Uncle Bob — Part III by Divya Saravanan](https://medium.com/@tales.of.di.official/breaking-down-clean-architecture-by-uncle-bob-part-iii-8c7b6e40ef1c))
+{: .text-center}
+
+The relationship between these metrics is plotted on the `I`/`A` graph, which features zones of exclusion on page 145. The Zone of Pain represents components that are highly stable (many dependent components) and highly concrete (hard to change), with database schemas and the Java `String` class serving as prime examples. The Zone of Uselessness represents highly abstract classes that are not referenced by any other components. The Main Sequence represents the optimal balance between stability and abstraction. The distance `D` from the Main Sequence is calculated as `D = |A + I - 1|`. This specific metric enables valuable statistical analysis, such as examining the normal distribution to analyze components where `D` is greater than the standard deviation, or monitoring the value of `D` for a specific component over time.
+
+
+### Part V — Architecture
+
+#### Chapter 15 — What is Architecture?
+Software architecture provides a definitive form or structure for software systems, which is fundamentally shaped by its components and their interactions. While system behavior is determined by functional requirements to fulfill the primary objective of supporting required use cases, the ultimate goal of architecture is to minimize lifetime costs across development, deployment, operations, and maintenance. To achieve this efficiency, the system must create and maintain architectural options over time.
+> A good software architect maximizes the number of decisions not yet made.
+
+This requires a strict separation of high-level policies, which represent the core business logic, from volatile details. Concrete examples of these details include databases, web frameworks, and device-specific implementations.
+
+#### Chapter 16 — Independence
+Architectural independence allows engineering teams to defer decisions regarding operations as long as possible. If the underlying component structure is robust, the concrete deployment and operational modes can be determined at a later stage without rewriting core logic. Component design must also consider team organization by accounting for [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law):
+> [O]rganizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations.
+
+To manage this, architects must implement architectural decoupling across multiple dimensions. First, decoupling horizontal layers requires adherence to the Single-Responsibility Principle (SRP) and the Common-Closure Principle (CCP) to separate implementation details, such as the UI and database access, from core business rules. Second, decoupling vertical use cases separates independent operations, meaning that creating an order is handled distinctly from deleting an order. This combined separation enables completely independent development and deployment cycles. When evaluating code reuse, architects must carefully differentiate between real duplication and accidental duplication. Real duplication should be eliminated systematically, whereas teams must resist the urge to eliminate accidental duplication. For example, similar-looking display outputs have a high probability of diverging in the future if they do not represent the same core concept. Ultimately, decoupling can occur at the source code, deployment, or service level, and architects should defer the selection of the specific level as long as possible because the most suitable decoupling level for a system may change over time.
+
+#### Chapter 17 — Boundaries: Drawing Lines
+The process of drawing physical boundary lines protects important components, such as business rules and policies, from volatile implementation details. Software teams should imagine these boundary lines as a plugin system where different GUIs or databases can be plugged into the system at will, provided the core business cases remain fully protected against these details. In practice, establishing these boundary lines represents a concrete application of the Dependency Inversion Principle (DIP) and the Stable Abstractions Principle (SAP).
+
+#### Chapter 18 — Boundary Anatomy
+Architectural boundaries manifest across a spectrum of deployment and runtime configurations, contrasting monolithic architectures with multi-deployment unit setups. These configurations represent different methodology variations used to enforce component paradigms. In a deployment monolith or modulith, a single deployment unit contains all logical components, meaning component paradigms remain highly valuable for isolation, testing, and structural simplicity. Conversely, full deployments isolate each individual component as a separate deployment unit. Within these setups, runtime execution boundaries operate within a single physical runtime environment. Threads represent distinct runtime execution paths operating within the exact same process space, featuring highly efficient data exchange via shared memory access. Local processes occur when multiple component instances run on the same physical machine but inside isolated operating system processes. This process communication relies on slower mechanisms via standard inter-process communication (IPC), though each individual process can internally spawn and employ multiple threads if required. Finally, service boundaries establish architectural boundaries across distributed services where multiple components or instances are instantiated as independent services. Service communication occurs via standard network protocols, which introduces latency and is relatively slow. However, services offer the flexibility to be deployed across completely different physical or virtual machines, and each individual service can internally utilize local processes or threads if desired.
+
+#### Chapter 19 — Policies and Level
+Policies represent high-level business logic within the application core. The organization of these policies requires defining the precise metric for an architectural "level" within a system.
+> A level is defined by the distance from the system inputs and outputs.
+
+Components sharing the exact same relative distance from inputs or outputs should be grouped together on the same architectural level. To illustrate this structure, the architectural case study spanning pages 196–198 explicitly applies the Single-Responsibility Principle (SRP), Open-Closed Principle (OCP), Common-Closure Principle (CCP), Dependency Inversion Principle (DIP), Stable-Dependencies Principle (SDP), and Stable-Abstractions Principle (SAP).
+
+#### Chapter 20 — Business Rules
+Business rules are divided into core domains and application mechanics, beginning with critical business rules. These represent policies or procedures that directly result in earning or saving business capital, and they would be applied even if no computer systems were used. Executing these rules relies on critical business data, which refers to the data required to calculate or execute the critical business rules. An entity is an object within a computer system that represents a small portion of these critical business rules. Developers should create a dedicated class for this and separate it completely from all other aspects of the system. In contrast, application use cases are not as puristic as critical business rules and represent application-specific business rules instead. These are required to be handled specifically within an automated system; for example, the contact data of a customer must be created before a user can place an order. Use cases orchestrate entities, but entities are not aware of the use cases. Use cases operate closer to the input and output mechanisms but remain strictly protected from system details. To facilitate communication, request and response models are required so that use cases can receive input and produce output. However, these classes must remain entirely free of dependencies on frameworks or even on the entities themselves. They will change over time for different reasons, and coupling them would violate both the Common-Closure Principle (CCP) and the Single-Responsibility Principle (SRP).
+
+#### Chapter 21 — Screaming Architecture
+An application's architecture should clearly broadcast its underlying purpose. Because application use cases are first-class citizens and represent the primary objective of the system, the architecture must prominently emphasize these use cases rather than the frameworks being utilized. Software frameworks are merely technical tools rather than an overriding philosophy or way of life, meaning they should be treated strictly as low-level implementation details. When use cases are kept completely free of framework dependencies, developers can easily apply lightweight unit tests to verify both application use cases and business entities in isolation.
+
+#### Chapter 22 — The Clean Architecture
+Clean architecture consolidates structural designs that share fundamental operational principles, drawing from three important influencing architectures: [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adapters_**), DCI - [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction) and BCE - [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary). These systems rely on common architectural characteristics, including the usage of layers to separate distinct system aspects, ensuring at least one level for business rules and an additional level for user and system interfaces. This separation guarantees comprehensive framework independence, high testability, complete UI independence, complete database independence, and absolute independence from external agencies. 
+
+![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+Architecture overview schematic diagram depict on page 212 (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
+{: .text-center}
+
+The concentric layout of this system is detailed in the clean architecture overview schematic diagram. The entire structural direction of all source code dependencies is governed by the **dependency rule**:
+> Source code dependencies must only point inward, toward higher-level policies.
+
+Within this model, entities encapsulate enterprise-wide business rules, representing critical business logic where the probability of structural change is low. Surrounding them, use cases realize application-specific business rules, ensuring that structural modifications here do not affect entities, which means changes in the GUI or database have no impact on the core logic. The interface adapters layer translates data between the format convenient for use cases and entities, and the format convenient for external components. The goal of this layer is to adapt interfaces between internal policies and external mechanisms like databases or web UIs while maintaining absolute independence from specific frameworks or concrete technologies. The frameworks and drivers outermost layer contains concrete technological details and external tools, housing all technological implementations and configuration details while demonstrating the highest structural distance from the core business logic. This ring-based design supports layer scalability, permitting structural modifications to the total number of architectural circles so engineers can introduce additional layers if required, provided the dependency rule strictly holds. Finally, architectural boundaries are crossed by consistently applying the Dependency Inversion Principle (DIP). Communication across these layer boundaries must employ simple Data Transfer Objects (DTOs) rather than utilizing entities or framework-specific types, following the standard cross-boundary data flows exemplified on page 217.
+
+#### Chapter 23 — Presenters and Humble Objects
+The Humble Object Pattern was originally defined to separate hard-to-test system behavior from behavior that is simple to test, isolating the hard-to-test behavior in a highly reduced manner. User interface (UI) interactions are a primary example of behavior that is often difficult to test. To solve this, architectural components use presenters and views to isolate user interface dependencies cleanly. The **_View_** component acts as the Humble Object, moving data directly to the Graphical User Interface (GUI) without modifying it. The **_Presenter_** component is responsible for formatting data into the required structures and populating the **_View Model_**, which stores all presentation-relevant data and attributes so the **_View_** can access them safely. Testing is further simplified through database gateways, which provide interfaces decoupled from the underlying database implementation to enable ease of testing. Each required data access operation at the use-case level is defined as an interface, and the database gateways implement these use-case interfaces within the database layer. While the gateway implementation itself is not a Humble Object, the use-case interfaces can be tested easily, whereas Data Mappers, such as Object-Relational Mapping (ORM) frameworks, are strictly classified as database components. Following this exact pattern, service listeners are implemented analogously to database gateways to handle external service communications.
+
+#### Chapter 24 — Partial Boundaries
+Partial architectural boundaries provide an alternative approach when establishing complete architectural boundaries proves cost-prohibitive. Option 1 involves the omission of layer-specific builds, which eliminates independent packaging to reduce the administrative overhead of release and deployment management. Despite reduced operational overhead, the core development and maintenance efforts remain entirely unchanged. Option 2 implements the [Strategy Pattern](https://en.wikipedia.org/wiki/Strategy_pattern), which uses a dynamic behavioral switch to establish boundaries, though it introduces the architectural risk that core dependency rules can be bypassed or violated with relative simplicity. Option 3 utilizes the [Facade Pattern](https://en.wikipedia.org/wiki/Facade_pattern) to provide a unified structural interface that hides underlying component complexity. This approach enforces an even less rigorous boundary than the [Strategy Pattern](https://en.wikipedia.org/wiki/Strategy_pattern) because transitive dependencies persist across the boundary.
+
+#### Chapter 25 — Layers and Boundaries
+The strategic placement of full architectural boundaries depends on the economic and structural decisions governing where boundaries should be implemented. Implementing full architectural boundaries introduces significant up-front costs and ongoing maintenance overhead. Conversely, omitting necessary boundaries can impose even greater long-term maintenance and technical debt costs. To illustrate these architectural boundary concepts in depth, the chapter provides an insightful look at the Wumpus World case study on pages 228–233.
+
+#### Chapter 26 — The Main Component
+The Main component functions as the ultimate detail, acting as the low-level entry point responsible for system configuration and bootstrapping. It handles the creation of all factories, strategic implementations, and global instances so that all system dependencies can be injected by the dependency injection framework at hand and distributed throughout the entire system. Because it orchestrates these concrete dependencies, it is inherently classified as a non-clean component operating within the outermost ring of the Clean Architecture model.
+
+#### Chapter 27 — Services: Great and Small
+The usage of services represents a deployment and runtime detail rather than an intrinsic architectural characteristic, revealing the fallacy of service-oriented architecture. True architecture is defined by boundaries that separate high-level policies from low-level details, meaning runtime topology does not automatically equal structural independence. This reality exposes the decoupling trap; services appear decoupled at runtime, but this is often a misconception. When a data object transferred between services changes, domain coupling emerges, reflecting a dependency similar to function calls within a single program. This pattern introduces the independent development and deployment trap, which is the false belief that services grant total operational autonomy when, in practice, deployment activities across services must still be meticulously coordinated. Consequently, cross-cutting concerns are not handled more easily by microservice architectures than by other structural models, as illustrated by the "Cat Problem" case study on pages 243–246. These concerns can be resolved effectively only if each service is built upon SOLID component design principles. This structural requirement is absolute because the runtime environment remains merely an architectural detail, driven by a straightforward underlying reason: the cross-cutting concern does not exist between distinct services, but rather cuts directly across them.
+
+#### Chapter 28 — The Test Boundary
+Tests are a fundamental part of the system rather than an external or peripheral entity, requiring careful integration into the architecture. Without proper boundary management, teams run into the fragile test problem, where changes made to central components can inadvertently result in a massive number of test failures. To achieve volatility mitigation, tests must not depend on volatile components, such as Graphical User Interfaces (GUIs). Instead, developers should provide a dedicated test Application Programming Interface (API) that remains completely independent of the application structure. Maintaining this strict structural decoupling of tests from the production codebase is critical for long-term stability. From a security and isolation perspective, tests should be packaged into independent deployments to guarantee that no dependencies flow from production code to test code.
+
+#### Chapter 29 — Clean Embedded Architecture
+Firmware represents software that is tightly coupled to a specific technology, meaning that utilizing SQL or interfacing with the Android API constitutes firmware. To maintain a clean architecture, engineering teams must cease the development of firmware-centric code and transition to writing pure software. The optimal architectural solution for embedded systems relies on a three-tier model comprising three distinct layers, which are Software, Firmware, and Hardware. Engineers achieve this by implementing a Hardware Abstraction Layer (HAL) between the software and firmware tiers, which is an established industry concept that predates Windows on personal computers. The HAL must encapsulate all low-level hardware specificities. Because the processor serves as a low-level detail, the firmware layer must isolate the rest of the system from processor-specific architecture. Furthermore, the operating system must be treated as a low-level implementation detail. To manage this operating system encapsulation, you can add an additional layer to form a four-tier model of the clean embedded architecture: Software, OS, Firmware, and Hardware. This layout integrates the operating system alongside an Operating System Abstraction Layer (OSAL) between the software and firmware tiers.
+
+![Tier model of clean embedded architecture](/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
+Four-tier model of the clean embedded architecture (adapted from page 267)
+{: .text-center}
+
+
+### PART VI — Details
+
+#### Chapter 30 — The Database Is a Detail
+Data models hold architectural significance, whereas specific database implementations remain a mere detail. The intensity of architectural discussions stems from the inherent latency of magnetic hard drives, which demands significant engineering effort to maximize performance. Ultimately, a database functions fundamentally as a technological mechanism designed for persistent data storage.
+
+#### Chapter 31 — The Web Is a Detail
+Computer engineering experiences a perpetual pendulum swing between centralizing computation on servers and decentralizing it to client nodes. Graphical user interface (GUI) layouts frequently evolve due to shifting marketing requirements. The user interface must be treated as a mere detail to insulate high-level architectural components from volatile frontend changes. Architecturally, the web functions fundamentally as an input-output (I/O) device.
+
+#### Chapter 32 — Frameworks Are Details
+Developers often architect applications directly around a framework, which inadvertently establishes a highly tight coupling. This creates a unilateral commitment, as framework maintainers possess no reciprocal obligations or commitments toward the stability of your specific application. Solutions involve utilizing frameworks while strictly treating them as peripheral details confined to the outermost architectural layers. Through this strategic encapsulation, the objective is to leverage the framework's benefits without absorbing its long-term architectural liabilities—conceptually equivalent to enjoying the utility without incurring the ownership overhead. In certain scenarios, structural dependencies are unavoidable, such as a Java application possessing an absolute dependency on the standard library.
+
+#### Chapter 33 — Case Study: Video Sales
+Architectural design begins with a comprehensive use case analysis to capture functional requirements. This initialization includes abstract use case identification to factor out common behavioral patterns, and defined use cases are systematically assigned to specific actors to establish clear operational boundaries. Following this, the structural system configuration is partitioned into distinct architectural layers, separating views, presenters, interactors, and controllers. Rigid architectural boundaries are established between components to isolate business logic from delivery mechanisms. The determination of exact physical deployment structures remains a lower-level decision that can be deliberately deferred to a later lifecycle phase.
+
+#### Chapter 34 — The Missing Chapter
+Runtime execution discrepancies and structural failures manifest primarily during system execution rather than design phases. **_Packaging by layer_** serves as a viable baseline architecture for simplistic applications, but it suffers from an absence of domain expressiveness, failing to overtly communicate or "shout out" the application's underlying business use cases. Alternatively, **_packaging by feature_** concentrates all vertical slices of a functional requirement into a single, localized package. However, vertical feature organization introduces long-term maintainability challenges and boundary degradation risks in strictly enforcing architectural boundaries between distinct features. 
+
+**_Hexagonal architectural_** separation via Ports and Adapters isolates core domain logic within internal rings while relegating infrastructure concerns to external rings. These inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"](/blog/review-domain-driven-design). **_Packaging by component_** may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP, offering key internal encapsulation retention. Consolidating domain logic and persistence code within a single package prevents component-internal interfaces, such as an `OrderRepository`, from being exposed publicly. The [C4 Software Architecture Model](https://c4model.com) proposes a different definition of component:
+> "In the C4 model, a component is a grouping of related functionality encapsulated behind a well-defined interface. [...] components are _not_ separately deployable units. Instead, it’s the container that’s the deployable unit."
+
+Packaging by component yields a significant architectural encapsulation benefit, as vertical slicing is achieved while preserving the layered architecture as an internal implementation detail of the component. Furthermore, this sub-component architecture must still preserve the strict separation of core domain logic from persistence mechanisms as an internal implementation detail.
+
+Macro-architectural integrity is highly sensitive to implementation-level erosion caused by micro-implementation details. Object-oriented languages, particularly Java, frequently suffer from an over-use of public access modifiers. When all classes are declared public, structural organization falls short of true encapsulation, and all architectural organization styles become functionally identical since public types remain universally accessible. Leveraging packages as genuine encapsulation boundaries requires the deliberate utilization of non-public (package-private) class access levels. Team agreements to maintain architectural boundaries through peer reviews and discipline inevitably collapse under heavy production deadline pressures. A comprehensive, structural comparison of these discrete code organization methodologies is illustrated in figure 34.8 on page 307. 
+
+Modern language constructs offer technical mechanisms to enforce alternative decoupling modalities beyond standard package boundaries. Incorporating Java 9 module isolation (Project Jigsaw) can programmatically enforce access constraints, serving as a potential technical resolution to encapsulation leakage. Conversely, utilizing independent physical source code trees to isolate ports from adapters introduces distinct tooling and maintenance overhead. The definitive architectural advice emphasizes that optimal high-level design decisions can be rapidly neutralized by undisciplined or flawed low-level implementation strategies. Structural decoupling must be consciously evaluated and maintained at both compile-time and runtime. Architectural enforcement must remain pragmatic, balancing systemic ideals against budgetary constraints, delivery timelines, team sizes, and engineering competencies. Software systems should leverage compiler constraints and static analysis tools to programmatically validate compliance with the chosen architectural style.
+
+### PART VII — Appendix
+
+#### Appendix A — Architecture Archaeology
+This section features an interesting collection of Uncle Bob's projects and experience.
+
+#### Appendix B — Afterword
+The book concludes with final remarks from the author.
+
+
 
 ## 📝 Appendix: Raw Reading Notes
 {% include book-review-reading-notes.html %}
@@ -114,7 +324,7 @@ TAKE AWAYS
 
 #### Chapter 5 — Object-Oriented Programming
 - **Safety in polymorphism**: Object-oriented programming provides polymorphism in a safe, stable, and highly manageable manner.
-  - This technical capability directly enables the implementation of the Inversion of Control (IoC) paradigm, representing a critical architectural value. 
+  - This technical capability directly enables the implementation of the [Inversion of Control (IoC)](https://en.wikipedia.org/wiki/Inversion_of_control) paradigm, representing a critical architectural value. 
 - **Decoupling of dependency structures**: Software architects can structure source code dependencies independently, removing the constraint to follow the runtime control flow of the program.
   - For example, this mechanism allows engineering teams to build core domain logic entirely independent of database access layers, successfully separating domain business logic from technical infrastructure concerns.
 
@@ -211,6 +421,8 @@ TAKE AWAYS
   - It relates to the Interface Segregation Principle (ISP): ISP requires separating interfaces when methods are usually not used together.
   - Common denominator of ISP and CRP: Do not create dependencies on elements that you do not require.
 - **The Tension Triad of Component Principles**
+![Tension Triad of Component Principles](/assets/images/2026-review-clean-architecture/tension-triad-component-principles.png "Tension Triad of Component Principles")
+Tension Triad of Component Principles (adapted from page 126)
   - The three principles are in opposition.
   - REP tends to create big components to reduce their number.
   - CRP tends to create small components to reduce unnecessary dependencies.
@@ -249,6 +461,8 @@ TAKE AWAYS
     - `A`: Degree of abstraction. `A = N_a / N_c`
     - `A = 0` means no abstract classes, `A = 1` means all classes are abstract.
 - **The `I`/`A` Graph and Zones of Exclusion**
+  ![Zones of Exclusion](/assets/images/2026-review-clean-architecture/zones-of-exclusion.png "Zones of Exclusion")
+Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean Architecture’ by Uncle Bob — Part III by Divya Saravanan](https://medium.com/@tales.of.di.official/breaking-down-clean-architecture-by-uncle-bob-part-iii-8c7b6e40ef1c))
   - The `I`/`A` graph with zones of exclusion on page 145 depicts the following relationships:
   - Zone of Pain: Highly stable (many dependent components) and highly concrete (hard to change). Examples include database schemas and the Java `String` class.
   - Zone of Uselessness: Highly abstract classes that are not referenced by any other components.
@@ -364,6 +578,7 @@ TAKE AWAYS
     - Independence from external agencies.
 - **Clean Architecture Overview**: The schematic diagram illustrates the concentric layout of the architecture.
   ![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+  Architecture overview schematic diagram depict on page 212 (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 - **Dependency Rule**: This central rule governs the direction of all source code dependencies.
   - Definition:
   > Source code dependencies must only point inward, toward higher-level policies.
@@ -380,7 +595,7 @@ TAKE AWAYS
 - **Layer Scalability**: The system permits structural modifications to the number of architectural circles.
   - Engineers can introduce additional layers if required, provided the dependency rule strictly holds.
 - **Boundary Crossing**: Architectural boundaries are crossed by consistently applying the Dependency Inversion Principle (DIP).
-  - Employ simple **_Data Transfer Objects (DTOs)_** to cross layer boundaries. Do not utilize entities or framework-specific types for communication.
+  - Employ simple Data Transfer Objects (DTOs) to cross layer boundaries. Do not utilize entities or framework-specific types for communication.
 - **Application Flow Reference**: Page 217 includes a concrete example demonstrating standard cross-boundary data flows.
 
 #### Chapter 23 — Presenters and Humble Objects
@@ -459,7 +674,7 @@ TAKE AWAYS
   - Integrate the operating system alongside an Operating System Abstraction Layer (OSAL) between software and firmware.
 
 ![Tier model of clean embedded architecture](/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
-Four-tier model of the clean embedded architecture
+Four-tier model of the clean embedded architecture (adapted from page 267)
 {: .text-center}
 
 
