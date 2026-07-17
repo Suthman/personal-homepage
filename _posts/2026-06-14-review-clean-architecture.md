@@ -52,38 +52,38 @@ Takeaway
 > The objective of software architecture is to minimize the human resources required to build and maintain the required system.
 - Consequently, the fundamental purpose and focus of software architecture is to maximize **adaptability**.
 - Structured Programming enabled **functional decomposition** to reduce system complexity 
-- Object-Oriented Programming enabled **Inversion of Control** enabling the possibility to decouple domain logic from infrastructure
-- Functional Programming enabled the isolation of varibale manipulations and state changes to allow the vast majority of system complexity to become stateless and immutable
-- SOLD design principles:
+- Object-Oriented Programming enabled **Inversion of Control**, enabling the possibility to decouple domain logic from infrastructure
+- Functional Programming enabled the **isolation of variable manipulations and state changes** to allow the vast majority of system complexity to become stateless and immutable
+- **SOLID design principles**:
   - SRP: The Single-Responsibility Principle
   - OCP: The Open-Closed Principle
   - LSP: The Liskov Substitution Principle
   - ISP: The Interface Segregation Principle
-  - DIP: The Dependency Inversion PrinciplePermalink
-- Component Cohesion Principles and their tension triad
+  - DIP: The Dependency Inversion Principle
+- **Component Cohesion Principles** and their tension triad:
   - Reuse-Release-Equivalence Principle (REP)
   - Common-Closure Principle (CCP)
   - Common-Reuse Principle (CRP)
-- Component Cohesion Principles and the Zones of Exclusion
+- **Component Coupling Principles** and the Zones of Exclusion:
   - Acyclic-Dependencies Principle (ADP)
   - Stable-Dependencies Principle (SDP)
   - Stable-Abstractions Principle (SAP)
-- Architecture must create and maintain architectural options over time
+- Architecture must create and maintain **architectural options** over time:
   > A good software architect maximizes the number of decisions not yet made.
-- Architecture is about drawing lines to create independent components
-- Architectural boundary manifest across aspectrum of deployment and runtime configurations.
+- Architecture is about **drawing lines** to create independent components
+- **Architectural boundaries** manifest across a spectrum of deployment and runtime configurations.
   - Implementing full architectural boundaries introduces significant up-front costs and ongoing maintenance overhead. 
   - Conversely, omitting necessary boundaries can impose even greater long-term maintenance and technical debt costs.  
-- Architecture level: 
+- **Architecture level**: 
   > A level is defined by the distance from the system inputs and outputs.
-- An architecure must _scream_ its purpose: application use cases are first-class citizens, no technology or framework
-- Architecture overview schematic diagram (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)):
-![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+- An architecture must **scream** its purpose: **application use cases are first-class citizens**, not technology or frameworks
+- **Clean Architecture overview** schematic diagram (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)):
+![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
 - **dependency rule**:
 > Source code dependencies must only point inward, toward higher-level policies.
-- Services are an runtime detail, note the decoupling trap! Cross cutting concerns can be across services and not necessarily in between! 
-- A lot of details: database, web, frameworks
-- Read [Chapter 34 — The Missing Chapter](#chapter-34---the-missing-chapter) over and over
+- Services are a runtime detail; note the decoupling trap! **Cross-cutting concerns can be across services** and not necessarily in between! 
+- **A lot of details**: database, web, frameworks
+- Read **[Chapter 34 — The Missing Chapter](#chapter-34--the-missing-chapter)** over and over
  
 
 
@@ -229,13 +229,13 @@ Business rules are divided into core domains and application mechanics, beginnin
 An application's architecture should clearly broadcast its underlying purpose. Because application use cases are first-class citizens and represent the primary objective of the system, the architecture must prominently emphasize these use cases rather than the frameworks being utilized. Software frameworks are merely technical tools rather than an overriding philosophy or way of life, meaning they should be treated strictly as low-level implementation details. When use cases are kept completely free of framework dependencies, developers can easily apply lightweight unit tests to verify both application use cases and business entities in isolation.
 
 #### Chapter 22 — The Clean Architecture
-Clean architecture consolidates structural designs that share fundamental operational principles, drawing from three important influencing architectures: [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adapters_**), DCI — [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction) and BCE — [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary). These systems rely on common architectural characteristics, including the usage of layers to separate distinct system aspects, ensuring at least one level for business rules and an additional level for user and system interfaces. This separation guarantees comprehensive framework independence, high testability, complete UI independence, complete database independence, and absolute independence from external agencies. 
+Clean Architecture consolidates structural designs that share fundamental operational principles, drawing from three important influencing architectures: [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adapters_**), DCI — [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction) and BCE — [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary). These systems rely on common architectural characteristics, including the usage of layers to separate distinct system aspects, ensuring at least one level for business rules and an additional level for user and system interfaces. This separation guarantees comprehensive framework independence, high testability, complete UI independence, complete database independence, and absolute independence from external agencies. 
 
-![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
 Architecture overview schematic diagram depicted on page 212 (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 {: .text-center}
 
-The concentric layout of this system is detailed in the clean architecture overview schematic diagram. The entire structural direction of all source code dependencies is governed by the **dependency rule**:
+The concentric layout of this system is detailed in the Clean Architecture overview schematic diagram. The entire structural direction of all source code dependencies is governed by the **dependency rule**:
 > Source code dependencies must only point inward, toward higher-level policies.
 
 Within this model, entities encapsulate enterprise-wide business rules, representing critical business logic where the probability of structural change is low. Surrounding them, use cases realize application-specific business rules, ensuring that structural modifications here do not affect entities, which means changes in the GUI or database have no impact on the core logic. The interface adapters layer translates data between the format convenient for use cases and entities, and the format convenient for external components. The goal of this layer is to adapt interfaces between internal policies and external mechanisms like databases or web UIs while maintaining absolute independence from specific frameworks or concrete technologies. The frameworks and drivers outermost layer contains concrete technological details and external tools, housing all technological implementations and configuration details while demonstrating the highest structural distance from the core business logic. This ring-based design supports layer scalability, permitting structural modifications to the total number of architectural circles so engineers can introduce additional layers if required, provided the dependency rule strictly holds. Finally, architectural boundaries are crossed by consistently applying the Dependency Inversion Principle (DIP). Communication across these layer boundaries must employ simple Data Transfer Objects (DTOs) rather than utilizing entities or framework-specific types, following the standard cross-boundary data flows exemplified on page 217.
@@ -286,11 +286,11 @@ Runtime execution discrepancies and structural failures manifest primarily durin
 **_Hexagonal architecture_** separation via Ports and Adapters isolates core domain logic within internal rings while relegating infrastructure concerns to external rings. These inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"](/blog/review-domain-driven-design). **_Packaging by component_** may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP, offering key internal encapsulation retention. Consolidating domain logic and persistence code within a single package prevents component-internal interfaces, such as an `OrderRepository`, from being exposed publicly. The [C4 Software Architecture Model](https://c4model.com) proposes a different definition of component:
 > "In the C4 model, a component is a grouping of related functionality encapsulated behind a well-defined interface. [...] components are _not_ separately deployable units. Instead, it’s the container that’s the deployable unit."
 
-Packaging by component yields a significant architectural encapsulation benefit, as vertical slicing is achieved while preserving the layered architecture as an internal implementation detail of the component. Furthermore, this sub-component architecture must still preserve the strict separation of core domain logic from persistence mechanisms as an internal implementation detail.
+Packaging by component yields a **significant architectural encapsulation benefit**, as vertical slicing is achieved while preserving the layered architecture as an internal implementation detail of the component. Furthermore, this sub-component architecture must still preserve the strict separation of core domain logic from persistence mechanisms as an internal implementation detail.
 
-Macro-architectural integrity is highly sensitive to implementation-level erosion caused by micro-implementation details. Object-oriented languages, particularly Java, frequently suffer from an over-use of public access modifiers. When all classes are declared public, structural organization falls short of true encapsulation, and all architectural organization styles become functionally identical since public types remain universally accessible. Leveraging packages as genuine encapsulation boundaries requires the deliberate utilization of non-public (package-private) class access levels. Team agreements to maintain architectural boundaries through peer reviews and discipline inevitably collapse under heavy production deadline pressures. A comprehensive, structural comparison of these discrete code organization methodologies is illustrated in Figure 34.8 on page 307. 
+**Macro-architectural integrity is highly sensitive to implementation-level erosion caused by micro-implementation details**. Object-oriented languages, particularly Java, frequently suffer from an over-use of public access modifiers. When all classes are declared public, structural organization falls short of true encapsulation, and all architectural organization styles become functionally identical since public types remain universally accessible. Leveraging packages as genuine encapsulation boundaries requires the deliberate utilization of non-public (package-private) class access levels. Team agreements to maintain architectural boundaries through peer reviews and discipline inevitably collapse under heavy production deadline pressures. A comprehensive, structural comparison of these discrete code organization methodologies is illustrated in Figure 34.8 on page 307. 
 
-Modern language constructs offer technical mechanisms to enforce alternative decoupling modalities beyond standard package boundaries. Incorporating Java 9 module isolation (Project Jigsaw) can programmatically enforce access constraints, serving as a potential technical resolution to encapsulation leakage. Conversely, utilizing independent physical source code trees to isolate ports from adapters introduces distinct tooling and maintenance overhead. The definitive architectural advice emphasizes that optimal high-level design decisions can be rapidly neutralized by undisciplined or flawed low-level implementation strategies. Structural decoupling must be consciously evaluated and maintained at both compile-time and runtime. Architectural enforcement must remain pragmatic, balancing systemic ideals against budgetary constraints, delivery timelines, team sizes, and engineering competencies. Software systems should leverage compiler constraints and static analysis tools to programmatically validate compliance with the chosen architectural style.
+Modern language constructs offer technical mechanisms to enforce alternative decoupling modalities beyond standard package boundaries. Incorporating Java 9 module isolation (Project Jigsaw) can programmatically enforce access constraints, serving as a potential technical resolution to encapsulation leakage. Conversely, utilizing independent physical source code trees to isolate ports from adapters introduces distinct tooling and maintenance overhead. The definitive architectural advice emphasizes that optimal high-level design decisions can be rapidly neutralized by undisciplined or flawed low-level implementation strategies. **Structural decoupling must be consciously evaluated and maintained at both compile-time and runtime**. Architectural enforcement must remain pragmatic, balancing systemic ideals against budgetary constraints, delivery timelines, team sizes, and engineering competencies. Software systems should leverage compiler constraints and static analysis tools to programmatically validate compliance with the chosen architectural style.
 
 
 ### PART VII — Appendix
@@ -616,7 +616,7 @@ Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean
 
 #### Chapter 22 — The Clean Architecture
 {: .no_toc}
-- **Architectures influencing clean architecture**
+- **Architectures influencing Clean Architecture**
   - Three important influencing architectures:
     - [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adapters_**)
     - DCI - [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction)
@@ -628,8 +628,8 @@ Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean
     - Complete UI independence.
     - Complete database independence.
     - Independence from external agencies.
-- **Clean Architecture Overview**: The schematic diagram illustrates the concentric layout of the architecture.
-  ![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+- **Clean Architecture overview**: The schematic diagram illustrates the concentric layout of the architecture.
+  ![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
   Architecture overview schematic diagram depict on page 212 (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 - **Dependency Rule**: This central rule governs the direction of all source code dependencies.
   - Definition:
