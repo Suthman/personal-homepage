@@ -47,25 +47,44 @@ Translated from English by Maren Feilen and Knut Lorenzen
 
 ## 💡 My Key Takeaways & Actions
 
-TAKE AWAYS
-- see chapter 27: True architecture is defined by boundaries that separate high-level policies from low-level details.
-- wartbarkeit wichtiger als wiederverwendung
-- deployable units are compilations, not executables -> have to take care in Bewertung
-- read - https://c4model.com/abstractions/component ???
-- TODO ARE METRICS LIKE STABILITY AND ABSTRACTION AVAILABLE IN TOOLS (CH 14)
-- **Efficacy of functional decomposition** in ch 4
-- policies and details  in ch 1
-  - use cases are primary objective
-  - defer decisions about details -> archtecture probides options -> same argument as in "arch elevator"
-- layer Definition (Ch 19) is new for me
-- entities and use cases are precisely defined
-- Problem of microservices, when cross cutting concerns is across services abd not between! Can only be solved, when each service is based on SOLID components
-- ch 24 partial boundaries: can risks be reduced by arcunit? Same holds for ch 34
-  - forgot the name
-- Strict definition of level: 
-  > A level is defined by the distance from the system inputs and outputs.
-- Architecture and options
+Takeaway
+- Ultimate goal of software architecture or design is **long-term efficiency**: 
+> The objective of software architecture is to minimize the human resources required to build and maintain the required system.
+- Consequently, the fundamental purpose and focus of software architecture is to maximize **adaptability**.
+- Structured Programming enabled **functional decomposition** to reduce system complexity 
+- Object-Oriented Programming enabled **Inversion of Control** enabling the possibility to decouple domain logic from infrastructure
+- Functional Programming enabled the isolation of varibale manipulations and state changes to allow the vast majority of system complexity to become stateless and immutable
+- SOLD design principles:
+  - SRP: The Single-Responsibility Principle
+  - OCP: The Open-Closed Principle
+  - LSP: The Liskov Substitution Principle
+  - ISP: The Interface Segregation Principle
+  - DIP: The Dependency Inversion PrinciplePermalink
+- Component Cohesion Principles and their tension triad
+  - Reuse-Release-Equivalence Principle (REP)
+  - Common-Closure Principle (CCP)
+  - Common-Reuse Principle (CRP)
+- Component Cohesion Principles and the Zones of Exclusion
+  - Acyclic-Dependencies Principle (ADP)
+  - Stable-Dependencies Principle (SDP)
+  - Stable-Abstractions Principle (SAP)
+- Architecture must create and maintain architectural options over time
   > A good software architect maximizes the number of decisions not yet made.
+- Architecture is about drawing lines to create independent components
+- Architectural boundary manifest across aspectrum of deployment and runtime configurations.
+  - Implementing full architectural boundaries introduces significant up-front costs and ongoing maintenance overhead. 
+  - Conversely, omitting necessary boundaries can impose even greater long-term maintenance and technical debt costs.  
+- Architecture level: 
+  > A level is defined by the distance from the system inputs and outputs.
+- An architecure must _scream_ its purpose: application use cases are first-class citizens, no technology or framework
+- Architecture overview schematic diagram (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)):
+![Clean architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean architecture overview")
+- **dependency rule**:
+> Source code dependencies must only point inward, toward higher-level policies.
+- Services are an runtime detail, note the decoupling trap! Cross cutting concerns can be across services and not necessarily in between! 
+- A lot of details: database, web, frameworks
+- Read [Chapter 34 — The Missing Chapter](#chapter-34---the-missing-chapter) over and over
+ 
 
 
 ## 🔍 The Deep Dive (Summary)
