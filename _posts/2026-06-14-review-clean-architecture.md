@@ -81,7 +81,7 @@ TAKE AWAYS
 - **Maintainability case study**: The case study demonstrates that developing software without prioritizing maintainability increases the total cost of ownership (TCO) and decreases developer velocity.
 - **Productivity through TDD**: Implementing [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) enhances engineering productivity, as noted on page 36.
 - **Flawed deployment mindsets**: A common, erroneous mindset dictates launching the product to the market immediately while postponing refactoring and testing for a later phase.
-  - Note: That designated time for optimization never materializes.
+  - Note: The designated time for optimization never materializes.
   - Rebuilding the system fails to resolve the underlying issue because market pressure persists throughout the entire rebuilding phase.
 
 #### Chapter 2 — A Tale of Two Values
@@ -104,7 +104,7 @@ TAKE AWAYS
   > Functional programming imposes disciplined control over variable assignment.
 
 #### Chapter 4 — Structured Programming
-- **Structured programming paradigms**: Structured programming restricts the use of unrestricted transfer control statements (such as `goto`) and replaces them with standardized control flows like sequence, selection (`if/then/else`), and iteration (`do/while`).
+- **Structured programming paradigms**: Structured programming restricts the use of unconstrained transfer-of-control statements (such as `goto`) and replaces them with standardized control flows like sequence, selection (`if/then/else`), and iteration (`do/while`).
   - This paradigm aligns with theoretical findings demonstrating that any computable program can be constructed exclusively using sequence, selection, and iteration.
 - **Composability of software units**: Software architectures are inherently composable, built from smaller, modular sub-units.
   - Mathematically, if each sub-module could be proven to operate entirely without error, the aggregate program would itself be error-free.
@@ -127,7 +127,7 @@ TAKE AWAYS
 
 
 ### Part III — Design Principles
-- **Architectural goals**: Enable modification, ensure easy traceability, and facilitate the reuse of middle-layer software architecture.
+- **Architectural goals**: Enable modification, ensure easy traceability, and facilitate the reuse of middle-layer architectural components.
 - **Scope of middle layer**: Define the middle layer at the module level, positioned directly above the source-code level.
 - **Core design principles**: The following five principles are recognized by the acronym SOLID (note the slight differences in the definitions here compared to [Wikipedia](https://en.wikipedia.org/wiki/SOLID)):
   - **SRP**: The Single-Responsibility Principle  
@@ -143,7 +143,7 @@ TAKE AWAYS
 
 #### Chapter 7 — SRP: The Single-Responsibility Principle
 - **Definition**:
-> Define a module in this context as being responsible to one single actor.
+> Define a module in this context as being responsible to a single actor.
 - **Misconception correction**: Do not assume every module must perform only a single task; this rule applies strictly to functions and methods, not to modules.
 - **Original definition**: Maintain the original definition stating that there should be only one reason to change a module.
 - **Future architectural mappings**: Anticipate that this concept will reappear in subsequent architectural layers as the Common-Closure Principle (CCP) in chapter 13 and the axis-of-change model.
@@ -162,7 +162,7 @@ TAKE AWAYS
 - **Historical context and scope expansion**: The principle was originally developed to handle inheritance in programming languages, but it should be viewed more generally to encompass all types of interfaces and components.
 - **Architectural impact of violations**: A single violation can have a massive impact on maintainability, as numerous exceptions must subsequently be added, maintained, and understood.
 
-#### Chapter 10 ISP: The Interface Segregation Principle
+#### Chapter 10 — ISP: The Interface Segregation Principle
 - **Interface specialization**: Design distinct interfaces tailored to specific architectural purposes.
 - **Historical origin**: The concept was originally defined for statically linked programming languages.
 - **Component generalization**: The principle successfully generalizes to all categories of software components.
@@ -211,9 +211,9 @@ TAKE AWAYS
   - It relates to the Interface Segregation Principle (ISP): ISP requires separating interfaces when methods are usually not used together.
   - Common denominator of ISP and CRP: Do not create dependencies on elements that you do not require.
 - **The Tension Triad of Component Principles**
-  - The 3 principles are in opposition.
+  - The three principles are in opposition.
   - REP tends to create big components to reduce their number.
-  - CRP tends to create small components to reduce non-needed dependencies.
+  - CRP tends to create small components to reduce unnecessary dependencies.
   - CCP organizes the components from a maintenance effort point of view.
   - The optimal component definition may change over time and project affordances. A tension diagram is on page 126.
 
@@ -233,7 +233,7 @@ TAKE AWAYS
   - Metrics for instability (`I`):
     - `Fan-in`: number of incoming dependencies.
     - `Fan-out`: number of outgoing dependencies.
-    - `I = fan-out / (fan-out + fan-in)`
+    - `I = Fan-out / (Fan-out + Fan-in)`
     - `I = 0` is maximally stable, `I = 1` is maximally unstable.
   - SDP states that the `I`-value of a component should be higher than the `I`-values of the components it depends upon.
   - Note: Not all components should be stable.
@@ -247,7 +247,7 @@ TAKE AWAYS
     - `N_c`: Number of classes in a component.
     - `N_a`: Number of abstract classes and interfaces in a component.
     - `A`: Degree of abstraction. `A = N_a / N_c`
-    - `A=0` means no abstract classes, `A=1` means all classes are abstract.
+    - `A = 0` means no abstract classes, `A = 1` means all classes are abstract.
 - **The `I`/`A` Graph and Zones of Exclusion**
   - The `I`/`A` graph with zones of exclusion on page 145 depicts the following relationships:
   - Zone of Pain: Highly stable (many dependent components) and highly concrete (hard to change). Examples include database schemas and the Java `String` class.
@@ -283,7 +283,7 @@ TAKE AWAYS
   > [O]rganizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations.
 - **Decoupling**: Implement architectural decoupling across multiple dimensions.
   - Decouple horizontal layers.
-    - Adhere to the Single Responsibility Principle (SRP) and the Common Closure Principle (CCP).
+    - Adhere to the Single-Responsibility Principle (SRP) and the Common-Closure Principle (CCP).
     - Decouple implementation details (e.g., UI and database access) from core business rules.
   - Decouple vertical use cases.
     - For example, "Creating an order" is distinct from "Deleting an order."
@@ -328,7 +328,7 @@ TAKE AWAYS
   - Strict definition of level: 
   > A level is defined by the distance from the system inputs and outputs.
   - Components sharing the exact same relative distance from inputs or outputs should be grouped together on the same architectural level.
-  - Note: The architectural case study spanning pages 196–198 explicitly applies the Single Responsibility Principle (SRP), Open-Closed Principle (OCP), Common Closure Principle (CCP), Dependency Inversion Principle (DIP), Stable Dependencies Principle (SDP), and Stable Abstractions Principle (SAP).
+  - Note: The architectural case study spanning pages 196–198 explicitly applies the Single-Responsibility Principle (SRP), Open-Closed Principle (OCP), Common-Closure Principle (CCP), Dependency Inversion Principle (DIP), Stable-Dependencies Principle (SDP), and Stable-Abstractions Principle (SAP).
 
 #### Chapter 20 — Business Rules
 - **Critical Business Rules**: These represent policies or procedures that directly result in earning or saving business capital.
@@ -338,11 +338,11 @@ TAKE AWAYS
   - Developers should create a dedicated class for this and separate it completely from all other aspects of the system.
 - **Application Use Cases**: These rules are not as puristic as critical business rules and represent application-specific business rules instead.
   - They are required to be handled specifically within an automated system.
-  - For example, the contact data of a customer must be created before she can place an order.
+  - For example, the contact data of a customer must be created before a user can place an order.
   - Use cases orchestrate entities, but entities are not aware of the use cases. Use cases operate closer to the input and output mechanisms but remain strictly protected from system details.
 - **Request and Response Models**: These models are required so that use cases can receive input and produce output.
   - However, these classes must remain entirely free of dependencies on frameworks or even on the entities themselves.
-  - They will change over time for different reasons, and coupling them would violate both the Common Closure Principle (CCP) and the Single Responsibility Principle (SRP).
+  - They will change over time for different reasons, and coupling them would violate both the Common-Closure Principle (CCP) and the Single-Responsibility Principle (SRP).
 
 #### Chapter 21 — Screaming Architecture
 - **Screaming Architecture**: An application's architecture should clearly broadcast its underlying purpose. Because application use cases are first-class citizens and represent the primary objective of the system, the architecture must prominently emphasize these use cases rather than the frameworks being utilized.
@@ -352,7 +352,7 @@ TAKE AWAYS
 #### Chapter 22 — The Clean Architecture
 - **Architectures influencing clean architecture**
   - Three important influencing architectures:
-    - [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adpaters_**)
+    - [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adapters_**)
     - DCI - [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction)
     - BCE - [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary)
   - Common Architectural Characteristics: These structural designs share fundamental operational principles.
@@ -393,11 +393,11 @@ TAKE AWAYS
   - The **_View Model_** stores all presentation-relevant data and attributes, allowing the **_View_** to access them safely.
 - **Database Gateways**: Interfaces decoupled from the underlying database implementation to enable ease of testing.
   - Each required data access operation at the use-case level is defined as an interface.
-  - Database Gateways implement these use-case interfaces within the database layer.
+  - Database gateways implement these use-case interfaces within the database layer.
   - While the gateway implementation itself is not a Humble Object, the use-case interfaces can be tested easily.
   - Data Mappers, such as Object-Relational Mapping (ORM) frameworks, are strictly classified as database components.
 - **Service Listeners**: System components that handle external service communications.
-  - Service listeners are implemented analogously to database Gateways.
+  - Service listeners are implemented analogously to database gateways.
 
 #### Chapter 24 — Partial Boundaries
 - **Partial Architectural Boundaries**: An alternative approach when establishing complete architectural boundaries proves cost-prohibitive.
@@ -413,7 +413,7 @@ TAKE AWAYS
 - **Strategic Placement of Full Architectural Boundaries**: The economic and structural decisions governing where full boundaries should be implemented.
   - Implementing full architectural boundaries introduces significant up-front costs and ongoing maintenance overhead.
   - Conversely, omitting necessary boundaries can impose even greater long-term maintenance and technical debt costs.
-- **The Wumpus World Case Study**: An insightful example included within this chapter on pages 228 - 233 to illustrate these architectural boundary concepts.
+- **The Wumpus World Case Study**: An insightful example included within this chapter on pages 228–233 to illustrate these architectural boundary concepts.
 
 #### Chapter 26 — The Main Component
 - **The Main Component as the Ultimate Detail**: The low-level entry point responsible for system configuration and bootstrapping.
@@ -430,7 +430,7 @@ TAKE AWAYS
   - **The Independent Development and Deployment Trap**: The belief that services grant total operational autonomy.
     - In practice, deployment activities across services must still be meticulously coordinated.
 - **Cross-Cutting Concerns in Service Architectures**: Managing system-wide requirements that span multiple service boundaries.
-  - Cross-cutting concerns are not handled more easily by microservice architectures than by other structural models, as illustrated by the "Cat Problem" case study on pages 243 - 246.
+  - Cross-cutting concerns are not handled more easily by microservice architectures than by other structural models, as illustrated by the "Cat Problem" case study on pages 243–246.
   - These concerns can be resolved effectively only if each service is built upon SOLID component design principles.
   - This structural requirement is absolute because the runtime environment remains merely an architectural detail.
   - The underlying reason is straightforward: the cross-cutting concern does not exist between distinct services, but rather cuts directly across them.
@@ -455,11 +455,11 @@ TAKE AWAYS
     - The HAL must encapsulate all low-level hardware specificities.
   - The processor serves as a low-level detail, meaning the firmware layer must isolate the rest of the system from processor-specific architecture.
 - **Operating system encapsulation**: The operating system must be treated as a low-level implementation detail.
-  - You can add an addtional layer OS: Software, OS, Firmware, and Hardware
-  - Integrate the operating system alongside an Operating System Abstraction Layer (OSAL) between software and firmware
+  - You can add an additional layer OS: Software, OS, Firmware, and Hardware.
+  - Integrate the operating system alongside an Operating System Abstraction Layer (OSAL) between software and firmware.
 
 ![Tier model of clean embedded architecture](/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
-Four Tier model of the clean embedded architecture
+Four-tier model of the clean embedded architecture
 {: .text-center}
 
 
@@ -499,7 +499,7 @@ Four Tier model of the clean embedded architecture
   - Boundary degradation risks: Vertical feature organization introduces long-term maintainability challenges in strictly enforcing architectural boundaries between distinct features.
 - **Hexagonal architectural separation**: Ports and Adapters isolates core domain logic within internal rings while relegating infrastructure concerns to external rings.
   - Domain-Driven Design integration: Inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"](/blog/review-domain-driven-design).
-- **Component-centric organization**: Packaging by component may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP:
+- **Component-Centric Organization**: Packaging by component may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP:
   - Internal encapsulation retention: Consolidating domain logic and persistence code within a single package prevents component-internal interfaces, such as an `OrderRepository`, from being exposed publicly.
   - C4 model component: The [C4 Software Architecture Model](https://c4model.com) proposes a different definition of component:  
   > "In the C4 model, a component is a grouping of related functionality encapsulated behind a well-defined interface. [...] components are _not_ separately deployable units. Instead, it’s the container that’s the deployable unit." 
@@ -513,9 +513,9 @@ Four Tier model of the clean embedded architecture
     - Team agreements to maintain architectural boundaries through peer reviews and discipline inevitably collapse under heavy production deadline pressures.
 - **Structural comparison matrices**: A comprehensive, structural comparison of these discrete code organization methodologies is illustrated in figure 34.8 on page 307.
 - **Alternative decoupling modalities**: Modern language constructs offer technical mechanisms to enforce structural boundaries beyond standard package boundaries.
-  - Java 9 Module Module isolation: Incorporating the Java 9 Module System (Project Jigsaw) can programmatically enforce access constraints, serving as a potential technical resolution to encapsulation leakage.
+  - Java 9 module isolation: Incorporating the Java 9 Module System (Project Jigsaw) can programmatically enforce access constraints, serving as a potential technical resolution to encapsulation leakage.
   - Source tree segregation: Utilizing independent physical source code trees to isolate ports from adapters introduces distinct tooling and maintenance overhead.
-- **The definitive architectural advices**: 
+- **The definitive architectural advice**: 
   - **Implementation strategy dominance**: Optimal high-level design decisions can be rapidly neutralized by undisciplined or flawed low-level implementation strategies.
   - **Multidimensional decoupling**: Structural decoupling must be consciously evaluated and maintained at both compile-time and runtime.
   - **Pragmatic boundary optimization**: Architectural enforcement must remain pragmatic, balancing systemic ideals against budgetary constraints, delivery timelines, team sizes, and engineering competencies.
@@ -524,7 +524,7 @@ Four Tier model of the clean embedded architecture
 
 ### PART VII — Appendix
 
-#### Appendix A — Archtitecture Archäologie
-- interesting collection of Uncle Bob's projects and experience
+#### Appendix A — Architecture Archaeology
+- Interesting collection of Uncle Bob's projects and experience.
 
 #### Appendix B — Afterword
