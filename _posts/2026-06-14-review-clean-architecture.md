@@ -114,7 +114,7 @@ TAKE AWAYS
 
 #### Chapter 5 — Object-Oriented Programming
 - **Safety in polymorphism**: Object-oriented programming provides polymorphism in a safe, stable, and highly manageable manner.
-  - This technical capability directly enables the implementation of the Inversion of Control (IoC) paradigm, representing a critical architectural value. TODO VERWEIS
+  - This technical capability directly enables the implementation of the Inversion of Control (IoC) paradigm, representing a critical architectural value. 
 - **Decoupling of dependency structures**: Software architects can structure source code dependencies independently, removing the constraint to follow the runtime control flow of the program.
   - For example, this mechanism allows engineering teams to build core domain logic entirely independent of database access layers, successfully separating domain business logic from technical infrastructure concerns.
 
@@ -146,7 +146,7 @@ TAKE AWAYS
 > Define a module in this context as being responsible to one single actor.
 - **Misconception correction**: Do not assume every module must perform only a single task; this rule applies strictly to functions and methods, not to modules.
 - **Original definition**: Maintain the original definition stating that there should be only one reason to change a module.
-- **Future architectural mappings**: Anticipate that this concept will reappear in subsequent architectural layers as the Common Closure Principle (CCP) and the axis-of-change model. TODO VERWEISE
+- **Future architectural mappings**: Anticipate that this concept will reappear in subsequent architectural layers as the Common-Closure Principle (CCP) in chapter 13 and the axis-of-change model.
 
 #### Chapter 8 — OCP: The Open-Closed Principle
 - **Definition**:
@@ -167,7 +167,8 @@ TAKE AWAYS
 - **Historical origin**: The concept was originally defined for statically linked programming languages.
 - **Component generalization**: The principle successfully generalizes to all categories of software components.
 - **General formulation**: Avoid relying on modules that provide a broader scope of functionality than required.
-- **Component cohesion link**: This concept correlates directly with the Common Reuse Principle detailed in Chapter 13. TODO LINK
+- **Component cohesion link**: This concept correlates directly with the Common-Reuse Principle detailed in Chapter 13.
+
 
 #### Chapter 11 — DIP: The Dependency Inversion Principle
 - **Abstraction enforcement**: Source code dependencies must strictly consist of abstractions, a constraint that is historically challenging to implement.
