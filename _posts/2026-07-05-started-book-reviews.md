@@ -135,6 +135,35 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
 ----------
 ```
 
+- Fix grammar and spelling of a given text
+
+```markdown
+- Role
+  - Act as an experienced author of technical and IT research papers.
+- Tasks
+  - Improve grammar and fix spelling issues
+  - Do not change the meaning of the text
+  - Summarize your changes after creating the result
+  - Keep links to other pages; do not leave links out
+  - Keep Blockquotes; do not leave Blockquotes out
+- Context
+  - The source text is located immediately below the `----------` separator line.
+  - The text should be in English
+- Constraint
+  - if you do have any questions, then ask me; do not guess!
+- Tone
+  - your tone should be professional and objective
+- Format
+  - Provide answers in Markdown: render as well as a markdown-copy-and-paste block
+  - Do not render the summary of your corrections
+  - Use the following notations
+    - minus for unordered lists
+    - ** for bold text
+    - _ for italic text
+
+----------
+```
+
 - When a text exceeds the maximum token length for a single prompt, it must be split across multiple inputs. Subsequent prompts can then be utilized to provide the remaining additional text.
 
 ```markdown
