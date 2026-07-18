@@ -25,16 +25,20 @@ This repository contains the source code of my personal homepage.
     categories: `blog`, tags: `book-review` `productivity` `prompt-engineering`
   - [2026-07-10-review-domain-driven-design.md](_posts/2026-07-10-review-domain-driven-design.md)  
     categories: `blog`, tags: `book-review` `domain-driven-design` `software-architecture` `event-storming` `strategic-design`
-
+  - [2026-07-18-review-clean-architecture.md](_posts/2026-07-18-review-clean-architecture.md)  
+    categories: `blog`, tags: `book-review` `software-architecture` `clean-architecture` `solid-principles` `component-design`
 
 ---
 
 
 ## 🎨 Styleguide
-- Maximum of 2 levels in the table of contents
+- Maximum of 2 levels in the table of contents   
+Exception: TOCs of book review align to book structure
 - **_Technical terms_** in bold and italic
 - **Important information** in bold
 - _Quotes_ or _Calls-to-Action_ in italic
+- 3 - 5 tags per post
+- use `inline code snippets` for mathematical formulas whenever possible, i.e. avoid MathJax or similar frameworks
 
 
 ---
