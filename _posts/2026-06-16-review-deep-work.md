@@ -22,7 +22,7 @@ header:
 
 {% include ai-disclaimer-short.html %}
 
-This post is a book review as introduced in [Professional Book Review](/blog/started-book-reviews)
+This post is a book review, as introduced in [Professional Book Review](/blog/started-book-reviews).
 
 TODO: STICHPUNKTE FORMATIEREN UND PRUEFEN - TODO BEARBEITEN - SUMMARY GENERIEREN - TAGS VERGEBEN
 
