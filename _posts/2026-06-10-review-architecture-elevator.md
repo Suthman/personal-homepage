@@ -23,7 +23,13 @@ header:
 {% include ai-disclaimer-short.html %}
 
 
-TODO
+TODO: STICHPUNKTE FORMATIEREN UND PRUEFEN - TODO BEARBEITEN - SUMMARY GENERIEREN - TAGS VERGEBEN
+
+This post is a book review, as introduced in [Professional Book Review](/blog/started-book-reviews).
+
+ Hier sind ein paar spannende Links: https://architectelevator.com/
+
+"Gregors Law": https://architectelevator.com/gregors-law/
 
 ## 📋 Quick Facts
 
