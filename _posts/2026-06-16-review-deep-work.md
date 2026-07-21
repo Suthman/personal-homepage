@@ -31,7 +31,7 @@ TODO: STICHPUNKTE FORMATIEREN UND PRUEFEN - TODO BEARBEITEN - SUMMARY GENERIEREN
 - **Book:** _Deep Work_
 - **Author:** Cal Newport
 - **Target Audience:** Knowledge Worker
-- **My Rating:** ⭐⭐⭐⭐⭐ (5/5) - Highly Recommended / Must Read
+- **My Rating:** ⭐⭐⭐⭐☆ 4/5 - Recommended / High Value
 - **Link:** [Deep Work](https://www.littlebrown.co.uk/titles/cal-newport/deep-work/9780349411903/) or [ISBN: 9780349411903](https://www.isbn.de/9780349411903)
  
 
@@ -44,6 +44,8 @@ TODO: STICHPUNKTE FORMATIEREN UND PRUEFEN - TODO BEARBEITEN - SUMMARY GENERIEREN
 
 Take away:
 - deep work not only efficieny aspect but also valuable and "fulfilling"
+- --> todo: check limited willpower Reserve p147
+- stay healthy: do not get drunk in shallow tasks that create guilt when not done; helps to focus on value added work TODO one major Erkenntnis of the book
 - tryouts
   - Fixed schedule
   - Planung and Abschluss 
@@ -62,8 +64,10 @@ Take away:
 {% include book-review-reading-notes.html %}
 
 ### Introduction
-- TODO definition of deep work on p3
-- TODO definition of shallow work on p6
+- Definition Deep Work (see page 3):
+> Proferssional activities performed in a stat of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate.
+- Definition Shallow Work (see page 6)
+> Noncogively demanding, logistical-style tasks, often performed while distracted. These efforts tend not to create much new value in the world and are easy to replicate.
 
 
 ### PART 1: The Idea
@@ -163,9 +167,8 @@ If few depp work there, it will become valuable -> Invest in it!
     - personal: solve Problems over night
   - Reason #2: downtime helps recharge the energy needed to work deeply
     - attention Restauration theory (art)
-    - direkter attention is finite: being in nature requires less than walkinf through a City 
+    - directed attention is finite: being in nature requires less than walking through a City 
     - other "inherently fascinating stimuli" and freedom of directives concentration can help as nature does
-    --> todo: check limited willpower Reserve 
   - reason#2: the work that evening downtime replacrs is usually not that important 
     - limited deep work capability per day (about 1 hour for Novizen, up to 4 hours for experts): you should do this dringend your work day
     -> evening work will be shallow anyway
@@ -176,27 +179,26 @@ If few depp work there, it will become valuable -> Invest in it!
 #### Rule #2: Embrace Boredom
 - ability to concentrate intensiveky is a skill that must be trained: train your mental muscle AND
 - overcome your desire for distraction
-TODO: SUBPOINTS ARE STRATEGIES
-- Don't take Breaks from distraction. Instead take Breaks from focus.
-  - idea: connect to Internet (shallow work) in pre-scheduled intervalls 
+- The following strategies might help
+1. Don't take breaks from distraction. Instead take breaks from focus.
+  - idea: connect to Internet (mails, social media) in pre-scheduled intervalls 
   -> for success:
-    - point #1: this strategy works even if your job requires Lots of internet use and/or prompt Email replies
+    - Point #1: this strategy works even if your job requires Lots of internet use and/or prompt Email replies
       - less offline time, but phases stay intact
     - Point #2: regardless of how you schedule your internet Blocks. You must keep the time outside these Blocks absolutely free from internet use
-TODO: FOR MYSELF: INTERNET USE = MAIL / SOCIAL MEDIA USE
       - you must resist the temptation to use a piece of information from the internet in an offline block! Even if you are blocken in your current task. Get another one!
       - If not avoidable: re-schedule your inter block. Wait at least 5min!
-    - point #3: scheduling internet use at home as Wellness as at work can Fürther improve your concentration training
+    - Point #3: scheduling internet use at home as Wellness as at work can Fürther improve your concentration training
       - note: goal is nit to reduce Overall inernet time, but to train to resist to switching to these Attraktionen
     - summary: rewire brain to tesist distracting stimuli
-- Work like teddy Roosevelt 
+2. Work like teddy Roosevelt 
   - hard schedule with brakes for studying in great intensity
   - Introduce "Roosevelt sprint": 
     - estimate usual time tasks, set very tight Deadline,  comminicate it and work without distraction!
     - start slowly with one Sprint per week!
     - keep Deadline on edge of feasibility 
       -> push limits further!!!
-- Meditation productively
+3. Meditation productively
   - exploit time periods being occupied physically but not mentally, e.g. Jogging 
   - concentrate on one Single professional Problem,  let your attention there, if it is being distracted!
   - strategy does not improve productivity but train ability to think deeply: avoid distraction, focus on ONE Problem forces enforces depth
@@ -208,23 +210,23 @@ TODO: FOR MYSELF: INTERNET USE = MAIL / SOCIAL MEDIA USE
     - 3rd: solve the 
     - 4th: consolidate by reviewing the answers
     ---> go deep by iterating this cycle
-- Memorize a deck of cards
+4. Memorize a deck of cards
   - mental athletes can control/focus their attention, e.g. they can concentrate deeply
   1. memorize a path: walk through 5 rooms in your home in special order,  look at 10 (big) items per room in certain order. Picture these as clearly as possible. Add two Addition items to get 52 -> a complete card game 
   2. connect a thing or person to each card with a logical Eselsbrücke
   - then learn concrete decks: walk through path and Memorize item of card
-  => goal is again practice and Training.  Not the ability to memorize cards. TODO: something to Do with attention control of LLMs
+  => goal is again practice and Training.  Not the ability to memorize cards. 
 
 #### Rule #3: Quit Social Media
 
 - social media fragment Our time and reduce ability to concentrate 
 - not all dicisl media is evil
 - key: find the middleground!
-- usage of social media is a Tool Selektion problem:
-  - häufiger grund für social media: The Any-Benefit Approach to Network Tool Selection (p. 186)
+- usage of social media is a Tool selection problem:
+  - häufiger grund für social media: The any-benefit Approach to network tool selection (p. 186)
   --> there is an Extra value of These Tools. But its minor, and the costs  (eg Personal data offering or addiction is high) are ignored
-- better: the craftman approch to Tool Selektion (p 191)
-  --> identify core factors and alternatives to select the best Tool TODO Seminar to ADRs
+- better: the craftman approch to tool selection (p 191)
+  - identify core factors and evaluate alternatives to select the best tool
 
 - Apply the law of the vital few to your internet habits
   - do craftmans approach for multi media tools
@@ -268,10 +270,9 @@ TODO: FOR MYSELF: INTERNET USE = MAIL / SOCIAL MEDIA USE
 
 - Ask your Boss for a shallow work Budget 
   - often 30 - 50% (not the majority, but still respond to mails)
-TODO: Ist shallow work toil to be automated?!
-  - questions arise: is weekly required? Is Projekt acceptable? 
-    -> establish Monitoring to justify changes in  your work habits: say no; streamline activities even if this becomes more inconvenient for others incl. The Boss itself
-  - stay healthy: do not get drunk in shallow tasks that create guilt when not done; helps to focus on value added work TODO one major Erkenntnis of the book
+  - questions arise: is weekly required? Is Project acceptable? 
+    -> establish Monitoring to justify changes in  your work habits: say no; streamline activities even if this becomes more inconvenient for others incl. the Boss itself
+  - stay healthy: do not get drunk in shallow tasks that create guilt when not done; helps to focus on value added work
 
 - Finish you work by five thirty
   - fixed schedule productivity: fix schedule and "put work inside
