@@ -148,22 +148,25 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
 {% include book-review-reading-notes.html %}
 
 ### Introduction
+{: .no_toc}
 - Definition of Deep Work (see page 3):
   > Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate.
 - Definition of Shallow Work (see page 6):
   > Noncognitively demanding, logistical-style tasks, often performed while distracted. These efforts tend not to create much new value in the world and are easy to replicate.
 
 
-
 ### PART 1: The Idea
+{: .no_toc}
 
 #### Chapter 1: Deep Work Is Valuable
+{: .no_toc}
 - **Economic victors**: The current economy favors three distinct categories: highly skilled workers, industry superstars, and capital owners.
 - **Core professional abilities**: Success requires two fundamental capabilities: the capacity to quickly master complex technological tools and systems, and the ability to produce elite-level output regarding both quality and speed.
 - **The role of deep work**: Deep work serves as a critical mechanism that directly supports and enables both core professional abilities.
 - **Organizational exceptions**: Corporate managers represent a notable exception to this requirement, as their roles inherently demand high connectivity and frequent communication.
 
 #### Chapter 2: Deep Work Is Rare
+{: .no_toc}
 - **The conflict with modern trends**: Deep work stands in direct opposition to contemporary workplace and social trends, such as instant messaging applications, Twitter, and related collaborative communication platforms.
 - **The metric black hole**: Organizations suffer from a measurement vacuum, meaning they lack the analytical tools to accurately quantify an individual's direct impact on long-term strategic goals.
 - **The principle of least resistance**: As detailed on page 58, professionals naturally favor immediate, short-term conveniences over actions that yield long-term value. This behavioral bias makes it easy to dismiss or ignore the deep work of colleagues, especially since its benefits cannot be easily measured.
@@ -172,6 +175,7 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
 - **The economic and craft value of deep work**: Deep work embodies quality, craftsmanship, and professional mastery. While it may appear old-fashioned and lacks the superficial appeal of distracting social media platforms, it remains the primary driver of organizational value creation. Because fewer individuals engage in deep work, its market value will naturally appreciate; therefore, organizations must invest heavily in cultivating it.
 
 #### Chapter 3: Deep Work Is Meaningful
+{: .no_toc}
 - **Neurological argument**: Focus on positive and meaningful things forms the basis of a good lifestyle.
   - A lack of focus leads to passivity and a loss of control, causing circumstances to define who you are rather than your own intentional focus.
   - _"The idle mind is the devil's workshop"_ (p. 82)
@@ -187,8 +191,10 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
 
 
 ### PART 2: The Rules
+{: .no_toc}
 
 #### Rule #1: Work Deeply
+{: .no_toc}
 - **Rule #1: Work deeply**: Achieving optimal cognitive output requires structured environments and systematic defense against internal and external distractions.
   - The ideal workspace architecture is exemplified by the Eudaimonia Machine, a specialized office layout designed entirely to facilitate deep work.
   - Natural human desires (such as food, drink, entertainment, and media) continuously deplete willpower, making it impossible to sustain deep work all day without deliberate routines and rituals.
@@ -225,6 +231,7 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
   - To mitigate the **Zeigarnik effect** — where incomplete tasks cause persistent, intrusive mental thoughts — ensure every open point is assigned a specific plan for resolution or scheduled for future review before finishing the day.
 
 #### Rule #2: Embrace Boredom
+{: .no_toc}
 - **Rule #2: Embrace boredom**: Developing the capacity for intense concentration is a skill that requires active cognitive conditioning alongside a deliberate resistance to distraction.
   - The mind must be trained like a muscle to overcome the continuous, dopamine-driven desire for novelty and interruption.
   - **Strategy #1: Don't take breaks from distraction. Instead, take breaks from focus.**: Rather than taking occasional breaks from internet distraction to focus, practitioners must flip the paradigm to take scheduled breaks from focus to use the internet.
@@ -252,6 +259,7 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
     - **Phase #3: Execution**: Practice memorizing a randomized deck by mentally walking through the established path and anchoring the corresponding mnemonic image to each sequential location.
 
 #### Rule #3: Quit Social Media
+{: .no_toc}
 - **Rule #3: Quit social media**: Networked tools fragment cognitive reserves and systematically erode the long-term capacity for deep concentration.
   - While digital media is not inherently malevolent, practitioners must actively seek a strategic middle ground rather than defaulting to ubiquitous consumption.
   - **The network tool selection problem**: Choosing digital platforms should be treated as a strict optimization problem, contrasting two dominant paradigms:
@@ -280,6 +288,7 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
   - To prevent cognitive relapse into digital traps, practitioners must give the mind meaningful, structured objectives throughout all waking hours.
 
 #### Rule #4: Drain the Shallow
+{: .no_toc}
 - **Rule #4: Drain the shallows**: Mitigating non-cognitive, administrative tasks is essential to maximizing an organization's or individual's core intellectual output.
   - Empirical corporate experiments involving a four-day workweek demonstrate that eliminating shallow work allows professionals to maintain identical total productivity output.
   - While shallow work cannot be completely eradicated, its operational footprint must be systematically compressed.
@@ -311,6 +320,7 @@ Adopting a deep work ethos constitutes a profound lifestyle choice that demands 
     - A practitioner has a right to expect an investment of effort from the sender; if a sender fails to invest effort into their inquiry, it is acceptable to issue no response.
 
 ### Conclusion 
+{: .no_toc}
 - **Conclusion**: Adopting a deep work ethos constitutes a profound lifestyle choice that demands significant behavioral restructuring.
   - A commitment to deep work is not suited for everyone, as it represents highly intensive cognitive labor and requires radical alterations to long-standing personal and professional habits.
   - > "I'll live the focused life, because it's the best kind there is." — Winifred Gallagher (p. 258)
