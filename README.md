@@ -27,6 +27,8 @@ This repository contains the source code of my personal homepage.
     categories: `blog`, tags: `book-review` `domain-driven-design` `software-architecture` `event-storming` `strategic-design`
   - [2026-07-18-review-clean-architecture.md](_posts/2026-07-18-review-clean-architecture.md)  
     categories: `blog`, tags: `book-review` `software-architecture` `clean-architecture` `solid-principles` `component-design`
+  - [2026-07-21-review-deep-work.md](_posts/2026-07-21-review-deep-work.md)  
+    categories: `blog`, tags: `book-review` `software-architecture` `clean-architecture` `solid-principles` `component-design`
 
 ---
 
