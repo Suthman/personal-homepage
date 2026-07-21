@@ -64,10 +64,11 @@ Take away:
 {% include book-review-reading-notes.html %}
 
 ### Introduction
-- Definition Deep Work (see page 3):
-> Proferssional activities performed in a stat of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate.
-- Definition Shallow Work (see page 6)
-> Noncogively demanding, logistical-style tasks, often performed while distracted. These efforts tend not to create much new value in the world and are easy to replicate.
+- Definition of Deep Work (see page 3):
+  > Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate.
+- Definition of Shallow Work (see page 6):
+  > Noncognitively demanding, logistical-style tasks, often performed while distracted. These efforts tend not to create much new value in the world and are easy to replicate.
+
 
 
 ### PART 1: The Idea
