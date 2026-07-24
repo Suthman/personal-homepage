@@ -80,6 +80,9 @@ jobs:
           print('\n'.join(lines[-50:]))
           "
 
+      - name: validate robots.txt
+        run: bundle exec ruby exclude/validate-robots-txt.rb
+
       - name: Validate HTML
         run: bundle exec ruby exclude/validate-html.rb
 
