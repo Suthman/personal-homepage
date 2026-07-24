@@ -17,5 +17,6 @@ end
 
 group :test do
   gem "webrick", "1.9.2" # web server
-  gem 'html-proofer', "5.2.1"
+  gem "html-proofer", "5.2.1"
+  gem "probot", "0.5.0"
 end
