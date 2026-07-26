@@ -144,8 +144,11 @@ The website is available at:
 
 Additional resources:
 
-- [Sitemap](https://christoph-mies.de/sitemap.xml)
+- [llms.txt](https://christoph-mies.de/llms.txt)
+- [llms-full.txt](https://christoph-mies.de/llms-full.txt)
+- [robots.txt](https://christoph-mies.de/robots.txt)
 - [RSS Feed](https://christoph-mies.de/feed.xml)
+- [Sitemap](https://christoph-mies.de/sitemap.xml)
 
 Domain Configuration
 #### A‑Records (root domain → GitHub Pages IPs)

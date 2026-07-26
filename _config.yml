@@ -1,8 +1,10 @@
 title: "Christoph Mies"
 subtitle: "IT Architect"
 description: "Blog · Publications · Professional Journey"
-url: "https://christoph-mies.de"
 og_image: /assets/images/author-photo.jpg # image used when sharing links. Can be a logo or portait. ATTENTION: also check og_image when updating!
+
+url: "https://christoph-mies.de"
+baseurl: ""
 
 minimal_mistakes_skin: "default" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
@@ -26,10 +28,22 @@ plugins:
   - jekyll-gist # Allows embedding GitHub Gists using the {% gist %} tag
   - jekyll-include-cache # Speeds up the build process by caching repetitive includes
   - jekyll-last-modified-at # Automatically syncs create and update timestamps with your Git commit history; important for automatic sitemap and feed generation
+  - jekyll-llms     # Eanbles md-sidecars and HTML header links
   - jekyll-paginate # Enables pagination for long lists of blog posts
   - jekyll-sitemap # Automatically generates a sitemap.xml for search engines
   - jemoji # Supports GitHub-style emojis like :books: or :rocket:
 
+llms:
+  markdown: true    # creates .md-sidecars
+  llms_txt: false   # deactivated - llms.txt is provided differently
+  include:
+    - posts
+    - pages
+  exclude:
+    - /
+    - /404.html
+    - /legal/
+    - /tags/
 
 include:
   - _pages
