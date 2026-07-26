@@ -6,7 +6,12 @@ on:
   workflow_dispatch:      # Enable manual triggers via the "Run workflow" button
     inputs:
       skip_html_validation:
-        description: 'HTML-Validierung überspringen?'
+        description: 'skip HTML validation?'
+        required: false
+        type: boolean
+        default: false
+      force_deploy:
+        description: 'Force deployment on manual trigger?'
         required: false
         type: boolean
         default: false
@@ -97,8 +102,10 @@ jobs:
         uses: actions/upload-pages-artifact@v5
 
   deploy:
-    # Only deploy automatically on 'main' OR when manually triggered via 'workflow_dispatch'
-    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    # Deploys automatically on 'main' push OR on manual trigger with 'force_deploy' checked
+    if: |
+      github.ref == 'refs/heads/main' && github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' && github.event.inputs.force_deploy == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
