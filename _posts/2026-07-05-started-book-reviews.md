@@ -77,7 +77,7 @@ The raw reading notes that I jotted down while reading the book are shared here.
 
 Based on the best practices outlined in [Getting started with AI chatbots – Master your prompting skills](/blog/getting-started-with-ai-chatbots), I developed a series of structured prompts designed to streamline the creation of book reviews from raw reading notes.
 
-- Fix and beautify my bullet points of the raw meeting notes
+### Fix and beautify the raw meeting notes
   
 ```markdown
 - **Role**
@@ -106,7 +106,7 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
 ----------
 ```
 
-- Create the summary based on the raw meeting notes
+### Create the summary based on the raw meeting notes
 
 ```markdown
 - Role
@@ -135,7 +135,7 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
 ----------
 ```
 
-- Fix grammar and spelling of a given text
+### Fix grammar and spelling of a given text
 
 ```markdown
 - Role
@@ -164,7 +164,10 @@ Based on the best practices outlined in [Getting started with AI chatbots – Ma
 ----------
 ```
 
-- When a text exceeds the maximum token length for a single prompt, it must be split across multiple inputs. Subsequent prompts can then be utilized to provide the remaining additional text.
+### Continue last prompt with additional text
+
+- When a text exceeds the maximum token length for a single prompt, it must be split across multiple inputs. 
+- Subsequent prompts can then be utilized to provide the remaining additional text.
 
 ```markdown
 Here is the additional text. It is located immediately below the `----------` separator line.
@@ -172,7 +175,7 @@ Here is the additional text. It is located immediately below the `----------` se
 ----------
 ```
 
-- Propose 3 - 5 tags for a blog post
+### Propose 3 - 5 tags for a blog post
 
 ```markdown
 Propose 3 - 5 tags for the blog post. It is located immediately below the `----------` separator line.
