@@ -1,0 +1,44 @@
+---
+layout: null
+permalink: /llms-full.txt
+allowed_pages:
+  - "About Me"
+  - "Publications"
+---
+# {{ site.title | unescape_html }}, {{ site.subtitle | unescape_html }} (Full-Text Repository)
+
+> {{ site.description | unescape_html }}
+
+This file provides the complete, unabridged content of my blog posts and selected pages for LLMs and AI assistants.
+
+---
+
+## Posts
+
+{% for post in site.posts %}# {{ post.title | unescape_html }}
+- **URL:** {{ site.url }}{{ post.url }}
+- **Created:** {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, **Updated:** {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}
+{% if post.tags.size > 0 %}- **Tags:** {{ post.tags | join: ', ' | unescape_html }}
+{% endif %}- **Words:** {{ post.content | strip_html | number_of_words }}
+
+### Content
+{{ post.content | strip_html | unescape_html }}
+
+---
+NEW PAGE
+---
+{% endfor %}
+
+## Pages
+
+{% for page_item in site.pages %}{% if page.allowed_pages contains page_item.title %}# {{ page_item.title | unescape_html }}
+- **URL:** {{ site.url }}{{ page_item.url }}
+- **Words:** {{ page_item.content | strip_html | number_of_words }}
+
+### Content
+{{ page_item.content | strip_html | unescape_html }}
+
+---
+NEW PAGE
+---
+{% endif %}{% endfor %}
