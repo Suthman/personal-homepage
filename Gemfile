@@ -10,6 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-gist", "1.5.0"
   gem "jekyll-include-cache", "0.2.1"
   gem "jekyll-last-modified-at", "1.3.2"
+  gem "jekyll-llms", "0.2.0"
   gem "jekyll-paginate", "1.1.0" # there also exist jekyll-paginate-v2
   gem "jekyll-sitemap", "1.4.0"
   gem "jemoji", "0.13.0"
