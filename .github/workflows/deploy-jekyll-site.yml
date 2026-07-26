@@ -4,6 +4,12 @@ on:
   push:
     branches: ["**"]      # Build on every push to any branch
   workflow_dispatch:      # Enable manual triggers via the "Run workflow" button
+    inputs:
+      skip_html_validation:
+        description: 'HTML-Validierung überspringen?'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -84,6 +90,7 @@ jobs:
         run: bundle exec ruby exclude/validate-robots-txt.rb
 
       - name: Validate HTML
+        if: ${{ github.event.inputs.skip_html_validation != 'true' }}
         run: bundle exec ruby exclude/validate-html.rb
 
       - name: Upload artifact
