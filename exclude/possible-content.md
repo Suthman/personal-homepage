@@ -32,25 +32,6 @@ Farben: Bleib bei Schwarz mit transparentem Hintergrund. Das passt perfekt zum S
 
 
 
-#### How could book summaries be presented? Collections or blog posts?
-
-##### books as post -> own category Key Takeaways 
-``` 
-title: "Bücher für den Job"
-layout: category
-permalink: /categories/key-takeaways/
-taxonomy: key-takeaways
-entries_layout: grid # grid or list; list is default  
-```
-##### books as collections? 
-
-
-### Denied questions and tasks
-- Can my publications be displayed "better" than the current bullet list? E.g. is it a collection?  
-  Answer: There are possibilities, but the best one seems to be an ordering auf the list by years -> not worth is, since the newest one is from 2013
-- Can I use public comments provider?
-  Answer: There are some available. Problem: If people do not need to authnticate, SPAM might become a problem. I decided to use mail as feedback loop
-
 ---
 
 ## Key-take-aways
@@ -65,16 +46,11 @@ entries_layout: grid # grid or list; list is default
 ## Possible future blogs
 
 
-
-- event-storming (`ddd`, `architecture`)
-  - first contact after book -> BOOK reference   [Domain-Driven Design kompakt](https://dpunkt.de/produkt/domain-driven-design-kompakt/) (ISBN: 978-3-86490-439-4) being a translation of [Domain-Driven Design Distilled](https://www.pearson.com/en-us/subject-catalog/p/domain-driven-design-distilled/P200000009615/9780134434995) by Vaughn Vernon (ISBN: 9780134434995)
-  - sticky-note method
+- ddd: (`ddd`, `architecture`)
+  - commands and event interaction, only 
+  - linguistic trick: turn "foreign" event into internal command -> corresponds to a translation from one context into another
   - short explanations: event, command, bounded context, aggregate
   - fachlich verteiltes modell -> no direct correspondance to microservice or any other technical entity
-  - linguistic trick: turn "foreign" event into internal command -> corresponds to a translation from one context into another
-  - Many teams have adopted ES and every session was feedbacked positive!
-
-- ddd: commands and event interaction, only (`ddd`, `architecture`)
 
 - documentation: arc42 and ADRs (`architecture`, `documentation`)
 
