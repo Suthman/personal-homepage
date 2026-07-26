@@ -5,6 +5,7 @@ toc: true
 toc_sticky: true
 toc_icon: "user-tie"
 toc_label: "About Me"
+excerpt: "Christoph Mies is an IT Architect and Software Engineer at REWE digital, specializing in DDD, arc42, and TDD. Previously, he was a Research Associate at Fraunhofer IAIS focused on simulations and applied AI, and studied Computer Science at RWTH Aachen. He is actively engaged in local cultural, charitable initiatives and sports."
 ---
 
 {% include ai-disclaimer-short.html %}

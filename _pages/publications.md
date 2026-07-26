@@ -1,6 +1,7 @@
 ---
 title: Publications
 permalink: /publications/
+excerpt: "A list of academic publications (2008–2013) focusing on AI planning frameworks (PDDL/HTN), multi-agent simulation environments (LAMPSys/ITSim), data farming, robotics hardware-software integration (DESIRE initiative), and optimization techniques applied to real-world scenarios."
 ---
 
 
