@@ -1,6 +1,6 @@
 ---
 title: "Book Review: 'Deep Work' by Cal Newport"    
-excerpt: "In his book 'Deep Work', Cal Newport explores strategic methodologies—such as structured routines, task prioritization, and communication filters—to systematically protect high-value focus and maximize cognitive performance within distracted corporate environments."
+excerpt: "In his book 'Deep Work', Cal Newport explores strategic methodologies — such as structured routines, task prioritization, and communication filters — to systematically protect high-value focus and maximize cognitive performance within distracted corporate environments."
 categories:
   - blog
 tags:
