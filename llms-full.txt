@@ -5,7 +5,7 @@ allowed_pages:
   - "About Me"
   - "Publications"
 ---
-# {{ site.title | unescape_html }}, {{ site.subtitle | unescape_html }} (Full-Text Repository)
+# {{ site.title | unescape_html }} – {{ site.subtitle | unescape_html }} (Full-Text Repository)
 
 > {{ site.description | unescape_html }}
 
@@ -14,31 +14,28 @@ This file provides the complete, unabridged content of my blog posts and selecte
 ---
 
 ## Posts
-
-{% for post in site.posts %}# {{ post.title | unescape_html }}
-- **URL:** {{ site.url }}{{ post.url }}
+{%- assign current_posts = site.posts | where_exp: "item", "item.date <= site.time" -%}
+{%- for post in current_posts %}
+---
+### [Post] {{ post.title | unescape_html }} – {{ site.url }}{{ post.url }}
 - **Created:** {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, **Updated:** {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}
-{% if post.tags.size > 0 %}- **Tags:** {{ post.tags | join: ', ' | unescape_html }}
-{% endif %}- **Words:** {{ post.content | strip_html | number_of_words }}
+{%- if post.tags.size > 0 %}
+- **Tags:** {{ post.tags | join: ', ' | unescape_html }}
+{%- endif %}
+- **Words:** {{ post.content | strip_html | number_of_words }}
 
-### Content
-{{ post.content | strip_html | unescape_html }}
-
----
-NEW PAGE
----
-{% endfor %}
+#### Content
+{{ post.raw_md | default: post.content }}
+{%- endfor %}
 
 ## Pages
-
-{% for page_item in site.pages %}{% if page.allowed_pages contains page_item.title %}# {{ page_item.title | unescape_html }}
-- **URL:** {{ site.url }}{{ page_item.url }}
+{%- for page_item in site.pages %}
+  {%- if page_item.title and page.allowed_pages contains page_item.title %}
+---
+### [Page] {{ page_item.title | unescape_html }} – {{ site.url }}{{ page_item.url }}
 - **Words:** {{ page_item.content | strip_html | number_of_words }}
 
-### Content
-{{ page_item.content | strip_html | unescape_html }}
-
----
-NEW PAGE
----
-{% endif %}{% endfor %}
+#### Content
+{{ page_item.raw_md | default: page_item.content }}
+  {%- endif %}
+{%- endfor %}
