@@ -10,12 +10,19 @@ allowed_pages:
 
 > {{ site.description | unescape_html }}
 
-This file provides a clean summary of my blog posts and pages for LLMs and AI assistants.
+This file provides a clean summary of my blog posts and pages for LLMs and AI assistants. 
+For each item, both the raw Markdown version [MD] and the processed web version [HTML] are provided.
 
-## Posts: 
-{% for post in site.posts %}- [{{ post.title | unescape_html }}]({{ site.url }}{{ post.url }}){% if post.excerpt %} : {{ post.excerpt | strip_html | strip_newlines | unescape_html | truncate: page.truncate_limit }}{% endif %} [Created: {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, Updated: {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}][Tags: {{ post.tags | join: ', ' | unescape_html }}] [Words: {{ post.content | strip_html | number_of_words }}]
-{% endfor %}
+## Posts:
+{%- assign current_posts = site.posts | where_exp: "item", "item.date <= site.time" -%}
+{%- for post in current_posts %}
+- [{{ post.title | unescape_html }}] — ([MD]({{ site.url }}{{ post.url }}index.md) | [HTML]({{ site.url }}{{ post.url }})){% if post.excerpt %} : {{ post.excerpt | strip_html | strip_newlines | unescape_html | truncate: page.truncate_limit }}{% endif %} [Created: {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, Updated: {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}][Tags: {{ post.tags | join: ', ' | unescape_html }}] [Words: {{ post.content | strip_html | number_of_words }}]
+{%- endfor %}
 
 ## Pages
-{% for page_item in site.pages %}{% if page.allowed_pages contains page_item.title %}{% assign page_desc = page_item.excerpt | default: page_item.content | strip_html | strip_newlines | unescape_html | truncate: page.truncate_limit %}- [{{ page_item.title | unescape_html }}]({{ site.url }}{{ page_item.url }}){% if page_desc != "" %} : {{ page_desc }}{% endif %} [Words: {{ page_item.content | strip_html | number_of_words }}]
-{% endif %}{% endfor %}
+{%- for page_item in site.pages %}
+  {%- if page_item.title and page.allowed_pages contains page_item.title %}
+    {%- assign page_desc = page_item.excerpt | default: page_item.content | strip_html | strip_newlines | unescape_html | truncate: page.truncate_limit %}
+- [{{ page_item.title | unescape_html }}] — ([MD]({{ site.url }}{{ page_item.url }}index.md) | [HTML]({{ site.url }}{{ page_item.url }})){% if page_desc != "" %} : {{ page_desc }}{% endif %} [Words: {{ page_item.content | strip_html | number_of_words }}]
+  {%- endif %}
+{%- endfor %}
