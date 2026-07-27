@@ -1,10 +1,10 @@
 require 'html-proofer'
 require 'pp' # Prettier print library for complex objects
 
-# target directory
+# Target directory
 target_directory = "./_site"
 
-# Prepase URL swapping depending on --swap-localhost parameter
+# Prepare URL swapping depending on the --swap-localhost parameter
 swap_localhost = ARGV.include?('--swap-localhost')
 url_swaps = {
   %r{^https://(www\.)?christoph-mies\.de} => ""
@@ -13,12 +13,12 @@ if swap_localhost
   url_swaps[%r{^https?://localhost:4000}] = ""
   url_swaps[%r{^https?://127\.0\.0\.1:4000}] = ""
 end
+
 puts "\n--- Active URL Swapping Configuration ---"
 url_swaps.each do |regex, replacement|
   puts "Match: #{regex.inspect}  =>  Replace with: '#{replacement}'"
 end
 puts "-----------------------------------------\n\n"
-
 
 # Definition of options
 options = {
@@ -47,10 +47,74 @@ options = {
 }
 
 begin
+  # 1. First, validate the standard HTML directories using HTML-Proofer
   puts "Starting HTML-Proofer for the folder #{target_directory}..."
-  HTMLProofer.check_directory(target_directory, options).run
-  puts "Great! All checks passed successfully."
+  directory_proofer = HTMLProofer.check_directory(target_directory, options)
+  
+  directory_failed = false
+  begin
+    directory_proofer.run
+  rescue => e
+    puts "HTML Directory check failed: #{e.message}"
+    directory_failed = true
+  end
+
+  # 2. Extract and natively validate links exclusively from llms.txt (In-Memory)
+  llm_file_failed = false
+  llm_file = "/llms.txt"
+  full_file_path = File.join(target_directory, llm_file)
+  
+  if File.exist?(full_file_path)
+    puts "Validating links inside LLM interface: #{llm_file}"
+    content = File.read(full_file_path)
+    
+    # Precise Regex to capture all markdown links [text](url), even when nested in brackets
+    extracted_urls = content.scan(/\[.*?\]\((.*?)\)/).flatten.uniq
+    
+    extracted_urls.each do |url|
+      # Apply your configured url_swaps dynamically to the extracted URL
+      processed_url = url.dup
+      url_swaps.each do |regex, replacement|
+        processed_url.gsub!(regex, replacement)
+      end
+      
+      # Determine if the URL belongs to your local domain (starts with /, ./ or became relative after swap)
+      # If the original URL was 'http://localhost:4000/publications/idex.md', it is now '/publications/idex.md'
+      is_local = processed_url.start_with?("/") || processed_url.start_with?("./") || !processed_url.include?("://")
+      
+      if is_local
+        # Clean up URL parameters or anchor fragments (#)
+        clean_path = processed_url.split("#").first.split("?").first
+        
+        # Prevent empty path concatenation errors if a link points to root "/"
+        clean_path = "index.html" if clean_path.empty? || clean_path == "/"
+        
+        target_path = File.join(target_directory, clean_path)
+        
+        # Check for direct file existence or fallback to directory indexing
+        is_valid_file = File.exist?(target_path)
+        is_valid_dir = File.directory?(target_path) && (File.exist?(File.join(target_path, "index.html")) || File.exist?(File.join(target_path, "index.md")))
+        
+        unless is_valid_file || is_valid_dir
+          puts "❌ Broken Link found in #{llm_file}: '#{url}' (Resolved to local path: #{target_path})"
+          llm_file_failed = true
+        end
+      end
+    end
+  else
+    puts "Note: #{llm_file} not found in build directory. Skipping file-specific validation."
+  end
+
+  # 3. Final system exit handling based on combined results
+  if directory_failed || llm_file_failed
+    puts "\nValidation failed. Please fix the errors listed above."
+    exit 1
+  else
+    puts "\nGreat! All checks passed successfully (including verified LLM markdown index links)."
+    exit 0
+  end
+
 rescue => e
-  puts "Check failed: #{e.message}"
+  puts "Critical script failure: #{e.message}"
   exit 1
 end
