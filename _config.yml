@@ -3,7 +3,7 @@ subtitle: "IT Architect"
 description: "Blog · Publications · Professional Journey"
 og_image: /assets/images/author-photo.jpg # image used when sharing links. Can be a logo or portait. ATTENTION: also check og_image when updating!
 
-url: "https://christoph-mies.de"
+url: "https://christoph-mies.de" # ATTENTION: Also check social-links when changing!
 baseurl: ""
 
 minimal_mistakes_skin: "default" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
@@ -30,6 +30,7 @@ plugins:
   - jekyll-last-modified-at # Automatically syncs create and update timestamps with your Git commit history; important for automatic sitemap and feed generation
   - jekyll-llms     # Eanbles md-sidecars and HTML header links
   - jekyll-paginate # Enables pagination for long lists of blog posts
+  - jekyll-seo-tag  # Automatically adds metadata, Open Graph tags, and JSON-LD structured data for Google and LLMs
   - jekyll-sitemap # Automatically generates a sitemap.xml for search engines
   - jemoji # Supports GitHub-style emojis like :books: or :rocket:
 
@@ -84,9 +85,9 @@ defaults:
 email: www-christoph-mies-de@web.de # ATTENTION: Also check mail adress in author-info when changing!
 
 author:
-  name   : "Christoph"
+  name: "Christoph"
 #  bio    : "Here I am sharing my projects and thoughts."
-  avatar : /assets/images/author-photo.jpg # Path to photo. ATTENTION: also check og_image when updating!
+  avatar: /assets/images/author-photo.jpg # Path to photo. ATTENTION: also check og_image when updating!
   location: "Lohmar, Germany"
   links:
     - label: Email
@@ -94,13 +95,17 @@ author:
       url: "mailto:www-christoph-mies-de@web.de" # ATTENTION: Also check mail adress in site properties when changing!
     - label: LinkedIn
       icon: "fab fa-fw fa-linkedin"
-      url: "https://de.linkedin.com/in/christoph-mies-459042177"
+      url: "https://de.linkedin.com/in/christoph-mies-459042177" # ATTENTION: Also check social-links when changing!
     - label: XING
       icon: "fab fa-fw fa-square-xing"
-      url: "https://www.xing.com/profile/Christoph_Mies3"
-#    - label: "GitHub"
-#      icon: "fab fa-fw fa-github"
-#      url: "https://github.com"
+      url: "https://www.xing.com/profile/Christoph_Mies3" # ATTENTION: Also check social-links when changing!
+
+social:
+  name: "Christoph Mies"
+  links:
+  - "https://de.linkedin.com/in/christoph-mies-459042177" # ATTENTION: Also check author_links when changing!
+  - "https://www.xing.com/profile/Christoph_Mies3"  # ATTENTION: Also check author_links when changing!
+  - "https://christoph-mies.de"  # ATTENTION: Also check url when changing!
 
 atom_feed: 
   hide: true # not rendered anyway as long as search is active. So I put RSS feed to footer explicitly
