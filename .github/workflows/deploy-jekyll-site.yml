@@ -91,6 +91,9 @@ jobs:
           print('\n'.join(lines[-50:]))
           "
 
+      - name: validate published files and directories
+        run: bundle exec ruby exclude/validate-published-files.rb
+
       - name: validate robots.txt
         run: bundle exec ruby exclude/validate-robots-txt.rb
 

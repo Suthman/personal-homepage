@@ -129,11 +129,13 @@ Custom extensions:
   - For testing, it can be deployed manually from feature branches  
     Note: the branch must be explicitly mentioned in `github-pages` environment
   - ⚠️ **Attention**: PDF and BIB lastmod timestamps in the sitemap are overwritten via a post-build hack ⚠️
+  - The published files and directories are validated using the Ruby script [validate-published-files.rb](exclude/validate-published-files.rb)
   - [robots.txt](robots.txt) is validated using the Ruby script [validate-robots-txt.rb](exclude/validate-robots-txt.rb)
   - The generated HTML pages are validated by `html-proofer` using the Ruby script [validate-html.rb](exclude/validate-html.rb)   
   ⚠️ **Attention**: Production domain is replaced with `""` to ensure correct link checks on branches ⚠️
 - Local development:
   - Build pages and start the server `bundle exec jekyll serve --livereload`
+  - Validate published files in `_site`: `bundle exec ruby exclude/validate-published-files.rb`
   - Validate robots.txt: `bundle exec ruby exclude/validate-robots-txt.rb`
   - Validate HTML: `bundle exec ruby exclude/validate-html.rb --swap-localhost`
 - Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
