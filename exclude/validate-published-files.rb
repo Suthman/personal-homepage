@@ -9,7 +9,8 @@ EXPECTED_ITEMS = %w[
 ].freeze
 
 # System files to ignore
-IGNORED_ITEMS = %w[.DS_Store .gitkeep .keep thumbs.db].freeze
+#IGNORED_ITEMS = %w[.DS_Store .gitkeep .keep thumbs.db].freeze
+IGNORED_ITEMS = %w[].freeze
 
 # --- CONFIGURATION FOR STRICT CHECKS ---
 # Define what files are expected in which directories
