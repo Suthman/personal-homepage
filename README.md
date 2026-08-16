@@ -1,13 +1,11 @@
 # Personal Homepage
 
 This repository contains the source code for my personal homepage.  
-- [Contents and Overview](#-contents-and-overview)
-- [Technical setup](#-technical-setup)
-- [Styleguide](#-styleguide)
+- [📖 Contents and Overview](#-contents-and-overview)
+- [🎨 Styleguide](#-styleguide)
+- [🔧 Technical setup](#-technical-setup)
+- [🔗 Useful Links](#-useful-links)
 - [TODOs and Future Topics](exclude/possible-content.md)
-
-
----
 
 
 ## 📖 Contents and overview
@@ -30,8 +28,6 @@ This repository contains the source code for my personal homepage.
   - [2026-07-21-review-deep-work.md](_posts/2026-07-21-review-deep-work.md)  
     categories: `blog`, tags: `book-review` `software-architecture` `clean-architecture` `solid-principles` `component-design`
 
----
-
 
 ## 🎨 Styleguide
 - Maximum of 2 levels in the table of contents   
@@ -43,9 +39,6 @@ Exception: TOCs for book reviews align with the book's structure
 - use `inline code snippets` for mathematical formulas whenever possible, i.e. avoid MathJax or similar frameworks
 
 
----
-
-
 ## 🔧 Technical setup
 - [Jekyll Theme: Minimal Mistakes](#-jekyll-theme-minimal-mistakes)
 - [Theme Overrides and Customization](#-theme-overrides-and-customization)
@@ -53,28 +46,15 @@ Exception: TOCs for book reviews align with the book's structure
 - [Accessibility and Links](#-accessibility-and-important-links)
 
 
----
-
-
 ### 🧪 Jekyll theme: Minimal Mistakes
 
 The website is based on the [Jekyll](https://jekyllrb.com/) Theme **Minimal Mistakes**.
-
-Useful resources related to Minimal Mistakes:
-
-- [Minimal Mistakes GitHub](https://github.com/mmistakes/minimal-mistakes)
-- [Minimal Mistakes Documentation](https://mmistakes.github.io/minimal-mistakes/)
-- [Minimal Mistakes GitHub Pages Starter](https://github.com/mmistakes/mm-github-pages-starter)
-- [Sample Content Repository](https://github.com/mmistakes/jekyll-sample-content/)
 
 Important files:
 - [_config.yml](_config.yml): Jekyll configuration
 - [navigation.yml](_data/navigation.yml): site navigation
 - [Gemfile](Gemfile): dependency management for Ruby  
   Find Ruby dependencies on [rubygems.org](https://rubygems.org/)
-
-
----
 
 
 ### ⚠️ Theme Overrides and Customization
@@ -117,8 +97,6 @@ Custom extensions:
   Adds a copy button to code blocks.  
   ⚠️ This is **not** compatible with the minimal_mistakes_skins `neon` and `plum`
 
----
-
 
 ### 🚀 Build and Deployment
 
@@ -139,10 +117,6 @@ Custom extensions:
   - Validate robots.txt: `bundle exec ruby exclude/validate-robots-txt.rb`
   - Validate HTML: `bundle exec ruby exclude/validate-html.rb --swap-localhost`
 - Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
-
-
-
----
 
 
 ### 🌐 Accessibility and SEO / LLM Optimization
@@ -168,6 +142,7 @@ The website is available at:
 - The RSS Feed is provided by `jekyll-feed`
 - The sitemap is provided by `jekyll-sitemap`
 
+
 #### A‑Records (root domain → GitHub Pages IPs)
 
 - christoph-mies.de  → 185.199.108.153
@@ -180,3 +155,12 @@ The website is available at:
 
 - www.christoph-mies.de  → suthman.github.io
 
+
+## 🔗 Useful Links
+
+- [Font AWESOME - free-collection](https://fontawesome.com/search?ic=free-collection)
+- Useful resources related to Minimal Mistakes:
+  - [Minimal Mistakes GitHub](https://github.com/mmistakes/minimal-mistakes)
+  - [Minimal Mistakes Documentation](https://mmistakes.github.io/minimal-mistakes/)
+  - [Minimal Mistakes GitHub Pages Starter](https://github.com/mmistakes/mm-github-pages-starter)
+  - [Sample Content Repository](https://github.com/mmistakes/jekyll-sample-content/)
