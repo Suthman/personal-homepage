@@ -1,18 +1,44 @@
 require 'html-proofer'
-require 'pp' # Prettier print library for complex objects
+require 'pp'
+require 'yaml'
 
 # Target directory
 target_directory = "./_site"
 
-# Prepare URL swapping depending on the --swap-localhost parameter
+# Read url and baseurl from _config.yml
+config_file = "_config.yml"
+baseurl = ""
+url = ""
+
+begin
+  # YAML.load_file automatically fails if the file does not exist
+  config = YAML.load_file(config_file) || {}
+  
+  # .fetch directly raises a KeyError if the key is missing
+  url = config.fetch('url')
+  baseurl = config.fetch('baseurl')
+  
+  puts "Loaded from #{config_file}: url='#{url}', baseurl='#{baseurl}'"
+rescue => e
+  puts "Critical Error: Failed to load configuration from #{config_file} (#{e.message})."
+  exit 1
+end
+
+
+# Prepare URL swapping depending on url, baseurl and the --swap-localhost parameter
 swap_localhost = ARGV.include?('--swap-localhost')
-url_swaps = {
-  %r{^https://(www\.)?christoph-mies\.de} => ""
-}
+url_swaps = {}
+if !url.empty? && url != "/"
+  url_swaps[%r{^#{Regexp.escape(url)}}] = ""
+end
 if swap_localhost
   url_swaps[%r{^https?://localhost:4000}] = ""
   url_swaps[%r{^https?://127\.0\.0\.1:4000}] = ""
 end
+if !baseurl.empty? && baseurl != "/"
+  url_swaps[%r{^#{Regexp.escape(baseurl)}}] = ""
+end
+
 
 puts "\n--- Active URL Swapping Configuration ---"
 url_swaps.each do |regex, replacement|
