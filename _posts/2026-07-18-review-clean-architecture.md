@@ -26,7 +26,7 @@ header:
 
 {% include ai-disclaimer-short.html %}
 
-This post is my second book review, as introduced in [Professional Book Review](/blog/started-book-reviews).
+This post is my second book review, as introduced in [Professional Book Review]({{ site.baseurl }}/blog/started-book-reviews).
 
 
 ## 📋 Quick Facts
@@ -83,7 +83,7 @@ My primary takeaways from this book are the following:
   > A level is defined by the distance from the system inputs and outputs.
 - An architecture must **scream** its purpose: **application use cases are first-class citizens**, not technology or frameworks.
 - **Clean Architecture overview** schematic diagram (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)):
-![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
+![Clean Architecture overview]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
 - **Dependency rule**:
 > Source code dependencies must only point inward, toward higher-level policies.
 - Services are a runtime detail; note the decoupling trap! **Cross-cutting concerns can span across services** and are not necessarily in between them! 
@@ -177,7 +177,7 @@ This principle dictates that there should only be one reason to change a module,
 
 The CRP instructs engineers to put components together that are usually used together, and to separate classes that are usually not used together. It relates closely to the Interface Segregation Principle (ISP), which requires separating interfaces when methods are usually not used together. The common denominator of ISP and CRP is that systems must not create dependencies on elements that they do not require. 
 
-![Tension Triad of Component Principles](/assets/images/2026-review-clean-architecture/tension-triad-component-principles.png "Tension Triad of Component Principles")
+![Tension Triad of Component Principles]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/tension-triad-component-principles.png "Tension Triad of Component Principles")
 Tension Triad of Component Principles (adapted from page 126)
 {: .text-center}
 
@@ -195,7 +195,7 @@ Stability of components is defined as the effort required to change the componen
 
 Common components should be stable but also accessible by many components; therefore, they should be abstract. The SAP states that the stability of a component should relate directly to its abstraction. When combined, the SAP and SDP represent a component-level equivalent of the Dependency Inversion Principle (DIP). The degree of abstraction (`A`) of components is measured using the number of classes in a component (`N_c`) and the number of abstract classes and interfaces in a component (`N_a`), formulated as `A = N_a / N_c`. Here, `A = 0` means no abstract classes exist, and `A = 1` means all classes are abstract. 
 
-  ![Zones of Exclusion](/assets/images/2026-review-clean-architecture/zones-of-exclusion.png "Zones of Exclusion")
+  ![Zones of Exclusion]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/zones-of-exclusion.png "Zones of Exclusion")
 Zones of Exclusion depicted on page 145 (image copied from [Breaking Down ‘Clean Architecture’ by Uncle Bob — Part III by Divya Saravanan](https://medium.com/@tales.of.di.official/breaking-down-clean-architecture-by-uncle-bob-part-iii-8c7b6e40ef1c))
 {: .text-center}
 
@@ -237,7 +237,7 @@ An application's architecture should clearly broadcast its underlying purpose. B
 #### Chapter 22 — The Clean Architecture
 Clean Architecture consolidates structural designs that share fundamental operational principles, drawing from three important influencing architectures: [Hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) (later frequently referred to as **_Ports and Adapters_**), DCI — [Data, Context and Interaction](https://en.wikipedia.org/wiki/Data,_context_and_interaction) and BCE — [Boundary Control Entity](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary). These systems rely on common architectural characteristics, including the usage of layers to separate distinct system aspects, ensuring at least one level for business rules and an additional level for user and system interfaces. This separation guarantees comprehensive framework independence, high testability, complete UI independence, complete database independence, and absolute independence from external agencies. 
 
-![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
+![Clean Architecture overview]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
 Architecture overview schematic diagram depicted on page 212 (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 {: .text-center}
 
@@ -267,7 +267,7 @@ Tests are a fundamental part of the system rather than an external or peripheral
 #### Chapter 29 — Clean Embedded Architecture
 Firmware represents software that is tightly coupled to a specific technology, meaning that utilizing SQL or interfacing with the Android API constitutes firmware. To maintain a clean architecture, engineering teams must cease the development of firmware-centric code and transition to writing pure software. The optimal architectural solution for embedded systems relies on a three-tier model comprising three distinct layers, which are Software, Firmware, and Hardware. Engineers achieve this by implementing a Hardware Abstraction Layer (HAL) between the software and firmware tiers, which is an established industry concept that predates Windows on personal computers. The HAL must encapsulate all low-level hardware specificities. Because the processor serves as a low-level detail, the firmware layer must isolate the rest of the system from processor-specific architecture. Furthermore, the operating system must be treated as a low-level implementation detail. To manage this operating system encapsulation, you can add an additional layer to form a four-tier model of the clean embedded architecture: Software, OS, Firmware, and Hardware. This layout integrates the operating system alongside an Operating System Abstraction Layer (OSAL) between the software and firmware tiers.
 
-![Tier model of clean embedded architecture](/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
+![Tier model of clean embedded architecture]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
 Four-tier model of the clean embedded architecture (adapted from page 267)
 {: .text-center}
 
@@ -289,7 +289,7 @@ Architectural design begins with a comprehensive use case analysis to capture fu
 #### Chapter 34 — The Missing Chapter
 Runtime execution discrepancies and structural failures manifest primarily during system execution rather than design phases. **_Packaging by layer_** serves as a viable baseline architecture for simplistic applications, but it suffers from an absence of domain expressiveness, failing to overtly communicate or "shout out" the application's underlying business use cases. Alternatively, **_packaging by feature_** concentrates all vertical slices of a functional requirement into a single, localized package. However, vertical feature organization introduces long-term maintainability challenges and boundary degradation risks in strictly enforcing architectural boundaries between distinct features. 
 
-**_Hexagonal architecture_** separation via Ports and Adapters isolates core domain logic within internal rings while relegating infrastructure concerns to external rings. These inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"](/blog/review-domain-driven-design). **_Packaging by component_** may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP, offering key internal encapsulation retention. Consolidating domain logic and persistence code within a single package prevents component-internal interfaces, such as an `OrderRepository`, from being exposed publicly. The [C4 Software Architecture Model](https://c4model.com) proposes a different definition of component:
+**_Hexagonal architecture_** separation via Ports and Adapters isolates core domain logic within internal rings while relegating infrastructure concerns to external rings. These inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"]({{ site.baseurl }}/blog/review-domain-driven-design). **_Packaging by component_** may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP, offering key internal encapsulation retention. Consolidating domain logic and persistence code within a single package prevents component-internal interfaces, such as an `OrderRepository`, from being exposed publicly. The [C4 Software Architecture Model](https://c4model.com) proposes a different definition of component:
 > "In the C4 model, a component is a grouping of related functionality encapsulated behind a well-defined interface. [...] components are _not_ separately deployable units. Instead, it’s the container that’s the deployable unit."
 
 Packaging by component yields a **significant architectural encapsulation benefit**, as vertical slicing is achieved while preserving the layered architecture as an internal implementation detail of the component. Furthermore, this sub-component architecture must still preserve the strict separation of core domain logic from persistence mechanisms as an internal implementation detail.
@@ -469,7 +469,7 @@ The book concludes with final remarks from the author.
   - It relates to the Interface Segregation Principle (ISP): ISP requires separating interfaces when methods are usually not used together.
   - Common denominator of ISP and CRP: Do not create dependencies on elements that you do not require.
 - **The Tension Triad of Component Principles**
-![Tension Triad of Component Principles](/assets/images/2026-review-clean-architecture/tension-triad-component-principles.png "Tension Triad of Component Principles")
+![Tension Triad of Component Principles]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/tension-triad-component-principles.png "Tension Triad of Component Principles")
 Tension Triad of Component Principles (adapted from page 126)
   - The three principles are in opposition.
   - REP tends to create big components to reduce their number.
@@ -510,7 +510,7 @@ Tension Triad of Component Principles (adapted from page 126)
     - `A`: Degree of abstraction. `A = N_a / N_c`
     - `A = 0` means no abstract classes, `A = 1` means all classes are abstract.
 - **The `I`/`A` Graph and Zones of Exclusion**
-  ![Zones of Exclusion](/assets/images/2026-review-clean-architecture/zones-of-exclusion.png "Zones of Exclusion")
+  ![Zones of Exclusion]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/zones-of-exclusion.png "Zones of Exclusion")
 Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean Architecture’ by Uncle Bob — Part III by Divya Saravanan](https://medium.com/@tales.of.di.official/breaking-down-clean-architecture-by-uncle-bob-part-iii-8c7b6e40ef1c))
   - The `I`/`A` graph with zones of exclusion on page 145 depicts the following relationships:
   - Zone of Pain: Highly stable (many dependent components) and highly concrete (hard to change). Examples include database schemas and the Java `String` class.
@@ -635,7 +635,7 @@ Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean
     - Complete database independence.
     - Independence from external agencies.
 - **Clean Architecture overview**: The schematic diagram illustrates the concentric layout of the architecture.
-  ![Clean Architecture overview](/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
+  ![Clean Architecture overview]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/clean_architecture.jpg "Clean Architecture overview")
   Architecture overview schematic diagram depict on page 212 (image copied from [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html))
 - **Dependency Rule**: This central rule governs the direction of all source code dependencies.
   - Definition:
@@ -738,7 +738,7 @@ Zones of Exclusion depict on page 145 (image copied from [Breaking Down ‘Clean
   - You can add an additional layer OS: Software, OS, Firmware, and Hardware.
   - Integrate the operating system alongside an Operating System Abstraction Layer (OSAL) between software and firmware.
 
-![Tier model of clean embedded architecture](/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
+![Tier model of clean embedded architecture]({{ site.baseurl }}/assets/images/2026-review-clean-architecture/clean_embedded_architecture.png "Tier model of clean embedded architecture"){: style="width: 10rem; display: block; margin: 0 auto;"}
 Four-tier model of the clean embedded architecture (adapted from page 267)
 {: .text-center}
 
@@ -784,7 +784,7 @@ Four-tier model of the clean embedded architecture (adapted from page 267)
 - **Vertical feature slicing**: Packaging by feature concentrates all vertical slices of a functional requirement into a single, localized package.
   - Boundary degradation risks: Vertical feature organization introduces long-term maintainability challenges in strictly enforcing architectural boundaries between distinct features.
 - **Hexagonal architectural separation**: Ports and Adapters isolates core domain logic within internal rings while relegating infrastructure concerns to external rings.
-  - Domain-Driven Design integration: Inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"](/blog/review-domain-driven-design).
+  - Domain-Driven Design integration: Inner architectural rings encapsulate the Ubiquitous Language presented in ["Book Review: 'Domain-Driven Design kompakt' by Vaughn Vernon"]({{ site.baseurl }}/blog/review-domain-driven-design).
 - **Component-Centric Organization**: Packaging by component may operate independently from the presented component principles such as SOLID, REP, CCP, and CRP:
   - Internal encapsulation retention: Consolidating domain logic and persistence code within a single package prevents component-internal interfaces, such as an `OrderRepository`, from being exposed publicly.
   - C4 model component: The [C4 Software Architecture Model](https://c4model.com) proposes a different definition of component:  
