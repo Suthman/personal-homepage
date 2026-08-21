@@ -4,7 +4,7 @@ description: "Blog · Publications · Professional Journey"
 og_image: /assets/images/author-photo.jpg # image used when sharing links. Can be a logo or portait. ATTENTION: also check og_image when updating!
 
 url: "https://christoph-mies.de" # ATTENTION: Also check social-links when changing!
-baseurl: ""
+baseurl: "" # ATTENTION: check links within this config (e.g. in footer and social-links) when changing!
 
 minimal_mistakes_skin: "default" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
@@ -17,7 +17,7 @@ encoding: utf-8 # no official jekyll standard, but: might help and will not brea
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:categories/:title/ # ATTENTION: Adapt links in llms.txt and llms-full.txt when changing 
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 locale: en-GB # important: - instead of _
@@ -105,7 +105,7 @@ social:
   links:
   - "https://de.linkedin.com/in/christoph-mies-459042177" # ATTENTION: Also check author_links when changing!
   - "https://www.xing.com/profile/Christoph_Mies3"  # ATTENTION: Also check author_links when changing!
-  - "https://christoph-mies.de"  # ATTENTION: Also check url when changing!
+  - "https://christoph-mies.de"  # ATTENTION: Also check url and baseurl when changing!
 
 atom_feed: 
   hide: true # not rendered anyway as long as search is active. So I put RSS feed to footer explicitly
