@@ -8,6 +8,9 @@ module Jekyll
     HEADER_SHIFT_LEVEL = 4
 
     def generate(site)
+      # Pre-generate the global site payload containing baseurl, url, site variables etc.
+      @site_payload = site.site_payload
+
       # 1. Process all blog posts
       site.posts.docs.each do |post|
         process_document(post, site)
@@ -33,24 +36,53 @@ module Jekyll
         raw_markdown = content_parts[2..].join("---").strip
 
         begin
-          # Create a proper Liquid context using Jekyll's internal template environment
-          context = Liquid::Context.new({}, {}, { site: site, page: doc.data })
+          # We pass the site payload as environments and register the true system structures.
+          context = Liquid::Context.new(
+            [@site_payload.merge({ "page" => doc.data })], # Environments
+            {},                                            # Outer Scopes
+            { site: site, page: doc.data },                # Registers (CRUCIAL!)
+            true                                           # Rethrow Errors
+          )
+          
           template = site.liquid_renderer.file(doc.path).parse(raw_markdown)
 
-          # Render the liquid tags
+          # Render the liquid tags with full access to configuration drops and includes
           rendered_markdown = template.render(context)
         rescue => e
           Jekyll.logger.warn "RawMarkdownGenerator:", "Could not render Liquid tags in #{doc.relative_path}: #{e.message}"
           rendered_markdown = raw_markdown
         end
 
-        # Removes HTML tags except <style> and </style> tags
+        # 1. Convert HTML img to Markdown link
+        rendered_markdown.gsub!(/<img\b[^>]*?>/im) do |img_tag|
+          src_match = img_tag.match(/\bsrc=["']([^"']+)["']/i)
+          # extract ONLY the URL inside the quotes, not the whole 'src="..."' string
+          src_url = src_match ? src_match[1] : ""
+
+          alt_match = img_tag.match(/\balt=["']([^"']+)["']/i)
+          alt_text = alt_match ? alt_match[1] : ""
+          
+          if src_url.empty?
+            ""
+          else
+            "![#{alt_text}](#{src_url})"
+          end
+        end
+
+        # 2. Removes HTML tags except <style> and </style> tags
         rendered_markdown.gsub!(/<(?!style\b|\/style\b)\/?[^>]*>/i, "")
 
-        # Hierarchy shift: Dynamically shift all markdown headers down based on the constant
+        # 3. Hierarchy shift: Dynamically shift all markdown headers down based on the constant
         rendered_markdown.gsub!(/^(#+)(?=\s)/) do |header_match|
           header_match + ("#" * HEADER_SHIFT_LEVEL)
         end
+
+        # 4. Strip all accidental leading spaces before images globally
+        # This targets any line that has leading spaces followed immediately by an image link.
+        rendered_markdown.gsub!(/^[ \t]+(\!\[)/, '\1')
+
+        # Clean up lines that contain nothing but empty whitespace
+        rendered_markdown.gsub!(/^[ \t]+$/, '')
 
         doc.data["raw_md"] = rendered_markdown.strip
       else
