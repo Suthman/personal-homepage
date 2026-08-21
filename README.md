@@ -4,8 +4,10 @@ This repository contains the source code for my personal homepage.
 - [📖 Contents and Overview](#-contents-and-overview)
 - [🎨 Styleguide](#-styleguide)
 - [🔧 Technical setup](#-technical-setup)
+  - [⚠️ Theme Overrides and Customization](#️-theme-overrides-and-customization)
+  - [🚀 Build and Deployment](#-build-and-deployment)
+  - [🌐 Web Access, SEO, and LLM Optimization](#-web-access-seo-and-llm-optimization)
 - [🔗 Useful Links](#-useful-links)
-- [TODOs and Future Topics](exclude/possible-content.md)
 
 
 ## 📖 Contents and overview
@@ -37,6 +39,9 @@ Exception: TOCs for book reviews align with the book's structure
 - _Quotes_ or _Calls-to-Action_ in italics
 - 3 - 5 tags per post
 - use `inline code snippets` for mathematical formulas whenever possible, i.e. avoid MathJax or similar frameworks
+- Links:
+  - Pure Markdown (`![]()` or `[]()`): Use `{{ site.baseurl }}/assets/...`
+  - HTML-Code (in templates or as inline snippets): Use `{{ '/assets/...' | relative_url }}`
 
 
 ## 🔧 Technical setup
@@ -46,7 +51,6 @@ Exception: TOCs for book reviews align with the book's structure
 - [Accessibility and Links](#-accessibility-and-important-links)
 
 
-### 🧪 Jekyll theme: Minimal Mistakes
 
 The website is based on the [Jekyll](https://jekyllrb.com/) Theme **Minimal Mistakes**.
 
@@ -54,7 +58,6 @@ Important files:
 - [_config.yml](_config.yml): Jekyll configuration
 - [navigation.yml](_data/navigation.yml): site navigation
 - [Gemfile](Gemfile): dependency management for Ruby  
-  Find Ruby dependencies on [rubygems.org](https://rubygems.org/)
 
 
 ### ⚠️ Theme Overrides and Customization
@@ -118,46 +121,37 @@ Custom extensions:
 - Dependencies of `Ruby` and `Github Actions`are managed with Dependabot **[.github/dependabot.yml](.github/dependabot.yml)**
 
 
-### 🌐 Accessibility and SEO / LLM Optimization
+### 🌐 Web Access, SEO, and LLM Optimization
 
-The website is available at:
-
-- [https://www.christoph-mies.de](https://www.christoph-mies.de)
-- [https://suthman.github.io/personal-homepage/](https://suthman.github.io/personal-homepage/)
+- The website is available at:
+  - [https://www.christoph-mies.de](https://www.christoph-mies.de)
+  - [https://suthman.github.io/personal-homepage/](https://suthman.github.io/personal-homepage/)
 - Important links:
   - [llms.txt](https://www.christoph-mies.de/llms.txt) 
   - [llms-full.txt](https://www.christoph-mies.de/llms-full.txt) 
   - [robots.txt](https://christoph-mies.de/robots.txt)
   - [feed.xml](https://christoph-mies.de/feed.xml)
   - [sitemap.xml](https://christoph-mies.de/sitemap.xml)
-
-
-#### SEO / LLM Optimization:
-
-- The plugin `jekyll-llm` builds the Markdown sidecars and links the HTML pages to them
-- [llms.txt](llms.txt) and [llms-full.txt](llms-full.txt) are built explicitly without plugin; [llms.txt](llms.txt) links to both the HTML pages and the Markdown sidecars
-- [head/custom.html](_includes/head/custom.html) extracts the `tags` from posts and adds them as `keywords` to the HTML
-- The plugin `jekyll-seo-tag` adds metadata, Open Graph tags, and JSON-LD structured data
-- The RSS Feed is provided by `jekyll-feed`
-- The sitemap is provided by `jekyll-sitemap`
-
-
-#### A‑Records (root domain → GitHub Pages IPs)
-
-- christoph-mies.de  → 185.199.108.153
-- christoph-mies.de  → 185.199.109.153
-- christoph-mies.de  → 185.199.110.153
-- christoph-mies.de  → 185.199.111.153
-
-
-#### CNAME (www → GitHub Pages)
-
-- www.christoph-mies.de  → suthman.github.io
+- SEO, and LLM Optimization
+  - The plugin `jekyll-llm` builds the Markdown sidecars and links the HTML pages to them
+  - [llms.txt](llms.txt) and [llms-full.txt](llms-full.txt) are built explicitly without plugin; [llms.txt](llms.txt) links to both the HTML pages and the Markdown sidecars
+  - [head/custom.html](_includes/head/custom.html) extracts the `tags` from posts and adds them as `keywords` to the HTML
+  - The plugin `jekyll-seo-tag` adds metadata, Open Graph tags, and JSON-LD structured data
+  - The RSS Feed is provided by `jekyll-feed`
+  - The sitemap is provided by `jekyll-sitemap`
+- A‑Records (root domain → GitHub Pages IPs)
+  - christoph-mies.de  → 185.199.108.153
+  - christoph-mies.de  → 185.199.109.153
+  - christoph-mies.de  → 185.199.110.153
+  - christoph-mies.de  → 185.199.111.153
+- [CNAME](CNAME) (www → GitHub Pages)
+  - www.christoph-mies.de  → suthman.github.io
 
 
 ## 🔗 Useful Links
 
 - [Font AWESOME - free-collection](https://fontawesome.com/search?ic=free-collection)
+- Find Ruby dependencies on [rubygems.org](https://rubygems.org/)
 - Useful resources related to Minimal Mistakes:
   - [Minimal Mistakes GitHub](https://github.com/mmistakes/minimal-mistakes)
   - [Minimal Mistakes Documentation](https://mmistakes.github.io/minimal-mistakes/)
