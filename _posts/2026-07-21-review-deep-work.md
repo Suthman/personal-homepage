@@ -24,7 +24,7 @@ header:
 
 {% include ai-disclaimer-short.html %}
 
-This post is a book review, as introduced in [Professional Book Review](/blog/started-book-reviews).
+This post is a book review, as introduced in [Professional Book Review]({{ site.baseurl }}/blog/started-book-reviews).
 
 
 ## 📋 Quick Facts

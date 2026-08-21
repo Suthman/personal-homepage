@@ -17,7 +17,7 @@ This file provides the complete, unabridged content of my blog posts and selecte
 {%- assign current_posts = site.posts | where_exp: "item", "item.date <= site.time" -%}
 {%- for post in current_posts %}
 ---
-### [Post] {{ post.title | unescape_html }} – {{ site.url }}{{ post.url }}
+### [Post] {{ post.title | unescape_html }} – {{ site.url }}{{ site.baseurl }}{{ post.url }}
 - **Created:** {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, **Updated:** {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}
 {%- if post.tags.size > 0 %}
 - **Tags:** {{ post.tags | join: ', ' | unescape_html }}
@@ -32,7 +32,7 @@ This file provides the complete, unabridged content of my blog posts and selecte
 {%- for page_item in site.pages %}
   {%- if page_item.title and page.allowed_pages contains page_item.title %}
 ---
-### [Page] {{ page_item.title | unescape_html }} – {{ site.url }}{{ page_item.url }}
+### [Page] {{ page_item.title | unescape_html }} – {{ site.url }}{{ site.baseurl }}{{ page_item.url }}
 - **Words:** {{ page_item.content | strip_html | number_of_words }}
 
 #### Content
