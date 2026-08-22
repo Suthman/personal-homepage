@@ -20,7 +20,7 @@ This file provides the complete, unabridged content of my blog posts and selecte
 ### [Post] {{ post.title | unescape_html }} – {{ site.url }}{{ site.baseurl }}{{ post.url }}
 - **Created:** {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, **Updated:** {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}
 {%- if post.tags.size > 0 %}
-- **Tags:** {{ post.tags | join: ', ' | unescape_html }}
+- **Keywords:** {{ post.tags | join: ', ' | unescape_html }}
 {%- endif %}
 - **Words:** {{ post.content | strip_html | number_of_words }}
 
