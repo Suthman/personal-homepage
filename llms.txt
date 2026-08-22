@@ -16,7 +16,7 @@ For each item, both the raw Markdown version [MD] and the processed web version 
 ## Posts:
 {%- assign current_posts = site.posts | where_exp: "item", "item.date <= site.time" -%}
 {%- for post in current_posts %}
-- [{{ post.title | unescape_html }}] — ([MD]({{ site.url }}{{ site.baseurl }}{{ post.url }}index.md) | [HTML]({{ site.url }}{{ site.baseurl }}{{ post.url }})){% if post.excerpt %} : {{ post.excerpt | strip_html | strip_newlines | unescape_html | truncate: page.truncate_limit }}{% endif %} [Created: {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, Updated: {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}][Tags: {{ post.tags | join: ', ' | unescape_html }}] [Words: {{ post.content | strip_html | number_of_words }}]
+- [{{ post.title | unescape_html }}] — ([MD]({{ site.url }}{{ site.baseurl }}{{ post.url }}index.md) | [HTML]({{ site.url }}{{ site.baseurl }}{{ post.url }})){% if post.excerpt %} : {{ post.excerpt | strip_html | strip_newlines | unescape_html | truncate: page.truncate_limit }}{% endif %} [Created: {{ post.date | date: "%Y-%m-%d" }}{% if post.last_modified_at %}, Updated: {{ post.last_modified_at | date: "%Y-%m-%d" }}{% endif %}][Keywords: {{ post.tags | join: ', ' | unescape_html }}] [Words: {{ post.content | strip_html | number_of_words }}]
 {%- endfor %}
 
 ## Pages
