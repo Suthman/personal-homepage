@@ -1,30 +1,12 @@
-module Jekyll
-  class RawMarkdownGenerator < Generator
-    safe true
-    priority :high
+require 'liquid'
 
-    # Configure how many levels you want to shift the markdown headers down.
-    # If your content section is #### Content (H4), a shift of 4 turns a # (H1) into a ##### (H5).
+module Jekyll
+  # Helper class to process documents for LLM friendliness
+  class LlmMarkdownProcessor
     HEADER_SHIFT_LEVEL = 4
 
-    def generate(site)
-      # Pre-generate the global site payload containing baseurl, url, site variables etc.
-      @site_payload = site.site_payload
-
-      # 1. Process all blog posts
-      site.posts.docs.each do |post|
-        process_document(post, site)
-      end
-
-      # 2. Process all selected pages
-      site.pages.each do |page|
-        process_document(page, site)
-      end
-    end
-
-    private
-
-    def process_document(doc, site)
+    def self.process_document(doc, site)
+      # Skip if it's a file we don't need to process
       full_path = site.in_source_dir(doc.relative_path)
       return unless File.exist?(full_path)
 
@@ -36,9 +18,10 @@ module Jekyll
         raw_markdown = content_parts[2..].join("---").strip
 
         begin
-          # We pass the site payload as environments and register the true system structures.
+          # Setup the full site payload context
+          site_payload = site.site_payload
           context = Liquid::Context.new(
-            [@site_payload.merge({ "page" => doc.data })], # Environments
+            [site_payload.merge({ "page" => doc.data })], # Environments
             {},                                            # Outer Scopes
             { site: site, page: doc.data },                # Registers (CRUCIAL!)
             true                                           # Rethrow Errors
@@ -49,14 +32,13 @@ module Jekyll
           # Render the liquid tags with full access to configuration drops and includes
           rendered_markdown = template.render(context)
         rescue => e
-          Jekyll.logger.warn "RawMarkdownGenerator:", "Could not render Liquid tags in #{doc.relative_path}: #{e.message}"
+          Jekyll.logger.warn "LlmMarkdownProcessor:", "Could not render Liquid tags in #{doc.relative_path}: #{e.message}"
           rendered_markdown = raw_markdown
         end
 
         # 1. Convert HTML img to Markdown link
         rendered_markdown.gsub!(/<img\b[^>]*?>/im) do |img_tag|
           src_match = img_tag.match(/\bsrc=["']([^"']+)["']/i)
-          # extract ONLY the URL inside the quotes, not the whole 'src="..."' string
           src_url = src_match ? src_match[1] : ""
 
           alt_match = img_tag.match(/\balt=["']([^"']+)["']/i)
@@ -78,7 +60,6 @@ module Jekyll
         end
 
         # 4. Strip all accidental leading spaces before images globally
-        # This targets any line that has leading spaces followed immediately by an image link.
         rendered_markdown.gsub!(/^[ \t]+(\!\[)/, '\1')
 
         # Clean up lines that contain nothing but empty whitespace
@@ -90,4 +71,15 @@ module Jekyll
       end
     end
   end
+end
+
+# Hook into the pre_render stage for BOTH posts and pages.
+# This guarantees doc.data['raw_md'] is populated before Jekyll caches or drops the data.
+Jekyll::Hooks.register :posts, :pre_render do |post, payload|
+  Jekyll::LlmMarkdownProcessor.process_document(post, post.site)
+end
+
+Jekyll::Hooks.register :pages, :pre_render do |page, payload|
+  # Only process standard pages, skip layout-less or utility files if necessary
+  Jekyll::LlmMarkdownProcessor.process_document(page, page.site)
 end
