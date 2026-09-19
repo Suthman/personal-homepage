@@ -110,15 +110,19 @@ Custom extensions:
   - For testing, it can be deployed manually from feature branches  
     Note: the branch must be explicitly mentioned in `github-pages` environment
   - ⚠️ **Attention**: PDF and BIB lastmod timestamps in the sitemap are overwritten via a post-build hack ⚠️
+  - [postprocess_and_validate_llms_full.rb](exclude/postprocess_and_validate_llms_full.rb) substitutes config-params and validates that no liquid tags are contained in `llms-full.txt`
   - The published files and directories are validated using the Ruby script [validate-published-files.rb](exclude/validate-published-files.rb)
   - [robots.txt](robots.txt) is validated using the Ruby script [validate-robots-txt.rb](exclude/validate-robots-txt.rb)
   - The generated HTML pages are validated by `html-proofer` using the Ruby script [validate-html.rb](exclude/validate-html.rb)
 - Local development:
-  - Use [start_local.sh](./start_local.sh) to start server locally! `./start_local.sh`  
-    Build pages and start the server `bundle exec jekyll serve --livereload`
-  - Validate published files in `_site`: `bundle exec ruby exclude/validate-published-files.rb`
-  - Validate `robots.txt`: `bundle exec ruby exclude/validate-robots-txt.rb`
-  - Validate HTML: `bundle exec ruby exclude/validate-html.rb --swap-localhost`
+  - Use **[start_local.sh](./start_local.sh)** to start server locally! `./start_local.sh`  
+    - Build pages and start the server `bundle exec jekyll serve --livereload`
+  - Use **[validate_local.sh](./validate_local.sh)** to execute local validation: `./validate_local.sh`   
+    ⚠️ **Attention**: site must have been built before, some scripts might fail locally
+    - Validate and postprocess `llms-full.txt`: `bundle exec ruby exclude/postprocess_and_validate_llms_full.rb`
+    - Validate published files in `_site`: `bundle exec ruby exclude/validate-published-files.rb`
+    - Validate `robots.txt`: `bundle exec ruby exclude/validate-robots-txt.rb`
+    - Validate HTML: `bundle exec ruby exclude/validate-html.rb --swap-localhost`
 - Versions of `Ruby gems` and `Github Actions` are checked and updated with Dependabot **[dependabot.yml](.github/dependabot.yml)**
 - Version of `Ruby` is checked with **[ruby_validator.yml](.github/workflows/ruby_validator.yml)**
   - Script [validate_ruby_version.sh](.github/scripts/validate_ruby_version.sh) the latest `Ruby` version of the github action `ruby/setup-ruby` and compares it to [.ruby-version](.ruby-version)
