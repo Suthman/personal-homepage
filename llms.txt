@@ -6,11 +6,11 @@ allowed_pages:
   - "About Me"
   - "Publications"
 ---
-# {{ site.title | unescape_html }}, {{ site.subtitle | unescape_html }}
+# {{ site.url }}{{ site.baseurl }}: {{ site.title | unescape_html }}, {{ site.subtitle | unescape_html }}
 
 > {{ site.description | unescape_html }}
 
-This file provides a clean summary of my blog posts and pages for LLMs and AI assistants. 
+This file provides a clean summary of "{{ site.url }}{{ site.baseurl }}"'s blog posts and pages for LLMs and AI assistants. 
 For each item, both the raw Markdown version [MD] and the processed web version [HTML] are provided.
 
 ## Posts:

@@ -48,6 +48,9 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Validate llms-full.txt
+        run: bundle exec ruby exclude/postprocess_and_validate_llms_full.rb
+
       - name: Fix PDF Timestamps in Sitemap
         run: |
           python3 -c "
