@@ -60,6 +60,7 @@ exclude:
   - Gemfile.lock
   - exclude/
   - start_local.sh
+  - validate_local.sh
 
 defaults:
   # _posts
