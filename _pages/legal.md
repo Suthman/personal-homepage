@@ -1,5 +1,5 @@
 ---
-title: Imprint, disclaimer and privacy policy 
+title: Imprint and privacy policy 
 permalink: /legal/
 toc: true
 toc_sticky: true
@@ -8,35 +8,25 @@ sitemap: false
 search: false
 ---
 
-{% include ai-disclaimer-short.html %}
-
 # Impressum / Imprint
 
-## Angaben gemäß § 5 TMG / Information according to § 5 TMG
+## Angaben gemäß § 5 DDG / Information according to § 5 DDG
 **Christoph Mies**  
 Altenrather Str. 5F  
 53797 Lohmar  
 Deutschland / Germany
 
 ## Kontakt / Contact
-E-Mail: {{  site.email  }}  
+E-Mail: [{{ site.email }}](mailto:{{ site.email }})
 
-## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV / Responsible for content according to § 55 (2) RStV
+## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV / Responsible for content according to § 18 (2) MStV
 Christoph Mies, Anschrift wie oben / same address as above.
 
----
+## Social-Media-Präsenzen / Social Media Profiles
+Dieses Impressum und die Datenschutzerklärung gelten auch für meine folgenden Social-Media-Profile: / This imprint and privacy policy also apply to my following social media profiles:
+{% for link in site.author.links %}{% if link.label == "LinkedIn" or link.label == "XING" %}* <i class="{{ link.icon }}"></i> {{ link.label }}: [Christoph Mies]({{ link.url }})
+{% endif %}{% endfor %}
 
-# Haftungsausschluss / Disclaimer
-
-## Haftung für Inhalte / Liability for Content
-Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehme ich jedoch keine Gewähr. Als privater Anbieter bin ich nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-
-The content on this website has been created with great care. However, I cannot guarantee the accuracy, completeness, or timeliness of the information provided. As a private website operator, I am not obligated to monitor third-party information transmitted or stored, nor to investigate circumstances that indicate unlawful activity.
-
-## Haftung für Links / Liability for External Links
-Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Zum Zeitpunkt der Verlinkung wurden die Seiten auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte nicht zumutbar.
-
-This website may contain links to external third‑party websites over which I have no control. The respective provider or operator is always responsible for the content of linked pages. At the time the links were created, the pages were checked for possible legal violations; no unlawful content was identifiable at that time. Continuous monitoring of linked pages is not reasonable without specific indications of a violation.
 
 ---
 
@@ -47,14 +37,24 @@ This website may contain links to external third‑party websites over which I h
 Altenrather Str. 5F  
 53797 Lohmar  
 Deutschland / Germany  
-E-Mail: {{ site.email }}
+E-Mail: [{{ site.email }}](mailto:{{ site.email }})
 
 ## 2. Erhebung und Speicherung personenbezogener Daten / Collection of Personal Data
 
 ### a) Beim Besuch dieser Website / When visiting this website
-Diese Website dient ausschließlich privaten Zwecken. Beim Aufruf der Seiten werden durch GitHub (GitHub Pages) automatisch technische Informationen erfasst, darunter: IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten. Diese Daten sind notwendig, um die Website bereitzustellen, und werden automatisch gelöscht.
+Diese Website dient ausschließlich privaten Zwecken. Beim Aufruf der Seiten werden durch GitHub (GitHub Pages) automatisch technische Informationen erfasst, darunter: IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit des Zustriffs, aufgerufene Seiten. Diese Daten sind notwendig, um die Website bereitzustellen, und werden automatisch gelöscht. 
+[Datenschutzerklärung von GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement)
 
-This website is for private, non-commercial use. GitHub (GitHub Pages) automatically collects technical information such as IP address, browser type, operating system, date and time of access, and pages viewed. These data are required to operate the site and are deleted automatically.
+This website is for private, non-commercial use. GitHub (GitHub Pages) automatically collects technical information such as IP address, browser type, operating system, date and time of access, and pages viewed. These data are required to operate the site and are deleted automatically. [GitHub privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
+
+### b) Social-Media-Präsenzen / Social Media Profiles
+Ich unterhalte Profile auf LinkedIn und XING. Beim Besuch dieser Profile werden durch die jeweiligen Plattformbetreiber personenbezogene Daten erhoben und verarbeitet (z.B. für Analysen und Werbung). Einzelheiten zur Datenverarbeitung entnehmen Sie bitte den Datenschunderklärungen der jeweiligen Anbieter:
+* **LinkedIn:** LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Irland. [Datenschutzerklärung](https://www.linkedin.com/legal/privacy-policy)
+* **XING:** New Work SE, Am Strandkai 1, 20457 Hamburg, Deutschland. [Datenschutzerklärung](https://privacy.xing.com/de/datenschutzerklaerung)
+
+I maintain profiles on LinkedIn and XING. When visiting these profiles, personal data is collected and processed by the respective platform operators, e.g., for analytics and advertising purposes. For details, please refer to the privacy policies of the respective providers:
+* **LinkedIn:** LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Irland. [Privacy Policy](https://www.linkedin.com/legal/privacy-policy)
+* **XING:** New Work SE, Am Strandkai 1, 20457 Hamburg, Deutschland. [Privacy Policy](https://privacy.xing.com/en/privacy-policy)
 
 ## 3. Kontaktaufnahme / Contact
 Daten aus E-Mail-Anfragen werden ausschließlich zur Bearbeitung verwendet.  
@@ -72,13 +72,6 @@ This website uses no cookies, analytics tools, or tracking.
 Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung.  
 Right to access, correct, delete, or restrict processing.
 
-## 7. Hosting durch GitHub / Hosting by GitHub
-Diese Website wird über GitHub Pages gehostet. Datenschutzerklärung von GitHub:  
-https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
-
-This website is hosted via GitHub Pages. GitHub privacy statement:  
-https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
-
-## 8. Änderungen dieser Datenschutzerklärung / Changes to this Policy
+## 7. Änderungen dieser Datenschutzerklärung / Changes to this Policy
 Diese Erklärung kann bei Bedarf angepasst werden.  
 This policy may be updated if necessary.
