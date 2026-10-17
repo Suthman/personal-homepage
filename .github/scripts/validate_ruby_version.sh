@@ -49,7 +49,7 @@ echo "Supported Ruby Versions:"
 echo "$SUPPORTED_RUBY_VERSIONS"
 echo "--------------------------------------------------------"
 
-# Extract all version numbers from the table cell and find the highest one
+# Extract all version numbers from the table cell and find the highest one (including previews)
 HIGHEST_RUBY_VERSION=$(echo "$SUPPORTED_RUBY_VERSIONS" | awk '
   {
     # Replace commas, pipes, and backticks with spaces to isolate tokens cleanly
@@ -57,8 +57,8 @@ HIGHEST_RUBY_VERSION=$(echo "$SUPPORTED_RUBY_VERSIONS" | awk '
     
     # Loop through every word/token in the cleaned string
     for (i = 1; i <= NF; i++) {
-      # Match only tokens that are valid version numbers (e.g., 2.2 or 4.0.7)
-      if ($i ~ /^[0-9]+\.[0-9]+(\.[0-9]+)?$/) {
+      # Match tokens that are valid version numbers, now allowing suffixes like -preview1
+      if ($i ~ /^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?$/ || $i ~ /^[0-9]+\.[0-9]+$/) {
         print $i
       }
     }
@@ -68,12 +68,12 @@ if [ -z "$HIGHEST_RUBY_VERSION" ]; then
   echo "[ERROR] Could not identify any valid Ruby version numbers without grep."
   exit 1
 fi
-echo "Highest Ruby version: $HIGHEST_RUBY_VERSION"
+echo "Highest Ruby version found in README: $HIGHEST_RUBY_VERSION"
 
 # print collected version information
 echo ""
 echo "========================================================"
-echo "Repository:            https://github.com/ruby/setup-ruby"
+echo "Repository:            https://github.com"
 echo "Latest Release Tag:    $LATEST_RELEASE_TAG"
 echo "--------------------------------------------------------"
 echo "Supported Ruby Versions:"
@@ -91,13 +91,32 @@ LOCAL_VERSION=$(cat .ruby-version | tr -d '[:space:]')
 echo "Local version (.ruby-version): $LOCAL_VERSION"
 echo "--------------------------------------------------------"
 
-# compare versions
+# 1. Exact Match Check
 if [ "$LOCAL_VERSION" == "$HIGHEST_RUBY_VERSION" ]; then
   echo "[SUCCESS] Perfect! Local version matches the highest pipeline support ($HIGHEST_RUBY_VERSION)."
-else
-  echo "[CRITICAL ERROR] Ruby version mismatch detected!"
-  echo "Highest pipeline support: $HIGHEST_RUBY_VERSION"
-  echo "Local environment: $LOCAL_VERSION"
-  echo "Build aborted to prevent configuration mismatches."
-  exit 1
+  exit 0
 fi
+
+# 2. Preview Handle Check
+# Check if the pipeline version contains a hyphen (e.g., 4.1.0-preview1)
+if [[ "$HIGHEST_RUBY_VERSION" == *'-'* ]]; then
+  # Strip the preview suffix to get the base version (e.g., 4.1.0)
+  BASE_PIPELINE_VERSION=$(echo "$HIGHEST_RUBY_VERSION" | cut -d'-' -f1)
+  
+  # Use sort -V to check if LOCAL_VERSION is strictly smaller than BASE_PIPELINE_VERSION
+  # If the local version comes first in a sorted list, it means LOCAL_VERSION < BASE_PIPELINE_VERSION
+  FIRST_IN_SORT=$(echo -e "${LOCAL_VERSION}\n${BASE_PIPELINE_VERSION}" | sort -V | head -n 1)
+  
+  if [ "$FIRST_IN_SORT" == "$LOCAL_VERSION" ] && [ "$LOCAL_VERSION" != "$BASE_PIPELINE_VERSION" ]; then
+    echo "[SUCCESS] Valid! Local version ($LOCAL_VERSION) is older than the upcoming preview ($HIGHEST_RUBY_VERSION)."
+    echo "You are safe until the stable $BASE_PIPELINE_VERSION release is published."
+    exit 0
+  fi
+fi
+
+# If neither condition met, trigger the mismatch error
+echo "[CRITICAL ERROR] Ruby version mismatch detected!"
+echo "Highest pipeline support: $HIGHEST_RUBY_VERSION"
+echo "Local environment:        $LOCAL_VERSION"
+echo "Build aborted to prevent configuration mismatches."
+exit 1

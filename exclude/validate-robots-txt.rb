@@ -25,7 +25,7 @@ def check_block(content, agent, directive, path)
 end
 
 # Test A: LLM Training Bots must be blocked on the entire site
-training_bots = ["GPTBot", "ClaudeBot", "Google-Extended", "Applebot-Extended", "CCBot"]
+training_bots = ["meta-externalagent", "GPTBot", "ClaudeBot", "Google-Extended", "Applebot-Extended", "CCBot"]
 training_bots.each do |bot|
   if check_block(robots_content, bot, "Disallow", "/")
     puts "✅ Test passed: #{bot} is correctly blocked via 'Disallow: /'."
@@ -36,7 +36,7 @@ training_bots.each do |bot|
 end
 
 # Test B: AI Search Bots must have explicit access to allowed entry paths
-search_bots = ["OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User"]
+search_bots = ["meta-webindexer", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User"]
 allowed_paths = ["/", "/llms.txt", "/llms-full.txt"]
 
 search_bots.each do |bot|
